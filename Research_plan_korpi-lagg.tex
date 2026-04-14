@@ -49,6 +49,16 @@
 \newcommand{\NH}{{\textsf{NM}}}
 \newcommand{\BH}{{\textsf{BM}}}
 
+\definecolor{yellow}{RGB}{252, 211, 3}
+\definecolor{green}{RGB}{60,179,113}
+\definecolor{blue}{RGB}{3, 165, 252}
+\definecolor{midblue}{rgb}{0.0,0.4,0.7}
+\definecolor{midgreen}{rgb}{0.1,0.6,0.3}
+\definecolor{mypurple}{rgb}{0.7,0.3,0.8}
+\newcommand{\fg}[1]{\textcolor{midblue}{#1}}
+\newcommand{\fag}[1]{\textcolor{midblue}{[FAG: #1]}}
+\newcommand{\lm}[1]{\textcolor{mypurple}{#1}}
+\newcommand{\lars}[1]{\textcolor{mypurple}{[LM: #1]}}
 \newcommand{\wpdef}[3]{\hypertarget{wp#1}{\subsubsection*{WP#1 {\normalfont(#2)}: #3}}}
 \newcommand{\wpref}[1]{\protect\hyperlink{wp#1}{\textbf{WP#1}}}
 
@@ -207,6 +217,10 @@ Maarit J. Korpi-Lagg (SNDust)
     \end{itemize}
 }
 
+\fag{incorporate work of new collaborators here and expand on the scientific questionmarks/hypotheses}
+
+\fag{add how the project justifies the use of LUMI resources}
+
 We plan to implement groundbreaking coupled multi-tiered, or
 {\textit{extended multi scale simulations}} (EMS), bridging previously
 unattainable scales of separation. Extreme scales of separation are generic in astrophysics, where this innovative concept shall be applied to dust,
@@ -248,28 +262,6 @@ understand the dust processing. To advance this scientific goal we need the
 multi-tiered approach and the machine-learning toolkit to facilitate
 identifying critical features, launching coupled simulations and managing
 communication and balancing resources within a typical HPC batch system.
-
-
-\section{Impact}
-
-\instructions{
-  	In this section, describe the following aspects:
-    \begin{itemize}
-        \item {Outcomes and impacts of research within academia}
-        \begin{itemize}
-            \item Expected research results and their anticipated scientific impact
-            \item Project’s novelty or added value for science
-            \item Potential for scientific breakthroughs and for promoting scientific renewal
-            \item Research impact within the scientific community
-        \end{itemize}
-        \item{Effects, impact and interaction beyond academia}
-        \begin{itemize}
-           	\item Brief description of the appeal, utilisation potential and application areas of the research results beyond the scientific community
-            	\item For instance, provide a self-assessment of the expected societal impact of the research in the long or short term. Impact beyond academia may come in many different forms depending on the research field and the project. For example, science is a source of wealth and prosperity, but it also improves our understanding of the world and enhances the level of civilisation, supports the development of good practices and informs decision-making.
-            	\item \href{https://www.aka.fi/en/tutkimuksen_vaikuttavuus}{Read more about the broader impact of research.}
-        \end{itemize}
-    \end{itemize}
-}
 
 %==============================================================================
 \begin{figure}
@@ -321,28 +313,6 @@ necessary turbulent structure.  Dust would decouple from the gas
 \citep[][]{Mattsson18a} and, because grains are easily charged, radiation
 pressure and Lorentz forces affect its critical MC scale distribution.
 
-\answer{Critical advance to application science envisaged here is
-to relate physics, previously mutually exclusive due to differences in scale, but essential to gas-dust and dust-dust dynamics:
-}
-\tabto{0em}
-$\bullet$ {\textit{Kinetic drag:}} Epstein-type, gas-dust interaction, significant at typical MC scales (10--20~pc).
-\tabto{0em}
-$\bullet$ {\textit{Coulomb forces:}} Electrically charged dust affected in a plasma \citep{Draine79}.
-\tabto{0em}
-$\bullet$ {\textit{Lorentz forces:}} MHD flows in the gas shift magnetic fields which exert forces on charged grains.
-\tabto{0em}
-$\bullet$ {\textit{Self-gravity:}} High cold cloud densities high act on decoupled grains affecting dust clustering.
-\tabto{0em}
-%$\bullet$ {\textit{``Lagrangian'' dust:}} At our smallest scales
-%dust can be tracked as Lagrangian particles to include, e.g., caustics/sling effects, streaming instability, resonant drag.
-%\tabto{0em}
-%$\bullet$ {\textit{Interstellar radiation field (ISRF).}} The ISRF is required for the RT calculations. Inverting measurements of the average local stellar radiation field \citet{Mathis83} provide a simple estimate radiation distribution. This will be improved by using recent detailed 3D models of the ISRF \citep{Porter17}.
-\tabto{0em}
-$\bullet$ {\textit{Radiation pressure:}} Mono-chromatic proxy \citep{HDB06} prior to an SN explosion.
-\tabto{0em}
-$\bullet$ {\textit{Dust cooling:}} Supersede simple gas temperature related cooling functions in the MHD simulations
-
-
 To bridge the gap between scales relevant to dust processing and the numerical
 scales required to model the realistic multi-phase turbulent ISM, we have
 treated dust as a distribution of multiple fluids binned by grain size and
@@ -375,7 +345,7 @@ realistic multi-phase ISM are thus critical ingredients.
  \end{minipage}
 \quad
 \begin{minipage}[h]{0.37\textwidth}
-\vspace{-1cm}
+%\vspace{-1cm}
   \captionof{figure}{Regional variation of dust distribution at sampled times.
 ({\textbf{a}}) Location of three specimen regions (green boxes) in the vicinity
 of an SN blast wave, each of size of $5\, \text{pc}\times5\, $pc.  Dust
@@ -392,6 +362,51 @@ to background processing (transport and destruction).
   \label{fig_gsd}
 %\end{figure}
 \end{minipage}
+
+
+
+\section{Impact}
+
+\instructions{
+  	In this section, describe the following aspects:
+    \begin{itemize}
+        \item {Outcomes and impacts of research within academia}
+        \begin{itemize}
+            \item Expected research results and their anticipated scientific impact
+            \item Project’s novelty or added value for science
+            \item Potential for scientific breakthroughs and for promoting scientific renewal
+            \item Research impact within the scientific community
+        \end{itemize}
+        \item{Effects, impact and interaction beyond academia}
+        \begin{itemize}
+           	\item Brief description of the appeal, utilisation potential and application areas of the research results beyond the scientific community
+            	\item For instance, provide a self-assessment of the expected societal impact of the research in the long or short term. Impact beyond academia may come in many different forms depending on the research field and the project. For example, science is a source of wealth and prosperity, but it also improves our understanding of the world and enhances the level of civilisation, supports the development of good practices and informs decision-making.
+            	\item \href{https://www.aka.fi/en/tutkimuksen_vaikuttavuus}{Read more about the broader impact of research.}
+        \end{itemize}
+    \end{itemize}
+}
+
+\fag{add scientific impact and goals of the simulations}
+\answer{Critical advance to application science envisaged here is
+to relate physics, previously mutually exclusive due to differences in scale, but essential to gas-dust and dust-dust dynamics:
+}
+\tabto{0em}
+$\bullet$ {\textit{Kinetic drag:}} Epstein-type, gas-dust interaction, significant at typical MC scales (10--20~pc).
+\tabto{0em}
+$\bullet$ {\textit{Coulomb forces:}} Electrically charged dust affected in a plasma \citep{Draine79}.
+\tabto{0em}
+$\bullet$ {\textit{Lorentz forces:}} MHD flows in the gas shift magnetic fields which exert forces on charged grains.
+\tabto{0em}
+$\bullet$ {\textit{Self-gravity:}} High cold cloud densities high act on decoupled grains affecting dust clustering.
+\tabto{0em}
+%$\bullet$ {\textit{``Lagrangian'' dust:}} At our smallest scales
+%dust can be tracked as Lagrangian particles to include, e.g., caustics/sling effects, streaming instability, resonant drag.
+%\tabto{0em}
+%$\bullet$ {\textit{Interstellar radiation field (ISRF).}} The ISRF is required for the RT calculations. Inverting measurements of the average local stellar radiation field \citet{Mathis83} provide a simple estimate radiation distribution. This will be improved by using recent detailed 3D models of the ISRF \citep{Porter17}.
+\tabto{0em}
+$\bullet$ {\textit{Radiation pressure:}} Mono-chromatic proxy \citep{HDB06} prior to an SN explosion.
+\tabto{0em}
+$\bullet$ {\textit{Dust cooling:}} Supersede simple gas temperature related cooling functions in the MHD simulations
 
 
 Effective implementation of the EMS approach will require advancing from manual
@@ -495,6 +510,8 @@ In this section, describe the following aspects:
 }
 
 Insert your text here...
+
+\fag{Redefine the plan to three years and match to number of FTs funded.}
 
 \wpdef{1}{EMS}{Extended Multi-scale Simulations}
 \vspace{-0.3cm}
