@@ -221,30 +221,46 @@ Maarit J. Korpi-Lagg (SNDust)
 
 \fag{add how the project justifies the use of LUMI resources}
 
-We plan to implement groundbreaking coupled multi-tiered, or
-{\textit{extended multi scale simulations}} (EMS), bridging previously
-unattainable scales of separation. Extreme scales of separation are generic in astrophysics, where this innovative concept shall be applied to dust,
-but our new interactive control tools would have applicability in other
-disciplines proliferated by large and heterogeneous data.
+We plan to implement groundbreaking
+%mm coupled multi-tiered, or
+{\textit{extended multi-scale simulations}} (EMS), bridging previously
+unattainable scales of separation. Extreme scales of separation are
+generic in astrophysics, where we shall apply this innovative concept
+to dust
+% mm
+  formation and dynamics,
+but our new interactive control tools
+% mm would have applicability in
+  will apply to
+other disciplines
+% mm proliferated
+  characterized
+by large and heterogeneous data.
 
 A common alternative approach is \textit{adaptive mesh refinement} (AMR), in
 which higher resolution meshes are dynamically applied locally where,
-typically, densities exceed some threshold \cite{AMR00}.  However, in MHD the
+typically,
+% mm densities
+  pressure gradients
+% mm change \cite to \citep or \citet to avoid odd formatting in the PDF
+exceed some threshold \citep{AMR00}.  However, in MHD the
 strongest turbulence and critical dynamo action often occur in regions of high
 temperatures and low densities. This does not permit solving additional physics
 relevant only to the zoomed in region. Additionally, non-uniform discrete
 Fourier transform that would be used to understand the spectral properties of
-turbulent fields are challenging to determine \cite{NUFFT}. Multi-grid methods
+turbulent fields are challenging to determine \citep{NUFFT}. Multi-grid methods
 are also commonly employed for improving convergence with implicit solvers of
-highly non-linear systems in chemistry \cite{MGRID}, engineering and other
+highly non-linear systems in chemistry \citep{MGRID}, engineering and other
 disciplines, with increased overheads. Our approach will use multi-grid tools to
 extend the scales and physics accessible to the hierarchy of simulations with
 minimal increase in overheads.
 
-Another resource applying a common interface to multiple astrophysics is the
-Astrophysical Multipurpose Software Environment \cite{AMUSE}.  Its Python
+Another resource applying a common interface to multiple astrophysics
+% mm
+  algorithms
+is the Astrophysical Multipurpose Software Environment \citep{AMUSE}.  Its Python
 interface is relatively user friendly, but has limited scalability via parallel
-high performance computation. Our project shall implement integrated highly
+high performance computation. Our project shall implement integrated, highly
 scalable simulations capable of handling huge data, while also developing user
 friendly interactive tools with which to manage and interrogate the
 applications.
@@ -530,25 +546,30 @@ an entirely new concept, but offers an innovative means to perform simulations
 in almost an equivalent approach to laboratory experiments that seek to test a
 hypothesis.  Schematically, the EMS process is as follows:
 \answer{
-\small
+%\small
 \begin{enumerate}
-    \item\tabto{0em} Select or extend a suitable macro simulation on domain
-$\mathcal{D}_0$, enclosing region $\mathcal{R}_n$ with $n=1$.\\[-0.7cm]
-    \item Identify region $\mathcal{R}_n$ (e.g., dense
-star-forming cluster), small enough to ensure scale separation.\\[-0.7cm]
+\item\tabto{0em} Select
+  % mm or extend
+  a suitable macro simulation on domain
+$\mathcal{D}_0$, enclosing region $\mathcal{R}_n$ with $n=1$.%\\[-0.7cm]
+\item Identify region $\mathcal{R}_n$ (e.g.,
+  %  mm  dense star-forming cluster
+  star-forming cloud), small enough to ensure scale separation.%\\[-0.7cm]
     \item Extract domain $\mathcal{D}_n$ enclosing $\mathcal{R}_n$ and remesh
-to the desired resolution as initial conditions (ICs).\\[-0.7cm]
-    \item Define appropriate boundary conditions (BCs). Interpolate from
-$\mathcal{D}_0$ to retain macro dynamics.\\[-0.7cm]
-    \item Run simulation of $\mathcal{D}_n$.\\[-0.7cm]
-    \item Repeat step 2 -- 5 for $n>1$ until the size of $\mathcal{D}_n$
+to the desired resolution.% as initial conditions (ICs).\\[-0.7cm]
+    \item Define appropriate boundary conditions. Interpolate from
+$\mathcal{D}_0$ to retain macro dynamics.%\\[-0.7cm]
+    \item Run simulation of $\mathcal{D}_n$.%\\[-0.7cm]
+    \item Repeat steps 2--5 for $n>1$ until the size of $\mathcal{D}_n$
 reaches some limiting length scale.
 \end{enumerate}
 }
 \vspace{-0.2cm}%
 %------------------------------------------------------------------------------
 \tabto{0em}
-Deliveries and expected results:
+% Deliveries
+  Deliverables
+and expected results:
 \tabto{0em}
 $\bullet$~MHD simulations spanning more than three tiers or two orders
 of magnitude in resolution.
