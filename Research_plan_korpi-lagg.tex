@@ -530,22 +530,22 @@ an entirely new concept, but offers an innovative means to perform simulations
 in almost an equivalent approach to laboratory experiments that seek to test a
 hypothesis.  Schematically, the EMS process is as follows:
 \answer{
-\small
+%\small
 \begin{enumerate}
     \item\tabto{0em} Select or extend a suitable macro simulation on domain
-$\mathcal{D}_0$, enclosing region $\mathcal{R}_n$ with $n=1$.\\[-0.7cm]
+$\mathcal{D}_0$, enclosing region $\mathcal{R}_n$ with $n=1$.\\%[-0.7cm]
     \item Identify region $\mathcal{R}_n$ (e.g., dense
-star-forming cluster), small enough to ensure scale separation.\\[-0.7cm]
+star-forming cluster), small enough to ensure scale separation.\\%[-0.7cm]
     \item Extract domain $\mathcal{D}_n$ enclosing $\mathcal{R}_n$ and remesh
-to the desired resolution as initial conditions (ICs).\\[-0.7cm]
+to the desired resolution as initial conditions (ICs).\\%[-0.7cm]
     \item Define appropriate boundary conditions (BCs). Interpolate from
-$\mathcal{D}_0$ to retain macro dynamics.\\[-0.7cm]
-    \item Run simulation of $\mathcal{D}_n$.\\[-0.7cm]
+$\mathcal{D}_0$ to retain macro dynamics.\\%[-0.7cm]
+    \item Run simulation of $\mathcal{D}_n$.\\%[-0.7cm]
     \item Repeat step 2 -- 5 for $n>1$ until the size of $\mathcal{D}_n$
 reaches some limiting length scale.
 \end{enumerate}
 }
-\vspace{-0.2cm}%
+%\vspace{-0.2cm}%
 %------------------------------------------------------------------------------
 \tabto{0em}
 Deliveries and expected results:
@@ -555,10 +555,10 @@ of magnitude in resolution.
 \tabto{0em}
 $\bullet$~Models of gas-dust distribution and $B-n$ correlations in ISM environments up to MC densities.
 \tabto{0em}
-$\bullet$~Hand setting $\mathcal{D}_n$ \& boundary conditions superseded by pipeline tools (see \wpref{3} and \wpref{4}).
+$\bullet$~Hand setting $\mathcal{D}_n$ \& boundary conditions superseded by pipeline tools (see \wpref{3}).
 \tabto{0em}
 $\bullet$~Post-processed dust (\textsc{PAPERBOATS}) superseded by integral \textsc{Pencil Code}
- (\wpref{2}) and graphics cards (GPU)-accelerated sub-physics and dust (\wpref{5}).
+ (\wpref{2}) and graphics cards (GPU)-accelerated sub-physics and dust (\wpref{4}).
 %------------------------------------------------------------------------------
 
 \begin{minipage}[h]{0.4\textwidth}
@@ -595,9 +595,11 @@ $\bullet$~\textsc{Paperboats} implemented into highly scalable PC.
 $\bullet$~Dust modeling GPU-accelerated with PC-A.
 \tabto{0em}
 $\bullet$~Code-coupling tools: highly heterogeneous
-codes or computations require resource management to avoid idle resources, match performance and reduce IO, memory or compute bottlenecks (\wpref{4} and \wpref{5}).
+codes or computations require resource management to avoid idle resources, match performance and reduce IO, memory or compute bottlenecks (\wpref{3} and \wpref{4}).
 \end{minipage}
-To implement \wpref{1} and \wpref{2} the PI has years of experience executing
+
+\fag{Update, satisfied if application approved}
+To implement \wpref{1} and \wpref{2} the PI and CoI have years of experience executing
 such simulations with consistent success applying for resources on the Finnish
 national infrastructure CSC, European infrastructure directly on LUMI, as well
 as a member of successful HPCLab European scale PRACE projects.  Both the PI
@@ -613,43 +615,41 @@ they explore regimes of astrophysics with respect to dust distribution and
 dynamics, magnetic field and ISM multi-phase structure, which are poorly
 understood and important to observations and understanding of galaxy evolution.
 Four publications are realistic, the rate and extent of any advances increasing
-the better the success of \wpref{3} -- \wpref{5}.  The GS shall be included in
+the better the success of \wpref{3} and \wpref{4}.  The GS shall be included in
 the execution and analysis of \wpref{1} and \wpref{2}, while their thesis shall
-primarily address \wpref{3} and \wpref{4}.  New York and Ghent collaborators
+primarily address \wpref{3} and \wpref{4}.  
+Our collaborators from Victoria, New York, Stockholm and Ghent
 have high expertise at modeling dust and MC.
 
 
 %------------------------------------------------------------------------------
-%------------------------------------------------------------------------------
-\wpdef{3}{ODOP}{Pipeline -- ODOP tools}
-\vspace{-0.3cm}
-Data storage and management is commonly a bottleneck in any HPC, dealing with
-datasets approaching TB and even PB scales. Scanning for regions of interest in
-astrophysical simulations remains labour intensive and applied to disk-saved
-datasets, output at intervals.  We shall apply cutting-edge machine-learning
-tools for Opportunistic Data Operations \citep[][ODOP]{odop24} to analyze the
-data to identify regions or patterns of interest and extract a suitable
-subdomain from which to launch new experiments. Next these tools shall be
-enhanced to work on active data in memory on-the-fly during the computation to
-identify and extract relevant data when desired, and eventually launch such new
-experiments.  This work is at the frontier of computer science, in which HPCLab
-and \href{https://rdsea.github.io/}{\textbf{AaltoSEA}} are heavily
-invested, and large-data use applications, such as this proposal are critical
-for their development.
-\tabto{0em}
-Deliveries and expected results:
-\tabto{0em}
-$\bullet$ ODOP tools to identify critical patterns and extract relevant datasets.
-\tabto{0em}
-$\bullet$ Manage spawning EMS multi-scale simulations, rescheduling available resources to additional tasks and new physics, and .
-\tabto{0em}
-$\bullet$ Machine learning to manage additional resource requests and
-execute new diagnostics.
-%-----------------------------------------------------------------------------
+%%------------------------------------------------------------------------------
+%\wpdef{3}{ODOP}{Pipeline -- ODOP tools}
+%\vspace{-0.3cm}
+%Scanning for regions of interest in
+%astrophysical simulations remains labour intensive and applied to disk-saved
+%datasets, output at intervals.  
+%We shall apply cutting-edge machine-learning
+%tools for Opportunistic Data Operations \citep[][ODOP]{odop24} to analyze the
+%data to identify regions or patterns of interest and extract a suitable
+%subdomain from which to launch new experiments. Next these tools shall be
+%enhanced to work on active data in memory on-the-fly during the computation to
+%identify and extract relevant data when desired, and eventually launch such new
+%experiments.  
+%\tabto{0em}
+%Deliveries and expected results:
+%\tabto{0em}
+%$\bullet$ ODOP tools to identify critical patterns and extract relevant datasets.
+%\tabto{0em}
+%$\bullet$ Manage spawning EMS multi-scale simulations, rescheduling available resources to additional tasks and new physics, and .
+%\tabto{0em}
+%$\bullet$ Machine learning to manage additional resource requests and
+%execute new diagnostics.
+%%-----------------------------------------------------------------------------
 
 %------------------------------------------------------------------------------
 %------------------------------------------------------------------------------
-\wpdef{4}{CC}{Pipeline -- code coupling}
+\wpdef{3}{CC}{Pipeline -- code coupling}
 \vspace{-0.3cm}
 Defining consistent BCs after remeshing to macro-scale $\mathcal{D}_n$, without
 erroneous artifacts in the flows, is a crucial step in the process.  Open
@@ -659,12 +659,26 @@ over time.  Using surfaces from within $\mathcal{D}_{n-1}$ surrounding
 $\mathcal{D}_n$ one may interpolate boundary values onto the fine grid (also in
 time) to retain dynamically the macro-scale features.  High cadence slices from
 $\mathcal{D}_{n-1}$ can be saved to disk and read subsequently for
-$\mathcal{D}_{n}$ BC updates. Code-coupling on-the-fly, saves on storage, and
+$\mathcal{D}_{n}$ BC updates.
+
+Data storage and management is commonly a bottleneck in any HPC, dealing with
+datasets approaching TB and even PB scales. 
+ Code-coupling on-the-fly, saves on storage, and
 employs at the very least message passing interface (MPI).  Additional physics,
 such as dust, cooling or self-gravity, necessitate diverging timescales or
 computational load.  Code-coupling enhanced by machine learning could gain
 speed by balancing load and available resources, by minimizing redundant
-communication. The basic machinery for coupling multiple versions of the code
+communication. 
+We have access to cutting-edge machine-learning
+tools for Opportunistic Data Operations \citep[][ODOP]{odop24} to analyze the
+data to identify regions or patterns of interest and extract a suitable
+subdomain from which to launch new experiments.
+This work is at the frontier of computer science, in which HPCLab
+and \href{https://rdsea.github.io/}{\textbf{AaltoSEA}} are heavily
+invested, and large-data use applications, such as this proposal are critical
+for their development.
+
+The basic machinery for coupling multiple versions of the code
 or with other codes would be similar.  HPCLab already has experience coupling
 \textsc{Eulag} with \textsc{Pencil Code} (1-way).
 \tabto{0em}
@@ -679,71 +693,58 @@ $\bullet$ Code-coupling within multi-scale to balance computational load (2-way)
 %-----------------------------------------------------------------------------
 %-----------------------------------------------------------------------------
 \begin{figure}[h]
-    \begin{ganttchart}{1}{16}
-      \gantttitle{Year 1}{4}
-      \gantttitle{Year 2}{4}
-      \gantttitle{Year 3}{4}
-      \gantttitle{Year 4}{4} \\
+    \begin{ganttchart}{1}{18}
+      \gantttitle{Year 1}{6}
+      \gantttitle{Year 2}{6}
+      \gantttitle{Year 3}{6} \\
 %-----------------------------------------------------------------------------
-      \ganttgroup{\wpref{1} (EMS)}{1}{15} \\
-      \ganttbar{$R_1\rightarrow R_n$}{1}{3.5}
-      \ganttbar{}{5}{7}
-      \ganttbar{}{9}{11}
-      \ganttbar{}{13}{15}\\
-      \ganttmilestone[milestone/.append style={fill=blue!50}]{publications}{4}
-      \ganttmilestone[milestone/.append style={fill=blue!50}]{}{8}
-      \ganttmilestone[milestone/.append style={fill=blue!50}]{}{12}
-      \ganttmilestone[milestone/.append style={fill=blue!50}]{}{16} \\
-    \node (a) [fill=blue,draw,anchor=east] at ([xshift=4.6cm]current bounding box.0){MHD-Dust applications};
+      \ganttgroup{\wpref{1} (EMS)}{1}{18} \\
+      \ganttbar{$R_1\rightarrow R_n$}{1}{4}\\
+      \ganttbar{Coupled $R_1\rightarrow R_n$}{6}{18}\\
+      \node (a) [fill=blue,draw,anchor=east] at ([xshift=4.6cm]current bounding box.0){MHD-Dust applications};
       \node (b) [fill=yellow,draw,anchor=west] at ([yshift=-0.8cm]a.west){Toolkit development};
       \node (c) [fill=green,draw,anchor=west] at ([yshift=-0.8cm]b.west){GPU-PC-Toolkit integration};
 %-----------------------------------------------------------------------------
-      \ganttgroup{\wpref{2} (Dust)}{1}{15} \\
-      \ganttbar{\textsc{Paperboats}}{1}{3} \\
-      \ganttmilestone[milestone/.append style={fill=blue}]{\textsc{Dust in PC}}{4} \\
-      \ganttmilestone[milestone/.append style={fill=green}]{\textsc{Dust in PC-A}}{7} \\
-      \ganttbar{\textsc{Pencil-code}}{5}{7}
-      \ganttbar{}{9}{11}
-      \ganttbar{}{13}{15}\\
+      \ganttgroup{\wpref{2} (Dust)}{1}{18} \\
+      \ganttbar{\textsc{Paperboats dust}}{1}{4} \\
+      \ganttbar{\textsc{PC dust}}{6}{9}\\
+      \ganttbar{PC-A dust}{10}{18}\\
+      \ganttmilestone[milestone/.append style={fill=blue}]{\textsc{Dust in PC/PC-A}}{4}
+      \ganttmilestone[milestone/.append style={fill=green}]{\textsc{}}{9} \\
+%%-----------------------------------------------------------------------------
+%      \ganttgroup[group/.append style={fill=yellow}]{\wpref{3} (ODOP)}{1}{4}
+%      \ganttgroup[group/.append style={fill=yellow}]{}{12}{17} \\
+%      \ganttbar[bar/.append style={fill=yellow}]{dev. ODOP selection}{1}{4} \\
+%      \ganttbar{ODOP applied}{6}{8} \\
+%      \ganttbar[bar/.append style={fill=yellow}]{ODOP coupling}{12}{14}
+%      \ganttbar{}{15}{17} \\
+%      \ganttmilestone[milestone/.append style={fill=yellow!50}]{publication}{9} 
+%      \ganttmilestone[milestone/.append style={fill=yellow!50}]{publication}{16} \\
 %-----------------------------------------------------------------------------
-      \ganttgroup[group/.append style={fill=yellow}]{\wpref{3} (ODOP)}{1}{4}
-      \ganttgroup[group/.append style={fill=yellow}]{}{10}{15} \\
-      \ganttbar[bar/.append style={fill=yellow}]{dev. ODOP selection}{1}{4} \\
-      \ganttbar{ODOP applied}{5}{7} \\
-      \ganttmilestone[milestone/.append style={fill=yellow!50}]{publication}{7} \\
-      \ganttbar[bar/.append style={fill=yellow}]{ODOP coupling}{10}{12}
-      \ganttbar{}{13}{15} \\
+      \ganttgroup[group/.append style={fill=yellow}]{\wpref{3} (Coupling)}{1}{4} 
+      \ganttgroup[group/.append style={fill=yellow}]{}{10}{18} \\
+      \ganttbar[bar/.append style={fill=yellow}]{Dev. coupling PC}{1}{4} \\
+      \ganttbar[bar/.append style={fill=yellow}]{GPU/other coupling}{10}{18} \\
+%      \ganttbar{coupling applied}{5}{7} 
+%      \ganttbar{}{16}{18} \\
 %-----------------------------------------------------------------------------
-      \ganttgroup[group/.append style={fill=yellow}]{\wpref{3} (ODOP)}{1}{4}
-      \ganttgroup[group/.append style={fill=yellow}]{}{10}{15} \\
-      \ganttbar[bar/.append style={fill=yellow}]{dev. ODOP selection}{1}{4} \\
-      \ganttbar{ODOP applied}{5}{7} \\
-      \ganttmilestone[milestone/.append style={fill=yellow!50}]{publication}{7} \\
-      \ganttbar[bar/.append style={fill=yellow}]{ODOP coupling}{10}{12}
-      \ganttbar{}{13}{15} \\
-      \ganttmilestone[milestone/.append style={fill=yellow!50}]{publication}{14} \\
-%-----------------------------------------------------------------------------
-      \ganttgroup[group/.append style={fill=yellow}]{\wpref{4} (Coupling)}{5}{12} \\
-      \ganttbar[bar/.append style={fill=yellow}]{dev. coupling PC}{5}{7} \\
-      \ganttbar{coupling applied}{9}{11} \\
-      \ganttmilestone[milestone/.append style={fill=yellow!50}]{publication}{11} \\
-%-----------------------------------------------------------------------------
-      \ganttgroup[group/.append style={fill=green}]{\wpref{5} (GPU)}{5}{7}
-      \ganttgroup[group/.append style={fill=green}]{}{9}{11}
-      \ganttgroup[group/.append style={fill=green}]{}{13}{15} \\
-      \ganttbar[bar/.append style={fill=green}]{dev. PC-A dust}{5}{7} \\
-      \ganttbar{PC-A dust applied}{9}{11}
-      \ganttbar{}{13}{15}
-      \ganttvrule{}{4}
-      \ganttvrule{}{8}
+      \ganttgroup[group/.append style={fill=green}]{\wpref{4} (GPU)}{5}{9}\\
+      \ganttbar[bar/.append style={fill=green}]{Dev. PC-A dust}{5}{9} \\
+      \ganttmilestone[milestone/.append style={fill=blue!50}]{Publications}{4}
+      \ganttmilestone[milestone/.append style={fill=blue!50}]{}{9}
+      \ganttmilestone[milestone/.append style={fill=blue!50}]{}{18} 
+      \ganttmilestone[milestone/.append style={fill=yellow!50}]{}{5} 
+      \ganttmilestone[milestone/.append style={fill=yellow!50}]{}{15} 
+      \ganttmilestone[milestone/.append style={fill=blue!50}]{}{13} 
+      \ganttvrule{}{6}
       \ganttvrule{}{12}
     \end{ganttchart}
     \vspace{-1.6em}
     \caption{
-Gantt chart: proposed 4-yr timeline and \wpref{} organization. Blue denotes
+Gantt chart: proposed 3-year timeline and \wpref{} organization. Blue denotes
 science applications, results executed with PC and PC-A; yellow denotes
-development and application of ODOP management tools; green denotes GPU
-integration into PC and then into ODOP framework. At least 3 publications shall
+development and application of coupling and EMS management tools; green denotes GPU
+integration into PC. At least 3 publications shall
 have GS lead author, relevant to thesis; yellow to
 \href{https://www.nature.com/natmachintell/}{\textbf{Nature Machine
 Intelligence}} or
@@ -830,7 +831,7 @@ Collaborator & Institute & Role \\
 \href{https://kirchschlager.github.io/}{{Lars Mattsson}}\href{https://orcid.org/0000-0003-2670-2513}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & Nordita \& Stockholm University & Modeling dust processing dynamics \\[0.1cm]
 \href{https://kirchschlager.github.io/}{{Florian Kirchschlager}}\href{https://orcid.org/0000-0002-3036-0184}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & Ghent University & Modeling dust processing dynamics \\[0.1cm]
 \href{https://www.uvic.ca/research/centres/arc/people/faculty/babul-arif.php}{{Arif Babul}}\href{https://orcid.org/0000-0003-1746-9529}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & University of Victoria & Galaxy evolution and composition \\[0.1cm]
-\href{https://science.gsfc.nasa.gov/astrophysics/cosmology/bio/eliahu.dwek-1}{{Eli Dwek??}}\href{https://orcid.org/0000-0001-8033-1181}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & NASA Emeritus Professor & Supernova Remnants \& ISM and Dust \\[0.1cm]
+%\href{https://science.gsfc.nasa.gov/astrophysics/cosmology/bio/eliahu.dwek-1}{{Eli Dwek??}}\href{https://orcid.org/0000-0001-8033-1181}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & NASA Emeritus Professor & Supernova Remnants \& ISM and Dust \\[0.1cm]
 \href{https://www.amnh.org/research/staff-directory/mordecai-mark-mac-low}{Mordecai-M Mac Low}\href{https://orcid.org/0000-0003-0064-4060}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & American Museum of Natural History, New York & Modeling astrophysical turbulence and physics of molecular clouds \\[0.4cm]
 Hong-Linh Truong\href{https://orcid.org/0000-0003-1465-9722}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & Aalto University & analytics of distributed software systems, big data applications \& machine learning tools (ODOP)\\[0.4cm]
 \hline
