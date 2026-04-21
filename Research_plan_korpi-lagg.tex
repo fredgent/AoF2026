@@ -301,6 +301,9 @@ primary dust destruction mechanisms in SN blasts \citep{Jones11}.  The
 resultant dust properties are, however, highly uncertain.  Both processing and
 formation of ISM dust remain poorly understood \citep{Draine09} and most models
 omit realistic ISM turbulence.
+The treatment of dust abundances significantly affects the galaxy evolution and
+the properties of the circum-galactic medium in cosmological scale simulations 
+arizing from cooling \citep{Babul23}. 
 %done
 
 Simulations to sixth-order accuracy explore many scales of the ISM.  Due to a vast range
@@ -511,8 +514,8 @@ In this section, describe the following aspects:
 
 Insert your text here...
 
-\fag{Redefine the plan to three years and match to number of FTs funded.}
-
+\subsection{Work plan and schedule}
+ 
 \wpdef{1}{EMS}{Extended Multi-scale Simulations}
 \vspace{-0.3cm}
  We begin from established
@@ -525,7 +528,13 @@ between sub-MC sizes and the large scale MHD flow phenomena via
 \textit{boundary conditions} inherited and interpolated from its larger
 domain. The span between macro and micro scales is too large to bridge in one
 step. With each increase in resolution additional physics can be considered,
-such as self-gravity or stellar radiation and, eventually, dust.  EMS is not
+such as self-gravity or stellar radiation and, eventually, dust.
+ Applying the same such machinery with 
+respect to other codes, we aim in future to embed our largest scale dynamo models in
+galaxy scale codes such as \textsc{Arepo} or \textsc{Romulus} used by our Victoria
+collaborators \citep{Babul21L,Babul21a}, to capture even larger scale structure
+of the ISM magnetic field. 
+  EMS is not
 an entirely new concept, but offers an innovative means to perform simulations
 in almost an equivalent approach to laboratory experiments that seek to test a
 hypothesis.  Schematically, the EMS process is as follows:
@@ -545,7 +554,6 @@ $\mathcal{D}_0$ to retain macro dynamics.\\%[-0.7cm]
 reaches some limiting length scale.
 \end{enumerate}
 }
-%\vspace{-0.2cm}%
 %------------------------------------------------------------------------------
 \tabto{0em}
 Deliveries and expected results:
@@ -595,7 +603,7 @@ $\bullet$~\textsc{Paperboats} implemented into highly scalable PC.
 $\bullet$~Dust modeling GPU-accelerated with PC-A.
 \tabto{0em}
 $\bullet$~Code-coupling tools: highly heterogeneous
-codes or computations require resource management to avoid idle resources, match performance and reduce IO, memory or compute bottlenecks (\wpref{3} and \wpref{4}).
+codes or computations require resource management to avoid idle resources, match performance and reduce IO, memory or compute bottlenecks (\wpref{3}).
 \end{minipage}
 
 \fag{Update, satisfied if application approved}
@@ -760,7 +768,7 @@ Transactions on Automatic Control}}; blue to
 shall develop. Early in \wpref{3} the GS shall understand what manual
 management is applied to the selection and management of data for \wpref{1} and
 develop machine management tools to automate and learn these tasks using ODOP.
-The GS with the support of the PI will implement code coupling (\wpref{4})
+The GS with the support of the PI and CoI will implement code coupling (\wpref{4})
 between versions of the PC or PC-A to handle differently loaded tasks while
 communicating memory. This may extend to considering alternative uses of idle
 central processors (CPUs) on GPU nodes and designing strategies applying to alternate types of
@@ -772,12 +780,13 @@ the Aalto CS Doctoral program shall assist their Doctoral success.
 
 %------------------------------------------------------------------------------
 %------------------------------------------------------------------------------
-\wpdef{5}{GPU}{GPU Acceleration}
+\wpdef{4}{GPU}{GPU Acceleration}
 \vspace{-0.3cm}
 GPUs can offer a speed up 40--55$\times$ over traditional CPU
 \citep{Astaroth22} and for applications much closer to the setup proposed here
 the \textsc{Pencil Code -- Astaroth} (PC-A) yields speedup closer to 20$\times$
-in our development tests.  This utilizes the higher functionality of
+in our recent extreme-scale simulations applied on LUMI \citep{GMKPR26} and on 
+Frontier \href{https://www.olcf.ornl.gov/2025/04/11/incite-2026-call-for-proposals/}{2026 INCITE call}.  This utilizes the higher functionality of
 \textsc{Pencil Code} to compute and write diagnostics using idle CPUs while the
 GPU solves the equations.  A simple speedup in this project is anticipated by
 integrating \textsc{Paperboats} into PC-A.  Some operations are less efficient
@@ -793,6 +802,39 @@ $\bullet$~\textsc{Paperboats} implemented into highly scalable PC-A.
 $\bullet$ Code-coupling between GPU and CPU solvers.
 %------------------------------------------------------------------------------
 %------------------------------------------------------------------------------
+\subsection{Research data and material, methods and research environment}
+
+The research data is mainly simulated in HDF5 or ASCII form of TB scale, although some 
+astrophysical observational data may be analyzed alongside our generated data for
+scientific publication. We also produce and utilize open source numerical codes 
+and additional open source software tools for code integrations, management 
+pipelines and data analysis. The primary code milestones of this project will include: the implementation of
+Paperboats advanced dust processing physics into the Pencil Code and Astaroth for accelerated
+parallel 3D integration; code coupling machinery for running multiple versions of PC/PC-A or  to match
+difficult combinations of scales and physics; automation to support
+code coupling and simulation management.
+
+The main research environment is the Department of Computer Science (hereafter Aalto/CS) at the
+Aalto University School of Science. With over 40 professors and more than 400 employees, the
+department is the largest Computer Science unit in Finland. It is ranked among the top 10 Computer
+Science departments in Europe and among the top 100 globally. ICT and digitalization are among
+the seven key research areas at Aalto University. In addition to standard resources provided by the
+department, there is support for midrange HPC and data analytics through the Science-IT project of
+the Aalto University School of Science. Science-IT and its ﬂagship HPC unit Triton, are a part of the
+national Finnish Computing Competence Infrastructure (FCCI). Currently, Triton provides 9600
+computing cores and over 30 servers for high-end GPU computing. For indepth research methods
+and software development, Science-IT provides support from research software engineers.
+Researchers also have free access to national CSC resources, including the supercomputers Puhti
+and Mahti, as well as the cloud resources Rahti and CPouta. The teams also have access to Europe’s
+most powerful GPU-based supercomputer LUMI through competitive computing time allocations
+via the Euro-HPC consortium. The consortium has an outstanding track record of obtaining
+competitive computational resources through the Partnership for Advanced Computing in Europe
+(PRACE), EuroHPC, and CSC.
+
+The research infrastructure extends to mature longterm collaborations between the 
+PI, CoI and AaltoHPC on MHD and galaxy modelling with New York and Victoria collaborators
+and the CoI on dust processing with the Stockholm and Ghent collaborators.
+
 
 The PI shall have responsibility for \wpref{5} and its integration within the
 proposal, together with the HPCLab collaboration. This is an
@@ -800,7 +842,31 @@ extension of new physics to existing PC-A, which complements the outcomes in
 \wpref{1} and \wpref{2}, which shall lead to a substantial speed up of the
 calculations.
 
-The Principal Investigator (PI) Maarit Korpi-Lagg\href{https://orcid.org/0000-0002-9614-2200}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} \ldots
+\begin{tabular}{|m{4.0cm}|m{5.3cm}|m{7.0cm}|}
+\hline
+Collaborator & Institute & Role \\
+\hline
+\href{https://nordita.org/people/nordita-person/lars-mattsson}{{Lars Mattsson}}\href{https://orcid.org/0000-0003-2670-2513}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & Nordita \& Stockholm University & Modeling dust processing dynamics \\[0.1cm]
+\href{https://kirchschlager.github.io/}{{Florian Kirchschlager}}\href{https://orcid.org/0000-0002-3036-0184}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & Ghent University & Modeling dust processing dynamics \\[0.1cm]
+\href{https://www.uvic.ca/research/centres/arc/people/faculty/babul-arif.php}{{Arif Babul}}\href{https://orcid.org/0000-0003-1746-9529}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & University of Victoria & Galaxy evolution and composition \\[0.1cm]
+%\href{https://science.gsfc.nasa.gov/astrophysics/cosmology/bio/eliahu.dwek-1}{{Eli Dwek??}}\href{https://orcid.org/0000-0001-8033-1181}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & NASA Emeritus Professor & Supernova Remnants \& ISM and Dust \\[0.1cm]
+\href{https://www.amnh.org/research/staff-directory/mordecai-mark-mac-low}{Mordecai-M Mac Low}\href{https://orcid.org/0000-0003-0064-4060}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & American Museum of Natural History, New York & Modeling astrophysical turbulence and physics of molecular clouds \\[0.4cm]
+\href{https://www.aalto.fi/en/people/linh-truong?check_logged_in=1}{Hong-Linh Truong}\href{https://orcid.org/0000-0003-1465-9722}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & Aalto University & analytics of distributed software systems, big data applications \& machine learning tools (ODOP)\\[0.4cm]
+\hline
+\end{tabular}
+
+The Principal Investigator (PI) Maarit Korpi-Lagg\href{https://orcid.org/0000-0002-9614-2200}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} 
+(over 4,800 citations and h-index of 39 according to Google Scholar), is a
+tenured associate professor at Aalto CS, where she leads the High-Performance Computing Lab. She
+was the grant holder of the ERC Consolidator grant "UniSDyn" and the ERC Proof of-concept grant
+“SYCOS”, which projects studied dynamo action in solar and stellar convection zones. She acted as a
+team leader of the Academy of Finland Centre of Excellence “ReSoLVE” (2014-2019), which studied
+long-term solar magnetic activity and its eﬀects on Earth. She has acted as a PI of several
+competitive HPC projects (LUMI-C and LUMI-G Finnish project allocations, PRACE, DEISA/DECI, CSC
+Grand Challenge), and is a core developer of the Pencil Code Multiphysics Solver [8] for high-order
+stencil-based applications, and the initiator and project leader of the GPU-based MHD solver
+Astaroth.
+
 The Co-Investigator
 (CoI) Frederick Gent\href{https://orcid.org/0000-0002-1331-2260}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} has been
  a Research Fellow at the Aalto Computer Science Department until March 2025 and
@@ -824,18 +890,6 @@ groups combining expertise in HPC, service engineering analytics of distributed
 software systems, big data applications and machine learning tools.
 
 %\vspace{-0.6cm}
-\begin{tabular}{|m{4.0cm}|m{5.0cm}|m{7.0cm}|}
-\hline
-Collaborator & Institute & Role \\
-\hline
-\href{https://kirchschlager.github.io/}{{Lars Mattsson}}\href{https://orcid.org/0000-0003-2670-2513}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & Nordita \& Stockholm University & Modeling dust processing dynamics \\[0.1cm]
-\href{https://kirchschlager.github.io/}{{Florian Kirchschlager}}\href{https://orcid.org/0000-0002-3036-0184}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & Ghent University & Modeling dust processing dynamics \\[0.1cm]
-\href{https://www.uvic.ca/research/centres/arc/people/faculty/babul-arif.php}{{Arif Babul}}\href{https://orcid.org/0000-0003-1746-9529}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & University of Victoria & Galaxy evolution and composition \\[0.1cm]
-%\href{https://science.gsfc.nasa.gov/astrophysics/cosmology/bio/eliahu.dwek-1}{{Eli Dwek??}}\href{https://orcid.org/0000-0001-8033-1181}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & NASA Emeritus Professor & Supernova Remnants \& ISM and Dust \\[0.1cm]
-\href{https://www.amnh.org/research/staff-directory/mordecai-mark-mac-low}{Mordecai-M Mac Low}\href{https://orcid.org/0000-0003-0064-4060}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & American Museum of Natural History, New York & Modeling astrophysical turbulence and physics of molecular clouds \\[0.4cm]
-Hong-Linh Truong\href{https://orcid.org/0000-0003-1465-9722}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & Aalto University & analytics of distributed software systems, big data applications \& machine learning tools (ODOP)\\[0.4cm]
-\hline
-\end{tabular}
 \vspace{-0.2cm}
 
 
