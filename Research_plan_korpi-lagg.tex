@@ -221,11 +221,12 @@ Maarit J. Korpi-Lagg (SNDust)
 
 \fag{add how the project justifies the use of LUMI resources}
 
-We plan to implement groundbreaking coupled multi-tiered, or
-{\textit{extended multi scale simulations}} (EMS), bridging previously
-unattainable scales of separation. Extreme scales of separation are generic in astrophysics, where this innovative concept shall be applied to dust,
-but our new interactive control tools would have applicability in other
-disciplines proliferated by large and heterogeneous data.
+We plan to implement groundbreaking coupled multi-tiered, or {\textit{extended
+multi scale simulations}} (EMS), bridging previously unattainable scales of
+separation. Extreme scales of separation are generic in astrophysics, where
+this innovative concept shall be applied to dust, but our new interactive
+control tools would have applicability in other disciplines proliferated by
+large and heterogeneous data.
 
 A common alternative approach is \textit{adaptive mesh refinement} (AMR), in
 which higher resolution meshes are dynamically applied locally where,
@@ -237,9 +238,9 @@ Fourier transform that would be used to understand the spectral properties of
 turbulent fields are challenging to determine \cite{NUFFT}. Multi-grid methods
 are also commonly employed for improving convergence with implicit solvers of
 highly non-linear systems in chemistry \cite{MGRID}, engineering and other
-disciplines, with increased overheads. Our approach will use multi-grid tools to
-extend the scales and physics accessible to the hierarchy of simulations with
-minimal increase in overheads.
+disciplines, with increased overheads. Our approach will use multi-grid tools
+to extend the scales and physics accessible to the hierarchy of simulations
+with minimal increase in overheads.
 
 Another resource applying a common interface to multiple astrophysics is the
 Astrophysical Multipurpose Software Environment \cite{AMUSE}.  Its Python
@@ -271,14 +272,15 @@ communication and balancing resources within a typical HPC batch system.
         }
 \end{minipage}
 \begin{minipage}[h]{0.29\textwidth}
-  \caption{\footnotesize \label{ISMsim}\label{ISMsim2} Typical snapshots of gas number $n$ and magnetic energy $e_B$ density and magnetic field $B_y$
-from an MHD simulation of SN-driven turbulence and galactic dynamo
-\citep{GMK24}. Turbulence drives a fast small-scale dynamo, which can create
-magnetic fields within a few percent of the kinetic energy of the turbulence,
-while stratification about the galactic disc regulates the multi-phase
-structure of the ISM via outflows and inward precipitation. Large-scale shear
-is required for a mean-field dynamo, which continues the growth of the magnetic field to energy equipartition with its kinetic energy.
-}
+  \caption{\footnotesize \label{ISMsim}\label{ISMsim2} Typical snapshots of gas
+number $n$ and magnetic energy $e_B$ density and magnetic field $B_y$ from an
+MHD simulation of SN-driven turbulence and galactic dynamo \citep{GMK24}.
+Turbulence drives a fast small-scale dynamo, which can create magnetic fields
+within a few percent of the kinetic energy of the turbulence, while
+stratification about the galactic disc regulates the multi-phase structure of
+the ISM via outflows and inward precipitation. Large-scale shear is required
+for a mean-field dynamo, which continues the growth of the magnetic field to
+energy equipartition with its kinetic energy.  }
 \end{minipage}
 \end{figure}
 %==============================================================================
@@ -295,26 +297,24 @@ fraction of dust, their highly supersonic blast waves destroy masses of dust
 already present in the ambient ISM \citep{McKee89}.  Estimates of dust
 abundances in early galaxies appear too high, given prevailing models of
 destruction rates and accumulation mechanisms.  This has even been considered
-by some as a {\textbf{dust budget crisis}} \citep{Rowlands14b}.
-Sublimation, condensation, grain-grain interactions, ion sputtering are well established as
+by some as a {\textbf{dust budget crisis}} \citep{Rowlands14b}.  Sublimation,
+condensation, grain-grain interactions, ion sputtering are well established as
 primary dust destruction mechanisms in SN blasts \citep{Jones11}.  The
 resultant dust properties are, however, highly uncertain.  Both processing and
 formation of ISM dust remain poorly understood \citep{Draine09} and most models
-omit realistic ISM turbulence.
-The treatment of dust abundances significantly affects the galaxy evolution and
-the properties of the circum-galactic medium in cosmological scale simulations
-arizing from cooling \citep{Babul23}.
-%done
+omit realistic ISM turbulence.  The treatment of dust abundances significantly
+affects the galaxy evolution and the properties of the circum-galactic medium
+in cosmological scale simulations arizing from cooling \citep{Babul23}.
 
-Simulations to sixth-order accuracy explore many scales of the ISM.  Due to a vast range
-of scale in space and time all models, full galaxy or inside star-forming
-molecular clouds (MC), must exclude some physics from their scope.  Models at
-kpc-scale (see, e.g., Figure~\ref{ISMsim}) of SN-driven turbulence on
-stratified discs with galactic-shear dynamo \citep[e.g.,][]{
-GMK24} omit dust processing, but acquire the
-necessary turbulent structure.  Dust would decouple from the gas
-\citep[][]{Mattsson18a} and, because grains are easily charged, radiation
-pressure and Lorentz forces affect its critical MC scale distribution.
+Simulations to sixth-order accuracy explore many scales of the ISM.  Due to a
+vast range of scale in space and time all models, full galaxy or inside
+star-forming molecular clouds (MC), must exclude some physics from their scope.
+Models at kpc-scale (see, e.g., Figure~\ref{ISMsim}) of SN-driven turbulence on
+stratified discs with galactic-shear dynamo \citep[e.g.,][]{ GMK24} omit dust
+processing, but acquire the necessary turbulent structure.  Dust would decouple
+from the gas \citep[][]{Mattsson18a} and, because grains are easily charged,
+radiation pressure and Lorentz forces affect its critical MC scale
+distribution.
 
 To bridge the gap between scales relevant to dust processing and the numerical
 scales required to model the realistic multi-phase turbulent ISM, we have
@@ -330,7 +330,6 @@ exploring correlations between gas number density $n$ and magnetic field
 strength $B$, conclude \citet{GMK24} obtained $B-n$ relations which are among
 the best match to those from observations.  Large scale dynamo (LSD) and a
 realistic multi-phase ISM are thus critical ingredients.
-%done
 
 \begin{minipage}[h]{0.6\textwidth}
  \begin{center}
@@ -348,7 +347,6 @@ realistic multi-phase ISM are thus critical ingredients.
  \end{minipage}
 \quad
 \begin{minipage}[h]{0.37\textwidth}
-%\vspace{-1cm}
   \captionof{figure}{Regional variation of dust distribution at sampled times.
 ({\textbf{a}}) Location of three specimen regions (green boxes) in the vicinity
 of an SN blast wave, each of size of $5\, \text{pc}\times5\, $pc.  Dust
@@ -357,16 +355,20 @@ distributions ({\textbf{c}}) about the SN center, and ({\textbf{b}}) and
 Each depicts distributions: initially MRN \citep[][black]{Mathis77}, after
 200\,kyr (dashed lines) and after 1\,Myr (solid lines).  \BH\ and \NH\ indicate
 with and without Lorentz force, respectively.  The dust distributions show the
-average density for each grain size in each specimen.  At region
-({\textbf{c}}) significant amount of dust grains are removed or destroyed by
-the shock while  at regions ({\textbf{b}}) and ({\textbf{d}}) any change is due
-to background processing (transport and destruction).
-}
+average density for each grain size in each specimen.  At region ({\textbf{c}})
+significant amount of dust grains are removed or destroyed by the shock while
+at regions ({\textbf{b}}) and ({\textbf{d}}) any change is due to background
+processing (transport and destruction).  }
   \label{fig_gsd}
 %\end{figure}
 \end{minipage}
 
-
+The suitability of this project for international collaboration in HPC has been
+demonstrated by successful campaigns at the LUMI Extreme Sscale Access 2025
+call \citep{GMKPR26} and the INCITE 2026 award on Frontier (USA), which is
+currently progressing. This project will extend those simulations to include
+dust processing, which can require mush higher time resolution and large scale
+dynamos which require larger domains and much longer integration duration.
 
 \section{Impact}
 
