@@ -219,23 +219,20 @@ Maarit J. Korpi-Lagg (SNDust)
 
 \fag{incorporate work of new collaborators here and expand on the scientific questionmarks/hypotheses}
 
-\fag{add how the project justifies the use of LUMI resources}
-
-We plan to implement groundbreaking
-%mm coupled multi-tiered, or
-{\textit{extended multi-scale simulations}} (EMS), bridging previously
-unattainable scales of separation. Extreme scales of separation are
-generic in astrophysics, where we shall apply this innovative concept
-to dust
-% mm
-  formation and dynamics,
-but our new interactive control tools
-% mm would have applicability in
-  will apply to
-other disciplines
-% mm proliferated
-  characterized
-by large and heterogeneous data.
+We plan to implement groundbreaking 
+% mm coupled multi-tiered, or 
+{\textit{extended
+multi-scale simulations}} (EMS), bridging previously unattainable scales of
+separation. Extreme scales of separation are generic in astrophysics, where
+% mm 
+   we shall apply 
+this innovative concept 
+% mm shall be applied 
+to dust, but our new interactive
+control tools 
+% mm would have applicability in other disciplines proliferated by
+  will apply to other disciplinescharacterized by
+large and heterogeneous data.
 
 A common alternative approach is \textit{adaptive mesh refinement} (AMR), in
 which higher resolution meshes are dynamically applied locally where,
@@ -250,10 +247,6 @@ relevant only to the zoomed in region. Additionally, non-uniform discrete
 Fourier transform that would be used to understand the spectral properties of
 turbulent fields are challenging to determine \citep{NUFFT}. Multi-grid methods
 are also commonly employed for improving convergence with implicit solvers of
-highly non-linear systems in chemistry \citep{MGRID}, engineering and other
-disciplines, with increased overheads. Our approach will use multi-grid tools to
-extend the scales and physics accessible to the hierarchy of simulations with
-minimal increase in overheads.
 
 Another resource applying a common interface to multiple astrophysics
 % mm
@@ -287,14 +280,15 @@ communication and balancing resources within a typical HPC batch system.
         }
 \end{minipage}
 \begin{minipage}[h]{0.29\textwidth}
-  \caption{\footnotesize \label{ISMsim}\label{ISMsim2} Typical snapshots of gas number $n$ and magnetic energy $e_B$ density and magnetic field $B_y$
-from an MHD simulation of SN-driven turbulence and galactic dynamo
-\citep{GMK24}. Turbulence drives a fast small-scale dynamo, which can create
-magnetic fields within a few percent of the kinetic energy of the turbulence,
-while stratification about the galactic disc regulates the multi-phase
-structure of the ISM via outflows and inward precipitation. Large-scale shear
-is required for a mean-field dynamo, which continues the growth of the magnetic field to energy equipartition with its kinetic energy.
-}
+  \caption{\footnotesize \label{ISMsim}\label{ISMsim2} Typical snapshots of gas
+number $n$ and magnetic energy $e_B$ density and magnetic field $B_y$ from an
+MHD simulation of SN-driven turbulence and galactic dynamo \citep{GMK24}.
+Turbulence drives a fast small-scale dynamo, which can create magnetic fields
+within a few percent of the kinetic energy of the turbulence, while
+stratification about the galactic disc regulates the multi-phase structure of
+the ISM via outflows and inward precipitation. Large-scale shear is required
+for a mean-field dynamo, which continues the growth of the magnetic field to
+energy equipartition with its kinetic energy.  }
 \end{minipage}
 \end{figure}
 %==============================================================================
@@ -311,23 +305,24 @@ fraction of dust, their highly supersonic blast waves destroy masses of dust
 already present in the ambient ISM \citep{McKee89}.  Estimates of dust
 abundances in early galaxies appear too high, given prevailing models of
 destruction rates and accumulation mechanisms.  This has even been considered
-by some as a {\textbf{dust budget crisis}} \citep{Rowlands14b}.
-Sublimation, condensation, grain-grain interactions, ion sputtering are well established as
+by some as a {\textbf{dust budget crisis}} \citep{Rowlands14b}.  Sublimation,
+condensation, grain-grain interactions, ion sputtering are well established as
 primary dust destruction mechanisms in SN blasts \citep{Jones11}.  The
 resultant dust properties are, however, highly uncertain.  Both processing and
 formation of ISM dust remain poorly understood \citep{Draine09} and most models
-omit realistic ISM turbulence.
-%done
+omit realistic ISM turbulence.  The treatment of dust abundances significantly
+affects the galaxy evolution and the properties of the circum-galactic medium
+in cosmological scale simulations arizing from cooling \citep{Babul23}.
 
-Simulations to sixth-order accuracy explore many scales of the ISM.  Due to a vast range
-of scale in space and time all models, full galaxy or inside star-forming
-molecular clouds (MC), must exclude some physics from their scope.  Models at
-kpc-scale (see, e.g., Figure~\ref{ISMsim}) of SN-driven turbulence on
-stratified discs with galactic-shear dynamo \citep[e.g.,][]{
-GMK24} omit dust processing, but acquire the
-necessary turbulent structure.  Dust would decouple from the gas
-\citep[][]{Mattsson18a} and, because grains are easily charged, radiation
-pressure and Lorentz forces affect its critical MC scale distribution.
+Simulations to sixth-order accuracy explore many scales of the ISM.  Due to a
+vast range of scale in space and time all models, full galaxy or inside
+star-forming molecular clouds (MC), must exclude some physics from their scope.
+Models at kpc-scale (see, e.g., Figure~\ref{ISMsim}) of SN-driven turbulence on
+stratified discs with galactic-shear dynamo \citep[e.g.,][]{ GMK24} omit dust
+processing, but acquire the necessary turbulent structure.  Dust would decouple
+from the gas \citep[][]{Mattsson18a} and, because grains are easily charged,
+radiation pressure and Lorentz forces affect its critical MC scale
+distribution.
 
 To bridge the gap between scales relevant to dust processing and the numerical
 scales required to model the realistic multi-phase turbulent ISM, we have
@@ -343,7 +338,6 @@ exploring correlations between gas number density $n$ and magnetic field
 strength $B$, conclude \citet{GMK24} obtained $B-n$ relations which are among
 the best match to those from observations.  Large scale dynamo (LSD) and a
 realistic multi-phase ISM are thus critical ingredients.
-%done
 
 \begin{minipage}[h]{0.6\textwidth}
  \begin{center}
@@ -361,7 +355,6 @@ realistic multi-phase ISM are thus critical ingredients.
  \end{minipage}
 \quad
 \begin{minipage}[h]{0.37\textwidth}
-%\vspace{-1cm}
   \captionof{figure}{Regional variation of dust distribution at sampled times.
 ({\textbf{a}}) Location of three specimen regions (green boxes) in the vicinity
 of an SN blast wave, each of size of $5\, \text{pc}\times5\, $pc.  Dust
@@ -370,15 +363,41 @@ distributions ({\textbf{c}}) about the SN center, and ({\textbf{b}}) and
 Each depicts distributions: initially MRN \citep[][black]{Mathis77}, after
 200\,kyr (dashed lines) and after 1\,Myr (solid lines).  \BH\ and \NH\ indicate
 with and without Lorentz force, respectively.  The dust distributions show the
-average density for each grain size in each specimen.  At region
-({\textbf{c}}) significant amount of dust grains are removed or destroyed by
-the shock while  at regions ({\textbf{b}}) and ({\textbf{d}}) any change is due
-to background processing (transport and destruction).
-}
+average density for each grain size in each specimen.  At region ({\textbf{c}})
+significant amount of dust grains are removed or destroyed by the shock while
+at regions ({\textbf{b}}) and ({\textbf{d}}) any change is due to background
+processing (transport and destruction).  }
   \label{fig_gsd}
 %\end{figure}
 \end{minipage}
 
+\fag{Add here summary of research questions/hypotheses}
+
+The primary research questions of the project are to quantify the rates at
+which dust is processed by Supernova blast waves - how this depends on the
+multiphase turbulence of the ISM and on the strength and topology of the
+galactic magnetic field. By including realistic large scale fields and
+large scale galactic topology in increasingly high resolution zoom-in of the
+ISM we aim also to quantify where and when the blast waves are most destructive.We shall clarify which processes in the ISM are most critical to dust
+losses and properties and regions of the ISM which most mitigate such
+losses.
+
+The suitability of this project for international collaboration in HPC has been
+demonstrated by successful campaigns at the LUMI Extreme Sscale Access 2025
+call \citep{GMKPR26} and the INCITE 2026 award on Frontier (USA), which is
+currently progressing. This project will extend those simulations to include
+dust processing, which can require much higher time resolution and large scale
+dynamos which require larger domains and much longer integration duration.
+Acceleration with GPUs on Lumi is critical to the feasibility of such studies.
+The PC-A code has obtained at over 20 times speed-up over the equivalent PC
+CPU-based code. It has performed reliably and stably with weak scaling
+approaching a constant execution time up to 4096 GPU cores on Frontier.
+
+It is a primary focus of this project to bring together two or more codes, or
+instances of the same code, working on related but distinct physics. The
+participants will develop internationally leading expertise in knowledge and
+application of our collaborative codes and how to create, adapt and apply
+machinery to support their synthesis.
 
 
 \section{Impact}
@@ -527,7 +546,9 @@ In this section, describe the following aspects:
 
 Insert your text here...
 
-\fag{Redefine the plan to three years and match to number of FTs funded.}
+\subsection{Work plan and schedule}
+
+\fag{Check that risk assessment and alternative strategies are included}
 
 \wpdef{1}{EMS}{Extended Multi-scale Simulations}
 \vspace{-0.3cm}
@@ -541,30 +562,35 @@ between sub-MC sizes and the large scale MHD flow phenomena via
 \textit{boundary conditions} inherited and interpolated from its larger
 domain. The span between macro and micro scales is too large to bridge in one
 step. With each increase in resolution additional physics can be considered,
-such as self-gravity or stellar radiation and, eventually, dust.  EMS is not
+such as self-gravity or stellar radiation and, eventually, dust.
+ Applying the same such machinery with
+respect to other codes, we aim in future to embed our largest scale dynamo models in
+galaxy scale codes such as \textsc{Arepo} or \textsc{Romulus} used by our Victoria
+collaborators \citep{Babul21L,Babul21a}, to capture even larger scale structure
+of the ISM magnetic field.
+  EMS is not
 an entirely new concept, but offers an innovative means to perform simulations
 in almost an equivalent approach to laboratory experiments that seek to test a
 hypothesis.  Schematically, the EMS process is as follows:
 \answer{
 %\small
 \begin{enumerate}
-\item\tabto{0em} Select
-  % mm or extend
-  a suitable macro simulation on domain
-$\mathcal{D}_0$, enclosing region $\mathcal{R}_n$ with $n=1$.%\\[-0.7cm]
-\item Identify region $\mathcal{R}_n$ (e.g.,
-  %  mm  dense star-forming cluster
-  star-forming cloud), small enough to ensure scale separation.%\\[-0.7cm]
+
+    \item\tabto{0em} Select or extend a suitable macro simulation on domain
+$\mathcal{D}_0$, enclosing region $\mathcal{R}_n$ with $n=1$.\\%[-0.7cm]
+    \item Identify region $\mathcal{R}_n$ (e.g.,
+% mm dense star-forming cluster
+     star forming cloud), 
+small enough to ensure scale separation.\\%[-0.7cm]
     \item Extract domain $\mathcal{D}_n$ enclosing $\mathcal{R}_n$ and remesh
-to the desired resolution.% as initial conditions (ICs).\\[-0.7cm]
-    \item Define appropriate boundary conditions. Interpolate from
-$\mathcal{D}_0$ to retain macro dynamics.%\\[-0.7cm]
-    \item Run simulation of $\mathcal{D}_n$.%\\[-0.7cm]
-    \item Repeat steps 2--5 for $n>1$ until the size of $\mathcal{D}_n$
+to the desired resolution as initial conditions (ICs).\\%[-0.7cm]
+    \item Define appropriate boundary conditions (BCs). Interpolate from
+$\mathcal{D}_0$ to retain macro dynamics.\\%[-0.7cm]
+    \item Run simulation of $\mathcal{D}_n$.\\%[-0.7cm]
+    \item Repeat step 2 -- 5 for $n>1$ until the size of $\mathcal{D}_n$
 reaches some limiting length scale.
 \end{enumerate}
 }
-\vspace{-0.2cm}%
 %------------------------------------------------------------------------------
 \tabto{0em}
 % Deliveries
@@ -576,10 +602,10 @@ of magnitude in resolution.
 \tabto{0em}
 $\bullet$~Models of gas-dust distribution and $B-n$ correlations in ISM environments up to MC densities.
 \tabto{0em}
-$\bullet$~Hand setting $\mathcal{D}_n$ \& boundary conditions superseded by pipeline tools (see \wpref{3} and \wpref{4}).
+$\bullet$~Hand setting $\mathcal{D}_n$ \& boundary conditions superseded by pipeline tools (see \wpref{3}).
 \tabto{0em}
 $\bullet$~Post-processed dust (\textsc{PAPERBOATS}) superseded by integral \textsc{Pencil Code}
- (\wpref{2}) and graphics cards (GPU)-accelerated sub-physics and dust (\wpref{5}).
+ (\wpref{2}) and graphics cards (GPU)-accelerated sub-physics and dust (\wpref{4}).
 %------------------------------------------------------------------------------
 
 \begin{minipage}[h]{0.4\textwidth}
@@ -616,61 +642,60 @@ $\bullet$~\textsc{Paperboats} implemented into highly scalable PC.
 $\bullet$~Dust modeling GPU-accelerated with PC-A.
 \tabto{0em}
 $\bullet$~Code-coupling tools: highly heterogeneous
-codes or computations require resource management to avoid idle resources, match performance and reduce IO, memory or compute bottlenecks (\wpref{4} and \wpref{5}).
+codes or computations require resource management to avoid idle resources, match performance and reduce IO, memory or compute bottlenecks (\wpref{3}).
 \end{minipage}
-To implement \wpref{1} and \wpref{2} the PI has years of experience executing
+
+To implement \wpref{1} and \wpref{2} the PI and CoI have years of experience executing
 such simulations with consistent success applying for resources on the Finnish
 national infrastructure CSC, European infrastructure directly on LUMI, as well
 as a member of successful HPCLab European scale PRACE projects.  Both the PI
 and CoI also have continuous access to the National Academic Infrastructure for
 Supercomputing in Sweden and, via our established US collaboration, to calls on
 Frontier HPC resources.  Modifications to the dust modules and implementation
-to PC-A are low risk, as the PI participates in the HPCLab development of the
+to PC-A are low risk, as the PI and CoI lead the HPCLab development of the
 PC-A implementation of SN driven turbulence, and partial dust-processing
-modeling has successfully been implemented by the CoI.
+modeling has successfully been implemented by the Swedish collaborator.
 
 \wpref{1} and \wpref{2} are assured results of high impact, since
 they explore regimes of astrophysics with respect to dust distribution and
 dynamics, magnetic field and ISM multi-phase structure, which are poorly
 understood and important to observations and understanding of galaxy evolution.
 Four publications are realistic, the rate and extent of any advances increasing
-the better the success of \wpref{3} -- \wpref{5}.  The GS shall be included in
+the better the success of \wpref{3} and \wpref{4}.  The GS shall be included in
 the execution and analysis of \wpref{1} and \wpref{2}, while their thesis shall
-primarily address \wpref{3} and \wpref{4}.  New York and Ghent collaborators
+primarily address \wpref{3} and \wpref{4}.
+Our collaborators from Victoria, New York, Stockholm and Ghent
 have high expertise at modeling dust and MC.
 
 
 %------------------------------------------------------------------------------
-%------------------------------------------------------------------------------
-\wpdef{3}{ODOP}{Pipeline -- ODOP tools}
-\vspace{-0.3cm}
-Data storage and management is commonly a bottleneck in any HPC, dealing with
-datasets approaching TB and even PB scales. Scanning for regions of interest in
-astrophysical simulations remains labour intensive and applied to disk-saved
-datasets, output at intervals.  We shall apply cutting-edge machine-learning
-tools for Opportunistic Data Operations \citep[][ODOP]{odop24} to analyze the
-data to identify regions or patterns of interest and extract a suitable
-subdomain from which to launch new experiments. Next these tools shall be
-enhanced to work on active data in memory on-the-fly during the computation to
-identify and extract relevant data when desired, and eventually launch such new
-experiments.  This work is at the frontier of computer science, in which HPCLab
-and \href{https://rdsea.github.io/}{\textbf{AaltoSEA}} are heavily
-invested, and large-data use applications, such as this proposal are critical
-for their development.
-\tabto{0em}
-Deliveries and expected results:
-\tabto{0em}
-$\bullet$ ODOP tools to identify critical patterns and extract relevant datasets.
-\tabto{0em}
-$\bullet$ Manage spawning EMS multi-scale simulations, rescheduling available resources to additional tasks and new physics, and .
-\tabto{0em}
-$\bullet$ Machine learning to manage additional resource requests and
-execute new diagnostics.
-%-----------------------------------------------------------------------------
+%%------------------------------------------------------------------------------
+%\wpdef{3}{ODOP}{Pipeline -- ODOP tools}
+%\vspace{-0.3cm}
+%Scanning for regions of interest in
+%astrophysical simulations remains labour intensive and applied to disk-saved
+%datasets, output at intervals.
+%We shall apply cutting-edge machine-learning
+%tools for Opportunistic Data Operations \citep[][ODOP]{odop24} to analyze the
+%data to identify regions or patterns of interest and extract a suitable
+%subdomain from which to launch new experiments. Next these tools shall be
+%enhanced to work on active data in memory on-the-fly during the computation to
+%identify and extract relevant data when desired, and eventually launch such new
+%experiments.
+%\tabto{0em}
+%Deliveries and expected results:
+%\tabto{0em}
+%$\bullet$ ODOP tools to identify critical patterns and extract relevant datasets.
+%\tabto{0em}
+%$\bullet$ Manage spawning EMS multi-scale simulations, rescheduling available resources to additional tasks and new physics, and .
+%\tabto{0em}
+%$\bullet$ Machine learning to manage additional resource requests and
+%execute new diagnostics.
+%%-----------------------------------------------------------------------------
 
 %------------------------------------------------------------------------------
 %------------------------------------------------------------------------------
-\wpdef{4}{CC}{Pipeline -- code coupling}
+\wpdef{3}{CC}{Pipeline -- code coupling}
 \vspace{-0.3cm}
 Defining consistent BCs after remeshing to macro-scale $\mathcal{D}_n$, without
 erroneous artifacts in the flows, is a crucial step in the process.  Open
@@ -680,12 +705,26 @@ over time.  Using surfaces from within $\mathcal{D}_{n-1}$ surrounding
 $\mathcal{D}_n$ one may interpolate boundary values onto the fine grid (also in
 time) to retain dynamically the macro-scale features.  High cadence slices from
 $\mathcal{D}_{n-1}$ can be saved to disk and read subsequently for
-$\mathcal{D}_{n}$ BC updates. Code-coupling on-the-fly, saves on storage, and
+$\mathcal{D}_{n}$ BC updates.
+
+Data storage and management is commonly a bottleneck in any HPC, dealing with
+datasets approaching TB and even PB scales.
+ Code-coupling on-the-fly, saves on storage, and
 employs at the very least message passing interface (MPI).  Additional physics,
 such as dust, cooling or self-gravity, necessitate diverging timescales or
 computational load.  Code-coupling enhanced by machine learning could gain
 speed by balancing load and available resources, by minimizing redundant
-communication. The basic machinery for coupling multiple versions of the code
+communication.
+We have access to cutting-edge machine-learning
+tools for Opportunistic Data Operations \citep[][ODOP]{odop24} to analyze the
+data to identify regions or patterns of interest and extract a suitable
+subdomain from which to launch new experiments.
+This work is at the frontier of computer science, in which HPCLab
+and \href{https://rdsea.github.io/}{\textbf{AaltoSEA}} are heavily
+invested, and large-data use applications, such as this proposal are critical
+for their development.
+
+The basic machinery for coupling multiple versions of the code
 or with other codes would be similar.  HPCLab already has experience coupling
 \textsc{Eulag} with \textsc{Pencil Code} (1-way).
 \tabto{0em}
@@ -700,71 +739,58 @@ $\bullet$ Code-coupling within multi-scale to balance computational load (2-way)
 %-----------------------------------------------------------------------------
 %-----------------------------------------------------------------------------
 \begin{figure}[h]
-    \begin{ganttchart}{1}{16}
-      \gantttitle{Year 1}{4}
-      \gantttitle{Year 2}{4}
-      \gantttitle{Year 3}{4}
-      \gantttitle{Year 4}{4} \\
+    \begin{ganttchart}{1}{18}
+      \gantttitle{Year 1}{6}
+      \gantttitle{Year 2}{6}
+      \gantttitle{Year 3}{6} \\
 %-----------------------------------------------------------------------------
-      \ganttgroup{\wpref{1} (EMS)}{1}{15} \\
-      \ganttbar{$R_1\rightarrow R_n$}{1}{3.5}
-      \ganttbar{}{5}{7}
-      \ganttbar{}{9}{11}
-      \ganttbar{}{13}{15}\\
-      \ganttmilestone[milestone/.append style={fill=blue!50}]{publications}{4}
-      \ganttmilestone[milestone/.append style={fill=blue!50}]{}{8}
-      \ganttmilestone[milestone/.append style={fill=blue!50}]{}{12}
-      \ganttmilestone[milestone/.append style={fill=blue!50}]{}{16} \\
-    \node (a) [fill=blue,draw,anchor=east] at ([xshift=4.6cm]current bounding box.0){MHD-Dust applications};
+      \ganttgroup{\wpref{1} (EMS)}{1}{18} \\
+      \ganttbar{$R_1\rightarrow R_n$}{1}{4}\\
+      \ganttbar{Coupled $R_1\rightarrow R_n$}{6}{18}\\
+      \node (a) [fill=blue,draw,anchor=east] at ([xshift=4.6cm]current bounding box.0){MHD-Dust applications};
       \node (b) [fill=yellow,draw,anchor=west] at ([yshift=-0.8cm]a.west){Toolkit development};
       \node (c) [fill=green,draw,anchor=west] at ([yshift=-0.8cm]b.west){GPU-PC-Toolkit integration};
 %-----------------------------------------------------------------------------
-      \ganttgroup{\wpref{2} (Dust)}{1}{15} \\
-      \ganttbar{\textsc{Paperboats}}{1}{3} \\
-      \ganttmilestone[milestone/.append style={fill=blue}]{\textsc{Dust in PC}}{4} \\
-      \ganttmilestone[milestone/.append style={fill=green}]{\textsc{Dust in PC-A}}{7} \\
-      \ganttbar{\textsc{Pencil-code}}{5}{7}
-      \ganttbar{}{9}{11}
-      \ganttbar{}{13}{15}\\
+      \ganttgroup{\wpref{2} (Dust)}{1}{18} \\
+      \ganttbar{\textsc{Paperboats dust}}{1}{4} \\
+      \ganttbar{\textsc{PC dust}}{6}{9}\\
+      \ganttbar{PC-A dust}{10}{18}\\
+      \ganttmilestone[milestone/.append style={fill=blue}]{\textsc{Dust in PC/PC-A}}{4}
+      \ganttmilestone[milestone/.append style={fill=green}]{\textsc{}}{9} \\
+%%-----------------------------------------------------------------------------
+%      \ganttgroup[group/.append style={fill=yellow}]{\wpref{3} (ODOP)}{1}{4}
+%      \ganttgroup[group/.append style={fill=yellow}]{}{12}{17} \\
+%      \ganttbar[bar/.append style={fill=yellow}]{dev. ODOP selection}{1}{4} \\
+%      \ganttbar{ODOP applied}{6}{8} \\
+%      \ganttbar[bar/.append style={fill=yellow}]{ODOP coupling}{12}{14}
+%      \ganttbar{}{15}{17} \\
+%      \ganttmilestone[milestone/.append style={fill=yellow!50}]{publication}{9}
+%      \ganttmilestone[milestone/.append style={fill=yellow!50}]{publication}{16} \\
 %-----------------------------------------------------------------------------
-      \ganttgroup[group/.append style={fill=yellow}]{\wpref{3} (ODOP)}{1}{4}
-      \ganttgroup[group/.append style={fill=yellow}]{}{10}{15} \\
-      \ganttbar[bar/.append style={fill=yellow}]{dev. ODOP selection}{1}{4} \\
-      \ganttbar{ODOP applied}{5}{7} \\
-      \ganttmilestone[milestone/.append style={fill=yellow!50}]{publication}{7} \\
-      \ganttbar[bar/.append style={fill=yellow}]{ODOP coupling}{10}{12}
-      \ganttbar{}{13}{15} \\
+      \ganttgroup[group/.append style={fill=yellow}]{\wpref{3} (Coupling)}{1}{4}
+      \ganttgroup[group/.append style={fill=yellow}]{}{10}{18} \\
+      \ganttbar[bar/.append style={fill=yellow}]{Dev. coupling PC}{1}{4} \\
+      \ganttbar[bar/.append style={fill=yellow}]{GPU/other coupling}{10}{18} \\
+%      \ganttbar{coupling applied}{5}{7}
+%      \ganttbar{}{16}{18} \\
 %-----------------------------------------------------------------------------
-      \ganttgroup[group/.append style={fill=yellow}]{\wpref{3} (ODOP)}{1}{4}
-      \ganttgroup[group/.append style={fill=yellow}]{}{10}{15} \\
-      \ganttbar[bar/.append style={fill=yellow}]{dev. ODOP selection}{1}{4} \\
-      \ganttbar{ODOP applied}{5}{7} \\
-      \ganttmilestone[milestone/.append style={fill=yellow!50}]{publication}{7} \\
-      \ganttbar[bar/.append style={fill=yellow}]{ODOP coupling}{10}{12}
-      \ganttbar{}{13}{15} \\
-      \ganttmilestone[milestone/.append style={fill=yellow!50}]{publication}{14} \\
-%-----------------------------------------------------------------------------
-      \ganttgroup[group/.append style={fill=yellow}]{\wpref{4} (Coupling)}{5}{12} \\
-      \ganttbar[bar/.append style={fill=yellow}]{dev. coupling PC}{5}{7} \\
-      \ganttbar{coupling applied}{9}{11} \\
-      \ganttmilestone[milestone/.append style={fill=yellow!50}]{publication}{11} \\
-%-----------------------------------------------------------------------------
-      \ganttgroup[group/.append style={fill=green}]{\wpref{5} (GPU)}{5}{7}
-      \ganttgroup[group/.append style={fill=green}]{}{9}{11}
-      \ganttgroup[group/.append style={fill=green}]{}{13}{15} \\
-      \ganttbar[bar/.append style={fill=green}]{dev. PC-A dust}{5}{7} \\
-      \ganttbar{PC-A dust applied}{9}{11}
-      \ganttbar{}{13}{15}
-      \ganttvrule{}{4}
-      \ganttvrule{}{8}
+      \ganttgroup[group/.append style={fill=green}]{\wpref{4} (GPU)}{5}{9}\\
+      \ganttbar[bar/.append style={fill=green}]{Dev. PC-A dust}{5}{9} \\
+      \ganttmilestone[milestone/.append style={fill=blue!50}]{Publications}{4}
+      \ganttmilestone[milestone/.append style={fill=blue!50}]{}{9}
+      \ganttmilestone[milestone/.append style={fill=blue!50}]{}{18}
+      \ganttmilestone[milestone/.append style={fill=yellow!50}]{}{5}
+      \ganttmilestone[milestone/.append style={fill=yellow!50}]{}{15}
+      \ganttmilestone[milestone/.append style={fill=blue!50}]{}{13}
+      \ganttvrule{}{6}
       \ganttvrule{}{12}
     \end{ganttchart}
     \vspace{-1.6em}
     \caption{
-Gantt chart: proposed 4-yr timeline and \wpref{} organization. Blue denotes
+Gantt chart: proposed 3-year timeline and \wpref{} organization. Blue denotes
 science applications, results executed with PC and PC-A; yellow denotes
-development and application of ODOP management tools; green denotes GPU
-integration into PC and then into ODOP framework. At least 3 publications shall
+development and application of coupling and EMS management tools; green denotes GPU
+integration into PC. At least 3 publications shall
 have GS lead author, relevant to thesis; yellow to
 \href{https://www.nature.com/natmachintell/}{\textbf{Nature Machine
 Intelligence}} or
@@ -780,7 +806,7 @@ Transactions on Automatic Control}}; blue to
 shall develop. Early in \wpref{3} the GS shall understand what manual
 management is applied to the selection and management of data for \wpref{1} and
 develop machine management tools to automate and learn these tasks using ODOP.
-The GS with the support of the PI will implement code coupling (\wpref{4})
+The GS with the support of the PI and CoI will implement code coupling (\wpref{4})
 between versions of the PC or PC-A to handle differently loaded tasks while
 communicating memory. This may extend to considering alternative uses of idle
 central processors (CPUs) on GPU nodes and designing strategies applying to alternate types of
@@ -792,12 +818,13 @@ the Aalto CS Doctoral program shall assist their Doctoral success.
 
 %------------------------------------------------------------------------------
 %------------------------------------------------------------------------------
-\wpdef{5}{GPU}{GPU Acceleration}
+\wpdef{4}{GPU}{GPU Acceleration}
 \vspace{-0.3cm}
 GPUs can offer a speed up 40--55$\times$ over traditional CPU
 \citep{Astaroth22} and for applications much closer to the setup proposed here
 the \textsc{Pencil Code -- Astaroth} (PC-A) yields speedup closer to 20$\times$
-in our development tests.  This utilizes the higher functionality of
+in our recent extreme-scale simulations applied on LUMI \citep{GMKPR26} and on
+Frontier \href{https://www.olcf.ornl.gov/2025/04/11/incite-2026-call-for-proposals/}{2026 INCITE call}.  This utilizes the higher functionality of
 \textsc{Pencil Code} to compute and write diagnostics using idle CPUs while the
 GPU solves the equations.  A simple speedup in this project is anticipated by
 integrating \textsc{Paperboats} into PC-A.  Some operations are less efficient
@@ -813,6 +840,39 @@ $\bullet$~\textsc{Paperboats} implemented into highly scalable PC-A.
 $\bullet$ Code-coupling between GPU and CPU solvers.
 %------------------------------------------------------------------------------
 %------------------------------------------------------------------------------
+\subsection{Research data and material, methods and research environment}
+
+The research data is mainly simulated in HDF5 or ASCII form of TB scale, although some
+astrophysical observational data may be analyzed alongside our generated data for
+scientific publication. We also produce and utilize open source numerical codes
+and additional open source software tools for code integrations, management
+pipelines and data analysis. The primary code milestones of this project will include: the implementation of
+Paperboats advanced dust processing physics into the Pencil Code and Astaroth for accelerated
+parallel 3D integration; code coupling machinery for running multiple versions of PC/PC-A or  to match
+difficult combinations of scales and physics; automation to support
+code coupling and simulation management.
+
+The main research environment is the Department of Computer Science (hereafter Aalto/CS) at the
+Aalto University School of Science. With over 40 professors and more than 400 employees, the
+department is the largest Computer Science unit in Finland. It is ranked among the top 10 Computer
+Science departments in Europe and among the top 100 globally. ICT and digitalization are among
+the seven key research areas at Aalto University. In addition to standard resources provided by the
+department, there is support for midrange HPC and data analytics through the Science-IT project of
+the Aalto University School of Science. Science-IT and its ﬂagship HPC unit Triton, are a part of the
+national Finnish Computing Competence Infrastructure (FCCI). Currently, Triton provides 9600
+computing cores and over 30 servers for high-end GPU computing. For indepth research methods
+and software development, Science-IT provides support from research software engineers.
+Researchers also have free access to national CSC resources, including the supercomputers Puhti
+and Mahti, as well as the cloud resources Rahti and CPouta. The teams also have access to Europe’s
+most powerful GPU-based supercomputer LUMI through competitive computing time allocations
+via the Euro-HPC consortium. The consortium has an outstanding track record of obtaining
+competitive computational resources through the Partnership for Advanced Computing in Europe
+(PRACE), EuroHPC, and CSC.
+
+The research infrastructure extends to mature longterm collaborations between the
+PI, CoI and AaltoHPC on MHD and galaxy modelling with New York and Victoria collaborators
+and the CoI on dust processing with the Stockholm and Ghent collaborators.
+
 
 The PI shall have responsibility for \wpref{5} and its integration within the
 proposal, together with the HPCLab collaboration. This is an
@@ -820,7 +880,31 @@ extension of new physics to existing PC-A, which complements the outcomes in
 \wpref{1} and \wpref{2}, which shall lead to a substantial speed up of the
 calculations.
 
-The Principal Investigator (PI) Maarit Korpi-Lagg\href{https://orcid.org/0000-0002-9614-2200}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} \ldots
+\begin{tabular}{|m{4.0cm}|m{5.3cm}|m{7.0cm}|}
+\hline
+Collaborator & Institute & Role \\
+\hline
+\href{https://nordita.org/people/nordita-person/lars-mattsson}{{Lars Mattsson}}\href{https://orcid.org/0000-0003-2670-2513}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & Nordita \& Stockholm University & Modeling dust processing dynamics \\[0.1cm]
+\href{https://kirchschlager.github.io/}{{Florian Kirchschlager}}\href{https://orcid.org/0000-0002-3036-0184}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & Ghent University & Modeling dust processing dynamics \\[0.1cm]
+\href{https://www.uvic.ca/research/centres/arc/people/faculty/babul-arif.php}{{Arif Babul}}\href{https://orcid.org/0000-0003-1746-9529}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & University of Victoria & Galaxy evolution and composition \\[0.1cm]
+%\href{https://science.gsfc.nasa.gov/astrophysics/cosmology/bio/eliahu.dwek-1}{{Eli Dwek??}}\href{https://orcid.org/0000-0001-8033-1181}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & NASA Emeritus Professor & Supernova Remnants \& ISM and Dust \\[0.1cm]
+\href{https://www.amnh.org/research/staff-directory/mordecai-mark-mac-low}{Mordecai-M Mac Low}\href{https://orcid.org/0000-0003-0064-4060}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & American Museum of Natural History, New York & Modeling astrophysical turbulence and physics of molecular clouds \\[0.4cm]
+\href{https://www.aalto.fi/en/people/linh-truong?check_logged_in=1}{Hong-Linh Truong}\href{https://orcid.org/0000-0003-1465-9722}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & Aalto University & analytics of distributed software systems, big data applications \& machine learning tools (ODOP)\\[0.4cm]
+\hline
+\end{tabular}
+
+The Principal Investigator (PI) Maarit Korpi-Lagg\href{https://orcid.org/0000-0002-9614-2200}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}}
+(over 4,800 citations and h-index of 39 according to Google Scholar), is a
+tenured associate professor at Aalto CS, where she leads the High-Performance Computing Lab. She
+was the grant holder of the ERC Consolidator grant "UniSDyn" and the ERC Proof of-concept grant
+“SYCOS”, which projects studied dynamo action in solar and stellar convection zones. She acted as a
+team leader of the Academy of Finland Centre of Excellence “ReSoLVE” (2014-2019), which studied
+long-term solar magnetic activity and its eﬀects on Earth. She has acted as a PI of several
+competitive HPC projects (LUMI-C and LUMI-G Finnish project allocations, PRACE, DEISA/DECI, CSC
+Grand Challenge), and is a core developer of the Pencil Code Multiphysics Solver [8] for high-order
+stencil-based applications, and the initiator and project leader of the GPU-based MHD solver
+Astaroth.
+
 The Co-Investigator
 (CoI) Frederick Gent\href{https://orcid.org/0000-0002-1331-2260}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} has been
  a Research Fellow at the Aalto Computer Science Department until March 2025 and
@@ -844,18 +928,6 @@ groups combining expertise in HPC, service engineering analytics of distributed
 software systems, big data applications and machine learning tools.
 
 %\vspace{-0.6cm}
-\begin{tabular}{|m{4.0cm}|m{5.0cm}|m{7.0cm}|}
-\hline
-Collaborator & Institute & Role \\
-\hline
-\href{https://kirchschlager.github.io/}{{Lars Mattsson}}\href{https://orcid.org/0000-0003-2670-2513}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & Nordita \& Stockholm University & Modeling dust processing dynamics \\[0.1cm]
-\href{https://kirchschlager.github.io/}{{Florian Kirchschlager}}\href{https://orcid.org/0000-0002-3036-0184}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & Ghent University & Modeling dust processing dynamics \\[0.1cm]
-\href{https://www.uvic.ca/research/centres/arc/people/faculty/babul-arif.php}{{Arif Babul}}\href{https://orcid.org/0000-0003-1746-9529}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & University of Victoria & Galaxy evolution and composition \\[0.1cm]
-\href{https://science.gsfc.nasa.gov/astrophysics/cosmology/bio/eliahu.dwek-1}{{Eli Dwek??}}\href{https://orcid.org/0000-0001-8033-1181}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & NASA Emeritus Professor & Supernova Remnants \& ISM and Dust \\[0.1cm]
-\href{https://www.amnh.org/research/staff-directory/mordecai-mark-mac-low}{Mordecai-M Mac Low}\href{https://orcid.org/0000-0003-0064-4060}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & American Museum of Natural History, New York & Modeling astrophysical turbulence and physics of molecular clouds \\[0.4cm]
-Hong-Linh Truong\href{https://orcid.org/0000-0003-1465-9722}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & Aalto University & analytics of distributed software systems, big data applications \& machine learning tools (ODOP)\\[0.4cm]
-\hline
-\end{tabular}
 \vspace{-0.2cm}
 
 
@@ -887,6 +959,32 @@ This subsection is a mandatory part of the plan. All listed points must be fully
 
 Insert your text here...
 
+There are no ethical concerns as the application deals with no sensitive data.
+Nevertheless, we will follow stringent integrity principles in accordance with
+the guidelines of the Finnish Advisory Board on Research Integrity, and the
+ALLEA European Code of Conduct for Research Integrity.  We are committed to
+promote diversity, equality and non-discrimination in all our activities.
+Statutory obligations set forth in the Act on Equality between Women and Men
+609/1986, 1329/2014 and the Non-discrimination Act 1325/2014 also apply to our
+plan. We are ﬁrmly committed to promote equal opportunities for individuals to
+learn, acquire knowledge, participate and make a diﬀerence. We will make our
+values visible in all our practices.
+
+The products of the research will be made available immediately to the
+community during the project. Fully open access publications, data, and source
+code policy will be adopted. Services like Zenodo and FAIRdata IDA will be
+utilised for opening up data products ranging from the data to reproduce all
+the ﬁgures, to intermediate and selected raw data products for reproducibility
+and reusability of the results. All the simulation and data analysis tools are
+developed as open source, available and continuously maintained under GitHub
+and Bitbucket repositories.
+
+Our simulation and data analysis tools are being developed to work generally on
+GPUs and hence are energy-eﬃcient in comparison to standard CPU computing.
+Data-eﬃcient methods in our work help to achieve sustainable storage (also
+avoid data waste) and energy eﬃciency. Furthermore, we assess if international
+and national travel can be avoided by using remote visits. Computational time
+will be used wisely to avoid too large energy consumptions.
 %------------------------------------------
 %%%% REFERENCES %%%%
 %The list of references is included in the length of the research plan. All references must be added directly into the text, for example as follows: (author(s), year) or [number]. You must not use footnotes. The list of references can be added manually or, for example, by using BibTeX.
