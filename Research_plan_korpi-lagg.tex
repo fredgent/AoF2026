@@ -332,30 +332,46 @@ and, due to its
     light absorption and 
 scattering, 
 %mm important in galaxy evolution and multi-phase structure of the
-%ISM.
-     a contributor to the multiphase structure of the ISM and galaxy evolution.
+%ISM. [moved up the final sentence of the para and integrated]
+     a contributor to the multiphase structure of the ISM, galaxy
+     evolution, and the properties of cooling in the circumgalactic
+     medium in cosmological scale simulations \citep{Babul23}.
 Heavy elements are forged in stars, the heaviest metals fusing at the explosive
-death of the largest stars, and thus ejected into the ISM by SNe. Some of these
+death of the largest stars, and thus ejected into the ISM by
+supernovae (SNe). Some of these
 form dust, comprising a mixture of carbonaceous material and silicates
 \citep{Weingartner01}. The abundance or composition of dust is indicative of a
 galaxy's age and star formation rate.  Although SNe eject into the ISM some
-fraction of dust, their highly supersonic blast waves destroy masses of dust
-already present in the ambient ISM \citep{McKee89}.  Estimates of dust
-abundances in early galaxies appear too high, given prevailing models of
-destruction rates and accumulation mechanisms.  This has even been considered
-by some as a {\textbf{dust budget crisis}} \citep{Rowlands14b}.  Sublimation,
-condensation, grain-grain interactions, ion sputtering are well established as
-primary dust destruction mechanisms in SN blasts \citep{Jones11}.  The
+fraction of dust, their highly supersonic blast waves 
+%mm destroy masses of
+     can destroy 
+dust already present in the ambient ISM \citep{McKee89}.  
+%Estimates 
+    Observations of dust
+abundances in early galaxies 
+%mm appear too high, given 
+    substantially exceed predictions from 
+prevailing models of destruction rates and accumulation mechanisms.
+This has 
+%mm even been considered by some 
+     been described
+as a {\textbf{dust budget crisis}} \citep{Rowlands14b}.  Sublimation,
+condensation, grain-grain interactions, and ion sputtering are well established as
+primary dust destruction mechanisms in SN blast waves \citep{Jones11}.  The
 resultant dust properties are, however, highly uncertain.  Both processing and
 formation of ISM dust remain poorly understood \citep{Draine09} and most models
-omit realistic ISM turbulence.  The treatment of dust abundances significantly
-affects the galaxy evolution and the properties of the circum-galactic medium
-in cosmological scale simulations arizing from cooling \citep{Babul23}.
+omit realistic ISM 
+%mm
+   magnetized 
+turbulence.  
+%mm [moved up to list of applications] The treatment of dust abundances significantly
+%affects the galaxy evolution and the properties of the circumgalactic medium
+%in cosmological scale simulations arizing from cooling \citep{Babul23}.
 
 Our recent breakthrough
 %mm revealed how cosmic dust, the building blocks of planets, 
-    models demonstrated that cosmic dust, the construction material of planets,
-can survive destruction by supernova (SN)
+    models demonstrated that ISM dust
+can survive destruction by SN
 %mm more than
    blast waves far better than
 previously thought \citep{KMG24}. We showed that, 
@@ -411,28 +427,43 @@ energy equipartition with the kinetic energy.  }
 %==============================================================================
 
 
-Simulations to sixth-order accuracy explore many scales of the ISM.  Due to a
-vast range of scale in space and time all models, full galaxy or inside
-star-forming molecular clouds (MC), must exclude some physics from their scope.
-Models at kpc-scale (see, e.g., Figure~\ref{ISMsim}) of SN-driven turbulence on
-stratified discs with galactic-shear dynamo \citep[e.g.,][]{ GMK24} omit dust
+%mm Simulations 
+     Our existing simulations, performed
+to sixth-order accuracy, explore many scales of the ISM.  Due to a
+vast range of scalse in space and time, all models,
+%mm
+   whether 
+full galaxy or inside star-forming molecular clouds (MC), must exclude
+some physics from their scope. 
+Models at kiloparsec scale (see, e.g., Figure~\ref{ISMsim}) of SN-driven turbulence in
+stratified discs with galactic-shear dynamos \citep[e.g.,][]{ GMK24} omit dust
 processing, but acquire the necessary turbulent structure.  Dust would decouple
 from the gas \citep[][]{Mattsson18a} and, because grains are easily charged,
-radiation pressure and Lorentz forces affect its critical MC scale
-distribution.
+radiation pressure and Lorentz forces affect its critical distribution
+at MC scale.
 
 To bridge the gap between scales relevant to dust processing and the numerical
 scales required to model the realistic multi-phase turbulent ISM, we have
 treated dust as a distribution of multiple fluids binned by grain size and
-applied onto prior MHD data \textsc{Paperboats} \citep{Kirchschlager19}. Our
+applied onto prior MHD data
+%mm 
+    using the post-processing tool
+\textsc{Paperboats} \citep{Kirchschlager19}. Our
 breakthrough results \citep{KMG24} applied \textsc{Paperboats} to process dust
-on 2D slices taken from the 3D MHD \textsc{Pencil Code} \citep{Pencil-Joss}
-model of turbulent SN-driven dynamo \citep{GMKS21, GMKS22}.  As illustrated in
-Figure~\ref{fig_gsd} the magnetic field has a more significant effect on dust
-resilience than might be expected above that offered by turbulence.  A
-comprehensive review of MHD simulations at multiple scales \citep{Whitworth24},
+on 2D slices taken from 
+%mm the 3D MHD \textsc{Pencil Code} \citep{Pencil-Joss} model of 
+    3D MHD models of the
+turbulent SN-driven dynamo
+%mm
+    run with the \textsc{Pencil Code} \citep{Pencil-Joss} 
+\citep{GMKS21, GMKS22}.  As illustrated in
+Figure~\ref{fig_gsd} the magnetic field has a more significant effect
+%mm 
+ on dust resilience than expected, even beyond the effects of turbulence.
+%mm than might be expected above that offered by turbulence.  
+A comprehensive review of MHD simulations at multiple scales \citep{Whitworth24},
 exploring correlations between gas number density $n$ and magnetic field
-strength $B$, conclude \citet{GMK24} obtained $B-n$ relations which are among
+strength $B$, concludes that \citet{GMK24} obtained $B-n$ relations that are among
 the best match to those from observations.  Large scale dynamo (LSD) and a
 realistic multi-phase ISM are thus critical ingredients.
 
@@ -470,14 +501,19 @@ processing (transport and destruction).  }
 
 \fag{Add here summary of research questions/hypotheses}
 
-The primary research questions of the project are to quantify the rates at
-which dust is processed by Supernova blast waves - how this depends on the
+The primary research 
+%mm questions of the project are
+    goal of the project is
+to quantify the rate at
+which dust is processed by SN blast waves: how this depends on the
 multiphase turbulence of the ISM and on the strength and topology of the
 galactic magnetic field. By including realistic large scale fields and
-large scale galactic topology in increasingly high resolution zoom-in of the
-ISM we aim also to quantify where and when the blast waves are most destructive.We shall clarify which processes in the ISM are most critical to dust
-losses and properties and regions of the ISM which most mitigate such
-losses.
+large scale galactic topology in increasingly high resolution zoom-ins of the
+ISM we aim to quantify where and when the blast waves are most
+destructive. We shall clarify 
+%mm which processes in the ISM are most critical to dust losses and properties and regions of the
+%ISM which most mitigate such losses.
+    what processes and properties promote or mitigate dust loss in different phases of the ISM.
 
 The suitability of this project for international collaboration in HPC has been
 demonstrated by successful campaigns at the LUMI Extreme Sscale Access 2025
