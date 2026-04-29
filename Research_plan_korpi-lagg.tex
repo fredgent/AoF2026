@@ -318,48 +318,22 @@ scalable simulations capable of handling huge data, while also developing user
 friendly interactive tools with which to manage and interrogate the
 applications.
 
-Our recent breakthrough
-%mm revealed how cosmic dust, the building blocks of planets, 
-    models demonstrated that cosmic dust, the construction material of planets
-can survive destruction by supernova (SN)
-%mm more than
-   blast waves far better than
-previously thought \citep{KMG24}. We showed that, relative to the commonly used uniform
-interstellar medium (ISM), including a realistic in-homogeneous and turbulent
-ISM can reduce 50\% the amount of ambient dust destroyed during the lifetime of
-an SN remnant.  We also found that including the Lorentz force of the turbulent
-magnetic field acting on the dust further halved these losses, a much greater
-effect than had been anticipated.  Even larger scales are required to fully
-model the magnetic field structure and yet smaller scales to properly
-understand the dust processing. To advance this scientific goal we need the
-multi-tiered approach and the machine-learning toolkit to facilitate
-identifying critical features, launching coupled simulations and managing
-communication and balancing resources within a typical HPC batch system.
-
-%==============================================================================
-\begin{figure}
-\begin{minipage}[h]{0.7\textwidth}
-      \resizebox{\hsize}{!}{
-      \includegraphics[trim=3.5cm 0.0cm 0.0cm 0.0cm,clip=true,height=1.18\columnwidth]{Pics/vlcsnap-2025-01-31-13h38m50s316.png}
-        }
-\end{minipage}
-\begin{minipage}[h]{0.29\textwidth}
-  \caption{\footnotesize \label{ISMsim}\label{ISMsim2} Typical snapshots of gas
-number $n$ and magnetic energy $e_B$ density and magnetic field $B_y$ from an
-MHD simulation of SN-driven turbulence and galactic dynamo \citep{GMK24}.
-Turbulence drives a fast small-scale dynamo, which can create magnetic fields
-within a few percent of the kinetic energy of the turbulence, while
-stratification about the galactic disc regulates the multi-phase structure of
-the ISM via outflows and inward precipitation. Large-scale shear is required
-for a mean-field dynamo, which continues the growth of the magnetic field to
-energy equipartition with its kinetic energy.  }
-\end{minipage}
-\end{figure}
-%==============================================================================
-
-Cosmic dust plays a critical role in many astrophysical processes, a catalyst
-in star and planet formation and, due to its heat absorption and light
-scattering, important in galaxy evolution and multi-phase structure of the ISM.
+%mm moved this paragraph into narrative order
+Cosmic dust plays a critical role in many astrophysical processes, 
+%mm
+  including as
+a catalyst in star 
+%mm and planet 
+formation,
+%mm
+    the main ingredient in planet formation, 
+and, due to its 
+%mm heat absorption and light
+    light absorption and 
+scattering, 
+%mm important in galaxy evolution and multi-phase structure of the
+%ISM.
+     a contributor to the multiphase structure of the ISM and galaxy evolution.
 Heavy elements are forged in stars, the heaviest metals fusing at the explosive
 death of the largest stars, and thus ejected into the ISM by SNe. Some of these
 form dust, comprising a mixture of carbonaceous material and silicates
@@ -377,6 +351,65 @@ formation of ISM dust remain poorly understood \citep{Draine09} and most models
 omit realistic ISM turbulence.  The treatment of dust abundances significantly
 affects the galaxy evolution and the properties of the circum-galactic medium
 in cosmological scale simulations arizing from cooling \citep{Babul23}.
+
+Our recent breakthrough
+%mm revealed how cosmic dust, the building blocks of planets, 
+    models demonstrated that cosmic dust, the construction material of planets,
+can survive destruction by supernova (SN)
+%mm more than
+   blast waves far better than
+previously thought \citep{KMG24}. We showed that, 
+%mm relative 
+   compared 
+to the commonly used uniform
+interstellar medium (ISM), including a realistic inhomogeneous and turbulent
+ISM can reduce by 50\% the amount of ambient dust destroyed during the lifetime of
+an SN remnant.  We also found that including the Lorentz force of the turbulent
+magnetic field acting on the dust further halved these losses, a much greater
+effect than had been anticipated.  Even larger scales are required to fully
+model the magnetic field structure and yet smaller scales to properly
+understand the dust processing. To advance this scientific goal we
+need
+%mm the multi-tiered
+    our proposed EMS
+approach and 
+%mm the 
+machine-learning toolkit to facilitate
+identifying critical features, launching coupled simulations, and managing
+communication and balancing resources within a typical HPC batch system.
+
+%==============================================================================
+\begin{figure}
+\begin{minipage}[h]{0.7\textwidth}
+      \resizebox{\hsize}{!}{
+      \includegraphics[trim=3.5cm 0.0cm 0.0cm 0.0cm,clip=true,height=1.18\columnwidth]{Pics/vlcsnap-2025-01-31-13h38m50s316.png}
+        }
+\end{minipage}
+\begin{minipage}[h]{0.29\textwidth}
+  \caption{\footnotesize \label{ISMsim}\label{ISMsim2} Typical snapshots of gas
+%mm number $n$ and magnetic energy $e_B$ density and magnetic field
+    number density $n$, magnetic energy density $e_B$, and azimuthal
+    magnetic field 
+$B_y$ from an
+MHD simulation of SN-driven turbulence and galactic dynamo
+%mm
+   activity 
+\citep{GMK24}.
+Turbulence drives a fast small-scale dynamo, which 
+%mm can create
+     generates
+magnetic fields
+%mm within
+   up to 
+a few percent of the kinetic energy of the turbulence, while
+stratification about the galactic disc regulates the multi-phase structure of
+the ISM via outflows and inward precipitation. Large-scale shear is required
+for a mean-field dynamo, which continues the growth of the magnetic field to
+energy equipartition with the kinetic energy.  }
+\end{minipage}
+\end{figure}
+%==============================================================================
+
 
 Simulations to sixth-order accuracy explore many scales of the ISM.  Due to a
 vast range of scale in space and time all models, full galaxy or inside
