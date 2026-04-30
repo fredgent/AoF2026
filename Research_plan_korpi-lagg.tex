@@ -16,7 +16,7 @@
 %\usepackage[sort&compress]{natbib}
 \usepackage[round,authoryear]{natbib}
 
-% mm   \bibliographystyle{aasjournal} 
+% mm   \bibliographystyle{aasjournal}
 \bibliographystyle{abbrvnat} % mm [this style gives full titles in references]
 
 % Symbol support
@@ -252,8 +252,8 @@ Maarit J. Korpi-Lagg (SNDust)
 
 \fag{incorporate work of new collaborators here and expand on the scientific questionmarks/hypotheses}
 
-We plan to implement groundbreaking 
-%mm coupled multi-tiered, or 
+We plan to implement groundbreaking
+%mm coupled multi-tiered, or
 {\textit{extended
 multiscale simulations}} (EMS), bridging previously unattainable
 %mm scales of separation
@@ -262,11 +262,11 @@ separations of spatial scales.  Extreme separation of spatial scales
 is generic
   in astrophysical models.
 %mm , where
-   We shall apply 
-this innovative concept 
+   We shall apply
+this innovative concept
 %mm shall be applied to
     modeling the evolution of interstellar
-dust, but our new interactive control tools 
+dust, but our new interactive control tools
 %mm would have applicability in other disciplines proliferated by
    will apply to other disciplines characterized by
 large and heterogeneous data.
@@ -281,8 +281,8 @@ typically,
 %mm densities
   pressure gradients
 %mm change \cite to \citep or \citet to avoid odd formatting in the PDF
-exceed some threshold %mm \citep{AMR00}. 
-   \citep{Berger89}. 
+exceed some threshold %mm \citep{AMR00}.
+   \citep{Berger89}.
 %However, in MHD the strongest turbulence and critical dynamo action
 %often occur in regions of high temperatures and low densities. This
 %does not permit solving additional physics relevant only to the zoomed-in region.
@@ -293,11 +293,11 @@ exceed some threshold %mm \citep{AMR00}.
     smallest scales are resolved.
 Additionally, non-uniform discrete
 Fourier transforms that could be used to understand the spectral properties of
-turbulent fields are challenging to 
-%mm determine 
+turbulent fields are challenging to
+%mm determine
     calculate \citep{NUFFT}. Multigrid methods
-are 
-%mm also 
+are
+%mm also
    another algorithm
 commonly employed for improving convergence with implicit
 solvers of
@@ -306,8 +306,8 @@ solvers of
    elliptic equations such as the Poisson equation, but this is not applicable to hyperbolic or parabolic
    equations such as those of non-ideal magnetohydrodynamics (MHD).
 
-%mm Another resource 
-    An existing framework for 
+%mm Another resource
+    An existing framework for
 applying a common interface to multiple astrophysics
 %mm
   algorithms
@@ -319,18 +319,18 @@ friendly interactive tools with which to manage and interrogate the
 applications.
 
 %mm moved this paragraph into narrative order
-Cosmic dust plays a critical role in many astrophysical processes, 
+Cosmic dust plays a critical role in many astrophysical processes,
 %mm
   including as
-a catalyst in star 
-%mm and planet 
+a catalyst in star
+%mm and planet
 formation,
 %mm
-    the main ingredient in planet formation, 
-and, due to its 
+    the main ingredient in planet formation,
+and, due to its
 %mm heat absorption and light
-    light absorption and 
-scattering, 
+    light absorption and
+scattering,
 %mm important in galaxy evolution and multi-phase structure of the
 %ISM. [moved up the final sentence of the para and integrated]
      a contributor to the multiphase structure of the ISM, galaxy
@@ -342,41 +342,41 @@ supernovae (SNe). Some of these
 form dust, comprising a mixture of carbonaceous material and silicates
 \citep{Weingartner01}. The abundance or composition of dust is indicative of a
 galaxy's age and star formation rate.  Although SNe eject into the ISM some
-fraction of dust, their highly supersonic blast waves 
+fraction of dust, their highly supersonic blast waves
 %mm destroy masses of
-     can destroy 
-dust already present in the ambient ISM \citep{McKee89}.  
-%Estimates 
+     can destroy
+dust already present in the ambient ISM \citep{McKee89}.
+%Estimates
     Observations of dust
-abundances in early galaxies 
-%mm appear too high, given 
-    substantially exceed predictions from 
+abundances in early galaxies
+%mm appear too high, given
+    substantially exceed predictions from
 prevailing models of destruction rates and accumulation mechanisms.
-This has 
-%mm even been considered by some 
+This has
+%mm even been considered by some
      been described
 as a {\textbf{dust budget crisis}} \citep{Rowlands14b}.  Sublimation,
 condensation, grain-grain interactions, and ion sputtering are well established as
 primary dust destruction mechanisms in SN blast waves \citep{Jones11}.  The
 resultant dust properties are, however, highly uncertain.  Both processing and
 formation of ISM dust remain poorly understood \citep{Draine09} and most models
-omit realistic ISM 
+omit realistic ISM
 %mm
-   magnetized 
-turbulence.  
+   magnetized
+turbulence.
 %mm [moved up to list of applications] The treatment of dust abundances significantly
 %affects the galaxy evolution and the properties of the circumgalactic medium
 %in cosmological scale simulations arizing from cooling \citep{Babul23}.
 
 Our recent breakthrough
-%mm revealed how cosmic dust, the building blocks of planets, 
+%mm revealed how cosmic dust, the building blocks of planets,
     models demonstrated that ISM dust
 can survive destruction by SN
 %mm more than
    blast waves far better than
-previously thought \citep{KMG24}. We showed that, 
-%mm relative 
-   compared 
+previously thought \citep{KMG24}. We showed that,
+%mm relative
+   compared
 to the commonly used uniform
 interstellar medium (ISM), including a realistic inhomogeneous and turbulent
 ISM can reduce by 50\% the amount of ambient dust destroyed during the lifetime of
@@ -388,8 +388,8 @@ understand the dust processing. To advance this scientific goal we
 need
 %mm the multi-tiered
     our proposed EMS
-approach and 
-%mm the 
+approach and
+%mm the
 machine-learning toolkit to facilitate
 identifying critical features, launching coupled simulations, and managing
 communication and balancing resources within a typical HPC batch system.
@@ -405,18 +405,18 @@ communication and balancing resources within a typical HPC batch system.
   \caption{\footnotesize \label{ISMsim}\label{ISMsim2} Typical snapshots of gas
 %mm number $n$ and magnetic energy $e_B$ density and magnetic field
     number density $n$, magnetic energy density $e_B$, and azimuthal
-    magnetic field 
+    magnetic field
 $B_y$ from an
 MHD simulation of SN-driven turbulence and galactic dynamo
 %mm
-   activity 
+   activity
 \citep{GMK24}.
-Turbulence drives a fast small-scale dynamo, which 
+Turbulence drives a fast small-scale dynamo, which
 %mm can create
      generates
 magnetic fields
 %mm within
-   up to 
+   up to
 a few percent of the kinetic energy of the turbulence, while
 stratification about the galactic disc regulates the multi-phase structure of
 the ISM via outflows and inward precipitation. Large-scale shear is required
@@ -427,14 +427,14 @@ energy equipartition with the kinetic energy.  }
 %==============================================================================
 
 
-%mm Simulations 
+%mm Simulations
      Our existing simulations, performed
 to sixth-order accuracy, explore many scales of the ISM.  Due to a
 vast range of scalse in space and time, all models,
 %mm
-   whether 
+   whether
 full galaxy or inside star-forming molecular clouds (MC), must exclude
-some physics from their scope. 
+some physics from their scope.
 Models at kiloparsec scale (see, e.g., Figure~\ref{ISMsim}) of SN-driven turbulence in
 stratified discs with galactic-shear dynamos \citep[e.g.,][]{ GMK24} omit dust
 processing, but acquire the necessary turbulent structure.  Dust would decouple
@@ -446,21 +446,21 @@ To bridge the gap between scales relevant to dust processing and the numerical
 scales required to model the realistic multi-phase turbulent ISM, we have
 treated dust as a distribution of multiple fluids binned by grain size and
 applied onto prior MHD data
-%mm 
+%mm
     using the post-processing tool
 \textsc{Paperboats} \citep{Kirchschlager19}. Our
 breakthrough results \citep{KMG24} applied \textsc{Paperboats} to process dust
-on 2D slices taken from 
-%mm the 3D MHD \textsc{Pencil Code} \citep{Pencil-Joss} model of 
+on 2D slices taken from
+%mm the 3D MHD \textsc{Pencil Code} \citep{Pencil-Joss} model of
     3D MHD models of the
 turbulent SN-driven dynamo
 %mm
-    run with the \textsc{Pencil Code} \citep{Pencil-Joss} 
+    run with the \textsc{Pencil Code} \citep{Pencil-Joss}
 \citep{GMKS21, GMKS22}.  As illustrated in
 Figure~\ref{fig_gsd} the magnetic field has a more significant effect
-%mm 
+%mm
  on dust resilience than expected, even beyond the effects of turbulence.
-%mm than might be expected above that offered by turbulence.  
+%mm than might be expected above that offered by turbulence.
 A comprehensive review of MHD simulations at multiple scales \citep{Whitworth24},
 exploring correlations between gas number density $n$ and magnetic field
 strength $B$, concludes that \citet{GMK24} obtained $B-n$ relations that are among
@@ -501,7 +501,7 @@ processing (transport and destruction).  }
 
 \fag{Add here summary of research questions/hypotheses}
 
-The primary research 
+The primary research
 %mm questions of the project are
     goal of the project is
 to quantify the rate at
@@ -510,7 +510,7 @@ multiphase turbulence of the ISM and on the strength and topology of the
 galactic magnetic field. By including realistic large scale fields and
 large scale galactic topology in increasingly high resolution zoom-ins of the
 ISM we aim to quantify where and when the blast waves are most
-destructive. We shall clarify 
+destructive. We shall clarify
 %mm which processes in the ISM are most critical to dust losses and properties and regions of the
 %ISM which most mitigate such losses.
     what processes and properties promote or mitigate dust loss in different phases of the ISM.
@@ -521,19 +521,19 @@ destructive. We shall clarify
     the sixth-order MHD code \textsc{Pencil}, as implemented in the Astaroth
     domain-specific language \citep{Astaroth22}, hereafter referred to
     as PC-A, under development at the
-    Aalto\href{https://www.aalto.fi/en/department-of-computer-science/hpclab}{\textbf{HPCLab}}.  
+    Aalto\href{https://www.aalto.fi/en/department-of-computer-science/hpclab}{\textbf{HPCLab}}.
 The suitability of this project for international collaboration in HPC has been
 demonstrated by successful campaigns at the LUMI Extreme Scale Access 2025
 call \citep{GMKPR26} and the INCITE 2026 award on Frontier (USA), which is
 currently progressing. This project will extend those simulations to include
-dust processing, which can require much higher 
+dust processing, which can require much higher
 %mm time [this is fixed by Courant, no?  Or is there a dust substep needed?]
     spatial
 resolution and large scale
 dynamos, which require larger domains and much longer integration duration.
 Acceleration with GPUs on LUMI is critical to the feasibility of such studies.
-The PC-A code has obtained over 20 times speed-up 
-%mm over the equivalent PC CPU-based code. 
+The PC-A code has obtained over 20 times speed-up
+%mm over the equivalent PC CPU-based code.
     compared to the Pencil Code on CPU alone.
 It has performed reliably and stably with weak scaling
 approaching a constant execution time up to 4096 GPU cores on Frontier.
@@ -569,9 +569,9 @@ machinery to support their synthesis.
 \fag{add scientific impact and goals of the simulations}
 \answer{
 The critical advance to application science envisaged here is
-to 
+to
 %mm relate
-     model 
+     model
 physics, previously mutually exclusive due to differences in scale, but essential to gas-dust and dust-dust dynamics:
 %mm }
 \tabto{0em}
@@ -580,8 +580,8 @@ $\bullet$ {\textit{Kinetic drag:}} Epstein-type, gas-dust interaction, significa
 $\bullet$ {\textit{Coulomb forces:}} Electrically charged dust
 affected in a plasma %mm [cite in text not summary] \citep{Draine79}.
 \tabto{0em}
-$\bullet$ {\textit{Lorentz forces:}} 
-%mm MHD flows in the gas shift 
+$\bullet$ {\textit{Lorentz forces:}}
+%mm MHD flows in the gas shift
    Dynamo-generated
 magnetic fields exert forces on charged grains.
 \tabto{0em}
@@ -592,19 +592,19 @@ $\bullet$ {\textit{Self-gravity:}} High cold cloud densities high act on decoupl
 %\tabto{0em}
 %$\bullet$ {\textit{Interstellar radiation field (ISRF).}} The ISRF is required for the RT calculations. Inverting measurements of the average local stellar radiation field \citet{Mathis83} provide a simple estimate radiation distribution. This will be improved by using recent detailed 3D models of the ISRF \citep{Porter17}.
 \tabto{0em}
-$\bullet$ {\textit{Radiation pressure:}} Monochromatic proxy 
+$\bullet$ {\textit{Radiation pressure:}} Monochromatic proxy
 %mm \citep{HDB06} prior to an SN explosion.
     prior to SN explosions.
 \tabto{0em}
 $\bullet$ {\textit{Dust cooling:}} Supersede
-%mm simple 
+%mm simple
 gas temperature-dependent
 cooling functions in MHD simulations.
-%mm 
+%mm
   }
 
-Effective implementation of the EMS approach will require 
-%mm advancing from 
+Effective implementation of the EMS approach will require
+%mm advancing from
    replacing
 manual inspection of data, typically archived to disk
 %mm
@@ -622,7 +622,7 @@ automated extraction of the domain and setup of simulation parameters and
 execution.
 %mm   Code coupling between simulations can be done consecutively with
 %boundary conditions saved to disk for use later by the subdomain, but we seek
-   We plan 
+   We plan
 to run the simulations simultaneously, developing tools to manage communication
 across the nodes and distribute resources efficiently between the simulations,
 potentially extending to a hierarchy of simultaneous EMS, rather than coupling between simulations consecutively with
@@ -634,9 +634,9 @@ boundary conditions saved to disk for use later by the subdomain.
 \tabto{0em}
 $\bullet$ {\textit{Feature detection:}} 3D cloud cluster, gravity hotspot, user-specified feature detection tools.
 \tabto{0em}
-$\bullet$ {\textit{Subdomain launch:}} Automated 
-%mm 
-    choice of domain 
+$\bullet$ {\textit{Subdomain launch:}} Automated
+%mm
+    choice of domain
 ${\cal D}_n$, new physics and parameter setting, compilation and execution.
 \tabto{0em}
 $\bullet$ {\textit{Code coupling:}} Adaptive resource and communication management of coupled simulations.
@@ -651,13 +651,13 @@ $\bullet$ {\textit{GPU acceleration:}} Dust processing, radiation, and self-grav
    }
 As the hierarchy of high-resolution subdomains expands, the storage becomes an
 increasing bottleneck,
-%mm and 
+%mm and
     making
 the challenge of analysis and interpretation more
 demanding.
 A major objective of this project is to develop an intelligent adaptive
 \textbf{pipeline} for managing the implementation, evolution, and measurement,
-%mm in the first place 
+%mm in the first place
 of our astrophysical simulations
 %mm , but ultimately many HPC
     as a proof of concept, but ultimately of any HPC
@@ -667,8 +667,8 @@ between related problems with very different methods or regimes; and data
 management products that diagnose and adapt HPC applications
 on-the-fly, employing machine learning to recognize critical features
 and issue commands
-%mm and using machine learning, such as 
-    using 
+%mm and using machine learning, such as
+    using
 \textbf{opportunistic data operations} (ODOP).
  \section{Implementation}
 
@@ -743,7 +743,7 @@ Insert your text here...
 {\textit{macro-scale simulations}}, in which the micro-scale physics of
 gas-dust and dust-dust interactions are neglected or treated in \textsc{Pencil
 Code} with a mean-field or -flow approach, but using stratification and shear.
-We spawn consecutive 
+We spawn consecutive
 %mm {\textit{extended multiscale simulations}} (EMS)
    EMS
 from a zoomed-in region of the larger domain (see flow chart). We capture scales
@@ -754,10 +754,10 @@ step. With each increase in resolution additional physics can be considered,
 such as self-gravity or stellar radiation and, eventually, dust.
  Applying the same such machinery with
 respect to other codes, we aim in future to embed our largest scale dynamo models in
-galaxy scale 
-%mm codes 
+galaxy scale
+%mm codes
     models using codes used by our Victoria collaborators
-such as \textsc{Arepo} or 
+such as \textsc{Arepo} or
 %mm \textsc{Romulus} used by our Victoria collaborators
     \textsc{ChaNGa}
 \citep{Babul21L,Babul21a}, to capture even larger scale structure
@@ -767,9 +767,9 @@ of the ISM magnetic field.
 %%%%referee if you don't address it explicitly.]
   EMS is not
 an entirely new concept
-\citep{REFERENCES FOR EMS}, but offers an innovative means to perform 
+\citep{REFERENCESFOREMS}, but offers an innovative means to perform
 %mm simulations in almost an equivalent approach to laboratory experiments that seek to test a
-%hypothesis.  
+%hypothesis.
      the required simulations for our science goals.
 
 %mm [placing flowchart next to description]
@@ -790,13 +790,13 @@ an entirely new concept
     }
  \end{minipage}
 \begin{minipage}[h]{0.39\textwidth}
- 
+
 Schematically, the EMS process is as follows:
 \answer{
 %\small
 \begin{enumerate}
-    \item\tabto{0em} Select 
-%mm or extend 
+    \item\tabto{0em} Select
+%mm or extend
 a suitable macro simulation on domain
 $\mathcal{D}_0$.
     \item Identify region $\mathcal{R}_n$ (e.g., dense
@@ -856,10 +856,10 @@ $\bullet$~Post-processed dust (\textsc{PAPERBOATS}) superseded by integral \text
 a wider range of ISM environments, while being fully implemented into the
 efficiently parallel, sixth-order \textsc{Pencil Code}.  Greater
 acceleration shall be achieved by integration into the GPU-accelerated
-%mm \textsc{Pencil Code -- Astaroth} 
+%mm \textsc{Pencil Code -- Astaroth}
 PC-A.
 %mm [moved up] under development at the
-%Aalto\href{https://www.aalto.fi/en/department-of-computer-science/hpclab}{\textbf{HPCLab}}. 
+%Aalto\href{https://www.aalto.fi/en/department-of-computer-science/hpclab}{\textbf{HPCLab}}.
 Code coupling of MHD and dust modeling will be developed to address
 differences in timescales and computational load required for faster and more
 efficient deployment of resources.
@@ -890,9 +890,9 @@ they explore regimes of astrophysics with respect to dust distribution and
 dynamics, magnetic field and ISM multi-phase structure that are poorly
 understood and important to
 %mm
-    interpreting 
-observations and understanding 
-%mm of 
+    interpreting
+observations and understanding
+%mm of
 galaxy evolution.
 Four publications are realistic, the rate and extent of any advances increasing
 the better the success of \wpref{3} and \wpref{4}.  The graduate student shall be included in
@@ -941,11 +941,11 @@ time) to retain dynamically the macro-scale features.  High cadence slices from
 $\mathcal{D}_{n-1}$ can be saved to disk and read subsequently for
 $\mathcal{D}_{n}$ BC updates.
 
-Data storage and management is commonly a bottleneck in any HPC, 
+Data storage and management is commonly a bottleneck in any HPC,
 %mm dealing with
     requiring management of
 datasets approaching TB and even PB scales.
-Code coupling on-the-fly saves on storage. 
+Code coupling on-the-fly saves on storage.
 %mm, and
    It
 employs at the very least message passing interface (MPI).  Additional physics,
@@ -954,9 +954,9 @@ computational load.  Code coupling enhanced by machine learning could gain
 speed by balancing load and available resources by minimizing redundant
 communication.
 We have access to cutting-edge machine-learning
-tools for 
-%mm [acronym defined above] Opportunistic Data Operations \citep[][  
-   ODOP \citep{odop24} 
+tools for
+%mm [acronym defined above] Opportunistic Data Operations \citep[][
+   ODOP \citep{odop24}
 to analyze the
 data to identify regions or patterns of interest and extract a suitable
 subdomain from which to launch new experiments.
@@ -964,17 +964,17 @@ This work is at the frontier of computer science, in which HPCLab
 and \href{https://rdsea.github.io/}{\textbf{AaltoSEA}} are heavily
 invested
 %mm, and large-data use applications
-   Applications using large data, such as 
-%mm this proposal 
+   Applications using large data, such as
+%mm this proposal
    those proposed here,
 are critical for their development.
 
 The basic machinery for coupling multiple versions of the code
 or with other codes would be similar.  HPCLab already has experience coupling
-%mm [is this the code you mean: https://www.mmm.ucar.edu/models/eulag] 
-\textsc{Eulag} 
-%mm 
-\citep{Eulag REFERENCE} 
+%mm [is this the code you mean: https://www.mmm.ucar.edu/models/eulag]
+\textsc{Eulag}
+%mm
+\citep{EulagREFERENCE}
 with \textsc{Pencil Code} (1-way).
 %%%%mm DEMONSTRATION AND FURTHER EXPLANATION IS VITAL AS THIS IS YOUR
 %%%%ONLY ACTUAL SUPPORTING EVIDENCE THAT YOU CAN DO THIS!
@@ -1060,7 +1060,7 @@ Transactions on Automatic Control}}; blue to
 \end{figure}
 %-----------------------------------------------------------------------------
 
-\wpref{3} and \wpref{4} shall provide the framework around which the 
+\wpref{3} and \wpref{4} shall provide the framework around which the
 %mm GS thesis
     student dissertation
 shall develop. Early in \wpref{3} the student shall understand what manual
@@ -1074,8 +1074,8 @@ processing. Initial methods could rely on manual settings at executions, but
 subsequently the focus shall return to \wpref{3} to implement run-time
 ODOP control and responses to the code coupling to maximize utilization and
 reduce compute times. The support of collaborations in HPCLab and AaltoSEA and
-the Aalto CS Doctoral program shall assist their 
-%mm Doctoral 
+the Aalto CS Doctoral program shall assist their
+%mm Doctoral
 success
 %mm
     in completing their doctoral dissertation.
@@ -1086,18 +1086,18 @@ success
 \vspace{-0.3cm}
 GPUs can offer a speed up 40--55$\times$ over traditional CPUs
 \citep{Astaroth22},
-%mm  and 
+%mm  and
      though
 for applications closer to the setup proposed here
 %mm the \textsc{Pencil Code -- Astaroth} (
 PC-A yields speedup closer to 20$\times$
-in our recent extreme-scale simulations 
+in our recent extreme-scale simulations
 %mm applied
        executed
 on LUMI \citep{GMKPR26} and on
 Frontier
 (\href{https://www.olcf.ornl.gov/2025/04/11/incite-2026-call-for-proposals/}{2026
-  INCITE call}).  
+  INCITE call}).
 %mm This utilizes the higher
      PC-A uses the high-level
 functionality of
@@ -1119,9 +1119,9 @@ $\bullet$ Code coupling between GPU and CPU solvers.
 \subsection{Research data and material, methods and research environment}
 
 The
-%mm research 
+%mm research
     simulation
-data is mainly 
+data is mainly
 %mm simulated in HDF5 or ASCII form of TB scale, although some
     generated in HDF5 form for field data of TB scale and ASCII for
     integrated quantities over time.
@@ -1129,8 +1129,8 @@ Astrophysical observational data may be analyzed alongside our generated data fo
 scientific publication. We also produce and utilize open source numerical codes
 and additional open source software tools for code integrations, management
 pipelines, and data analysis. The primary code milestones of this project will include: the implementation of
-Paperboats advanced dust processing physics into 
-%mm the Pencil Code and Astaroth 
+Paperboats advanced dust processing physics into
+%mm the Pencil Code and Astaroth
    PC-A
 for accelerated
 parallel 3D integration; code coupling machinery for running multiple versions of PC/PC-A or to match
@@ -1140,11 +1140,11 @@ code coupling and simulation management.
 The main research environment is the Department of Computer Science (hereafter Aalto/CS) at the
 Aalto University School of Science. With over 40 professors and more than 400 employees, the
 department is the largest Computer Science unit in Finland. It is ranked among the top 10 Computer
-Science departments in Europe and among the top 100 globally. 
+Science departments in Europe and among the top 100 globally.
 %mm ICT
     Information and communications technology
 and digitalization are among
-the seven key research areas at 
+the seven key research areas at
 %mm Aalto University
    Aalto/CS. In addition to standard resources provided by the
 department, there is support for midrange HPC and data analytics through the Science-IT project of
@@ -1155,7 +1155,7 @@ and software development, Science-IT provides support from research software eng
 Researchers also have free access to national CSC resources, including the supercomputers Puhti
 and Mahti, as well as the cloud resources Rahti and CPouta. The teams also have access to Europe’s
 most powerful GPU-based supercomputer LUMI through competitive computing time allocations
-via the Euro-HPC consortium. 
+via the Euro-HPC consortium.
 %mm The consortium
      Our collaboration
 has an outstanding track record of obtaining
@@ -1167,11 +1167,11 @@ PI, CoI and AaltoHPC on MHD and galaxy modelling with New York and Victoria coll
 and the CoI on dust processing with the Stockholm and Ghent collaborators.
 
 
-The PI shall have responsibility for 
+The PI shall have responsibility for
 %mm \wpref{5} [this doesn't exist.  I'm guessing you mean:
-    \wpref{4} 
+    \wpref{4}
 and its integration within the
-%mm proposal, 
+%mm proposal,
      project
 together with the HPCLab collaboration. This is an
 extension of new physics to existing PC-A, which complements the outcomes in
@@ -1195,8 +1195,8 @@ The Principal Investigator (PI) Maarit Korpi-Lagg\href{https://orcid.org/0000-00
 (over 4,800 citations and h-index of 39 according to Google Scholar), is a
 tenured associate professor at Aalto CS, where she leads the High-Performance Computing Lab. She
 was the grant holder of the ERC Consolidator grant "UniSDyn" and the ERC Proof of-concept grant
-“SYCOS”, 
-%mm which projects 
+“SYCOS”,
+%mm which projects
    projects that
 studied dynamo action in solar and stellar convection zones. She acted as a
 team leader of the Academy of Finland Centre of Excellence “ReSoLVE” (2014-2019), which studied
@@ -1208,11 +1208,11 @@ Astaroth.
 
 The Co-Investigator
 (CoI) Frederick
-Gent\href{https://orcid.org/0000-0002-1331-2260}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} 
+Gent\href{https://orcid.org/0000-0002-1331-2260}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}}
 %mm has been
      was
-a Research Fellow at 
-%mm the Aalto Computer Science Department 
+a Research Fellow at
+%mm the Aalto Computer Science Department
     Aalto/CS
 until March 2025 and since November 2023
 %mm
@@ -1228,7 +1228,7 @@ The Nordic Institute for
 Theoretical Physics (\href{https://nordita.org/}{\textbf{Nordita}})
 also has an international reputation for excellence in
 astrophysics.
-%mm , and the 
+%mm , and the
     The
 CoI and PI are actively pursuing opportunities to further
 enhance the Swedish funding for the joint project with the Swedish Space
