@@ -395,8 +395,6 @@ at regions ({\textbf{b}}) and ({\textbf{d}}) any change is due to background
 processing (transport and destruction).  } \label{fig_gsd}
 \end{minipage}
 
-\fag{Add here summary of research questions/hypotheses}
-
 The primary research goal of the project is to quantify the rate at which dust
 is processed by SN blast waves: how this depends on the multiphase turbulence
 of the ISM and on the strength and topology of the galactic magnetic field. By
@@ -467,85 +465,61 @@ forces on charged grains.
 $\bullet$ {\textit{Self-gravity:}} High cold cloud densities high act on
 decoupled grains, affecting dust clustering.
 \tabto{0em}
-$\bullet$ {\textit{Radiation pressure:}} Monochromatic proxy
-%mm \citep{HDB06} prior to an SN explosion.
-    prior to SN explosions.
+$\bullet$ {\textit{Radiation pressure:}} Monochromatic proxy prior to SN
+explosions.
 \tabto{0em}
-$\bullet$ {\textit{Dust cooling:}} Supersede
-%mm simple
-gas temperature-dependent
-cooling functions in MHD simulations.
-%mm
+$\bullet$ {\textit{Dust cooling:}} Supersede gas temperature-dependent cooling
+functions in MHD simulations.
   }
 
-Effective implementation of the EMS approach will require
-%mm advancing from
-   replacing
-manual inspection of data, typically archived to disk
-%mm
-   after run completion,
-with machine tools accessing
-the data in memory at run time, sharing idle processors.
-%mm While simulations continue to iterate we require
-    We require that
-highly scalable and efficient algorithms inspect
-the data
-%mm
-    while simulations continue to advance.
-Selection of subdomains then also shall advance from manual to
-automated extraction of the domain and setup of simulation parameters and
-execution.
-%mm   Code coupling between simulations can be done consecutively with
-%boundary conditions saved to disk for use later by the subdomain, but we seek
-   We plan
-to run the simulations simultaneously, developing tools to manage communication
-across the nodes and distribute resources efficiently between the simulations,
-potentially extending to a hierarchy of simultaneous EMS, rather than coupling between simulations consecutively with
-boundary conditions saved to disk for use later by the subdomain.
+Effective implementation of the EMS approach will require replacing manual
+inspection of data, typically archived to disk after run completion, with
+machine tools accessing the data in memory at run time, sharing idle
+processors.  We require that highly scalable and efficient algorithms inspect
+the data while simulations continue to advance.  Selection of subdomains then
+also shall advance from manual to automated extraction of the domain and setup
+of simulation parameters and execution.  We plan to run the simulations
+simultaneously, developing tools to manage communication across the nodes and
+distribute resources efficiently between the simulations, potentially extending
+to a hierarchy of simultaneous EMS, rather than coupling between simulations
+consecutively with boundary conditions saved to disk for use later by the
+subdomain.
 
 
 \answer{Critical advances to the HPC toolkit:
-%mm }   \vspace{-0.2cm}
 \tabto{0em}
-$\bullet$ {\textit{Feature detection:}} 3D cloud cluster, gravity hotspot, user-specified feature detection tools.
+$\bullet$ {\textit{Feature detection:}} 3D cloud cluster, gravity hotspot,
+user-specified feature detection tools.
 \tabto{0em}
-$\bullet$ {\textit{Subdomain launch:}} Automated
-%mm
-    choice of domain
-${\cal D}_n$, new physics and parameter setting, compilation and execution.
+$\bullet$ {\textit{Subdomain launch:}} Automated choice of domain ${\cal D}_n$,
+new physics and parameter setting, compilation and execution.
 \tabto{0em}
-$\bullet$ {\textit{Code coupling:}} Adaptive resource and communication management of coupled simulations.
+$\bullet$ {\textit{Code coupling:}} Adaptive resource and communication
+management of coupled simulations.
 \tabto{0em}
-$\bullet$ {\textit{On-the-fly-diagnostics:}} running diagnostics
-concurrently with the simulations (using ODOP).
+$\bullet$ {\textit{On-the-fly-diagnostics:}} running diagnostics concurrently
+with the simulations (using ODOP).
 \tabto{0em}
-$\bullet$ {\textit{Node management:}} Concurrent computation, memory transfers, and diagnostics.
+$\bullet$ {\textit{Node management:}} Concurrent computation, memory transfers,
+and diagnostics.
 \tabto{0em}
-$\bullet$ {\textit{GPU acceleration:}} Dust processing, radiation, and self-gravity added to MHD on GPUs.
-%mm
+$\bullet$ {\textit{GPU acceleration:}} Dust processing, radiation, and
+self-gravity added to MHD on GPUs.
    }
 As the hierarchy of high-resolution subdomains expands, the storage becomes an
-increasing bottleneck,
-%mm and
-    making
-the challenge of analysis and interpretation more
-demanding.
-A major objective of this project is to develop an intelligent adaptive
-\textbf{pipeline} for managing the implementation, evolution, and measurement,
-%mm in the first place
-of our astrophysical simulations
-%mm , but ultimately many HPC
-    as a proof of concept, but ultimately of any HPC
-applications that combine big data and highly heterogeneous problems.  This has
-two distinct contributions: code coupling products that combine calculations
-between related problems with very different methods or regimes; and data
-management products that diagnose and adapt HPC applications
-on-the-fly, employing machine learning to recognize critical features
-and issue commands
-%mm and using machine learning, such as
-    using
-\textbf{opportunistic data operations} (ODOP).
- \section{Implementation}
+increasing bottleneck, making the challenge of analysis and interpretation more
+demanding.  A major objective of this project is to develop an intelligent
+adaptive \textbf{pipeline} for managing the implementation, evolution, and
+measurement, of our astrophysical simulations as a proof of concept, but
+ultimately of any HPC applications that combine big data and highly
+heterogeneous problems.  This has two distinct contributions: code coupling
+products that combine calculations between related problems with very different
+methods or regimes; and data management products that diagnose and adapt HPC
+applications on-the-fly, employing machine learning to recognize critical
+features and issue commands using \textbf{opportunistic data operations}
+(ODOP).
+
+\section{Implementation}
 
 \instructions{
 In this section, describe the following aspects:
@@ -614,38 +588,25 @@ Insert your text here...
 
 \wpdef{1}{EMS}{Extended Multiscale Simulations}
 \vspace{-0.3cm}
- We begin from established
-{\textit{macro-scale simulations}}, in which the micro-scale physics of
-gas-dust and dust-dust interactions are neglected or treated in \textsc{Pencil
-Code} with a mean-field or -flow approach, but using stratification and shear.
-We spawn consecutive
-%mm {\textit{extended multiscale simulations}} (EMS)
-   EMS
-from a zoomed-in region of the larger domain (see flow chart). We capture scales
-between sub-MC sizes and the large-scale MHD flow phenomena via
-\textit{boundary conditions} inherited and interpolated from its larger
-domain. The span between macro and micro scales is too large to bridge in one
-step. With each increase in resolution additional physics can be considered,
-such as self-gravity or stellar radiation and, eventually, dust.
- Applying the same such machinery with
-respect to other codes, we aim in future to embed our largest scale dynamo models in
-galaxy scale
-%mm codes
-    models using codes used by our Victoria collaborators
-such as \textsc{Arepo} or
-%mm \textsc{Romulus} used by our Victoria collaborators
-    \textsc{ChaNGa}
-\citep{Babul21L,Babul21a}, to capture even larger scale structure
-of the ISM magnetic field.
+ We begin from established {\textit{macro-scale simulations}}, in which the
+micro-scale physics of gas-dust and dust-dust interactions are neglected or
+treated in \textsc{Pencil Code} with a mean-field or -flow approach, but using
+stratification and shear.  We spawn consecutive EMS from a zoomed-in region of
+the larger domain (see flow chart). We capture scales between sub-MC sizes and
+the large-scale MHD flow phenomena via \textit{boundary conditions} inherited
+and interpolated from its larger domain. The span between macro and micro
+scales is too large to bridge in one step. With each increase in resolution
+additional physics can be considered, such as self-gravity or stellar radiation
+and, eventually, dust.  Applying the same such machinery with respect to other
+codes, we aim in future to embed our largest scale dynamo models in galaxy
+scale models using codes used by our Victoria collaborators such as
+\textsc{Arepo} or \textsc{ChaNGa} \citep{Babul21L,Babul21a}, to capture even
+larger scale structure of the ISM magnetic field.
 %%%%mm [How will you couple from structured to unstructured mesh in
 %%%%Arepo, or to SPH in ChaNGa? That sounds like a quick ding from a
 %%%%referee if you don't address it explicitly.]
-  EMS is not
-an entirely new concept
-\citep{EMS2023,EMS2024}, but offers an innovative means to perform
-%mm simulations in almost an equivalent approach to laboratory experiments that seek to test a
-%hypothesis.
-     the required simulations for our science goals.
+EMS is not an entirely new concept \citep{EMS2023,EMS2024}, but offers an
+innovative means to perform the required simulations for our science goals.
 
 %mm [placing flowchart next to description]
 \begin{minipage}[h]{0.6\textwidth}
@@ -668,23 +629,17 @@ an entirely new concept
 
 Schematically, the EMS process is as follows:
 \answer{
-%\small
 \begin{enumerate}
-    \item\tabto{0em} Select
-%mm or extend
-a suitable macro simulation on domain
+\item Select a suitable macro simulation on domain
 $\mathcal{D}_0$.
-    \item Identify region $\mathcal{R}_n$ (e.g., dense
-%mm star-forming cluster
-     star-forming cloud) within  $\mathcal{D}_{n-1}$,
-small enough to ensure scale separation.%[-0.7cm]
-%mm , enclosing region $\mathcal{R}_n$ with $n=1$.%[-0.7cm]
-\item Extract domain $\mathcal{D}_n$ enclosing $\mathcal{R}_n$ and remesh
-to the desired resolution as initial conditions (ICs).%[-0.7cm]
-    \item Define appropriate boundary conditions (BCs). Interpolate from
-$\mathcal{D}_{n-1}$ to retain macro dynamics.%[-0.7cm]
-    \item Run simulation of $\mathcal{D}_n$.%[-0.7cm]
-    \item Repeat steps 2--5 for $n>1$ until the size of $\mathcal{D}_n$
+\item Identify region $\mathcal{R}_n$ (e.g., dense star-forming cloud) within
+$\mathcal{D}_{n-1}$, small enough to ensure scale separation.
+\item Extract domain $\mathcal{D}_n$ enclosing $\mathcal{R}_n$ and remesh to
+the desired resolution as initial conditions (ICs).
+\item Define appropriate boundary conditions (BCs). Interpolate from
+$\mathcal{D}_{n-1}$ to retain macro dynamics.
+\item Run simulation of $\mathcal{D}_n$.
+\item Repeat steps 2--5 for $n>1$ until the size of $\mathcal{D}_n$
 reaches some limiting length scale.
 \end{enumerate}
 }
@@ -694,7 +649,6 @@ reaches some limiting length scale.
 \tabto{0em}
 
 
-% Deliveries
   Deliverables
 and expected results:
 \tabto{0em}
@@ -709,35 +663,14 @@ $\bullet$~Post-processed dust (\textsc{PAPERBOATS}) superseded by integral \text
  (\wpref{2}) and graphics cards (GPU)-accelerated sub-physics and dust (\wpref{4}).
 %------------------------------------------------------------------------------
 
-%mm \begin{minipage}[h]{0.4\textwidth}
-%     \centering
-
-%     \resizebox{\hsize}{!}{
-%         \includegraphics[trim=0.0cm 0.0cm 0.0cm 0.0cm, clip=true]{Pics/flowchart2.png}
-%  \begin{picture}(0,0)
-%     \put( -98,204){\footnotesize{$\mathcal{D}_0$}}
-%     \put(-105,124){\footnotesize{$\mathcal{D}_1$}}
-%     \put( -88, 81){\footnotesize{$\mathcal{D}_2$}}
-%     \put(-120, 42){\footnotesize{$\mathcal{D}_{n>2}$}}
-%     \put(-103,186){\tiny{$\mathcal{R}_1$}}
-%     \put( -90,123){\tiny{$\mathcal{R}_2$}}
-%     \put(-100, 86){\tiny{$\mathcal{R}_3$}}
-%   \end{picture}
-%     }
-%  \end{minipage}
-% \begin{minipage}[h]{0.59\textwidth}
 \wpdef{2}{Dust}{Dust processing}
-\textsc{Paperboats} shall be applied to new \textit{multiscale} simulations over
-a wider range of ISM environments, while being fully implemented into the
-efficiently parallel, sixth-order \textsc{Pencil Code}.  Greater
-acceleration shall be achieved by integration into the GPU-accelerated
-%mm \textsc{Pencil Code -- Astaroth}
-PC-A.
-%mm [moved up] under development at the
-%Aalto\href{https://www.aalto.fi/en/department-of-computer-science/hpclab}{\textbf{HPCLab}}.
-Code coupling of MHD and dust modeling will be developed to address
-differences in timescales and computational load required for faster and more
-efficient deployment of resources.
+\textsc{Paperboats} shall be applied to new \textit{multiscale} simulations
+over a wider range of ISM environments, while being fully implemented into the
+efficiently parallel, sixth-order \textsc{Pencil Code}.  Greater acceleration
+shall be achieved by integration into the GPU-accelerated PC-A.  Code coupling
+of MHD and dust modeling will be developed to address differences in timescales
+and computational load required for faster and more efficient deployment of
+resources.
 \tabto{0em}
 Deliveries and expected results:
 \tabto{0em}
@@ -745,67 +678,35 @@ $\bullet$~\textsc{Paperboats} implemented into highly scalable PC.
 \tabto{0em}
 $\bullet$~Dust modeling GPU-accelerated with PC-A.
 \tabto{0em}
-$\bullet$~Code-coupling tools: highly heterogeneous
-codes or computations require resource management to avoid idle resources, match performance and reduce IO, memory or compute bottlenecks (\wpref{3}).
-%mm \end{minipage}
+$\bullet$~Code-coupling tools: highly heterogeneous codes or computations
+require resource management to avoid idle resources, match performance and
+reduce IO, memory or compute bottlenecks (\wpref{3}).
 
-To implement \wpref{1} and \wpref{2} the PI and CoI have years of experience executing
-such simulations with consistent success applying for resources on the Finnish
-national infrastructure CSC, European infrastructure directly on LUMI, as well
-as a member of successful HPCLab European scale PRACE projects.  Both the PI
-and CoI also have continuous access to the National Academic Infrastructure for
-Supercomputing in Sweden and, via our established US collaboration, to calls on
-Frontier HPC resources.  Modifications to the dust modules and implementation
-to PC-A are low risk, as the PI and CoI lead the HPCLab development of the
-PC-A implementation of SN driven turbulence, and partial dust-processing
-modeling has successfully been implemented by the Swedish collaborator.
+To implement \wpref{1} and \wpref{2} the PI and CoI have years of experience
+executing such simulations with consistent success applying for resources on
+the Finnish national infrastructure CSC, European infrastructure directly on
+LUMI, as well as a member of successful HPCLab European scale PRACE projects.
+Both the PI and CoI also have continuous access to the National Academic
+Infrastructure for Supercomputing in Sweden and, via our established US
+collaboration, to calls on Frontier HPC resources.  Modifications to the dust
+modules and implementation to PC-A are low risk, as the PI and CoI lead the
+HPCLab development of the PC-A implementation of SN driven turbulence, and
+partial dust-processing modeling has successfully been implemented by the
+Swedish collaborator.
 
-\wpref{1} and \wpref{2} are assured results of high impact, since
-they explore regimes of astrophysics with respect to dust distribution and
-dynamics, magnetic field and ISM multi-phase structure that are poorly
-understood and important to
-%mm
-    interpreting
-observations and understanding
-%mm of
-galaxy evolution.
+\wpref{1} and \wpref{2} are assured results of high impact, since they explore
+regimes of astrophysics with respect to dust distribution and dynamics,
+magnetic field and ISM multi-phase structure that are poorly understood and
+important to interpreting observations and understanding galaxy evolution.
 Four publications are realistic, the rate and extent of any advances increasing
-the better the success of \wpref{3} and \wpref{4}.  The graduate student shall be included in
-the execution and analysis of \wpref{1} and \wpref{2}, while their thesis shall
-primarily address \wpref{3} and \wpref{4}.
-Our collaborators from Victoria, New York, Stockholm, and Ghent
-have high expertise at modeling dust and MCs.
+the better the success of \wpref{3} and \wpref{4}.  The graduate student shall
+be included in the execution and analysis of \wpref{1} and \wpref{2}, while
+their thesis shall primarily address \wpref{3} and \wpref{4}.  Our
+collaborators from Victoria, New York, Stockholm, and Ghent have high expertise
+at modeling dust and MCs.
 
-
-%------------------------------------------------------------------------------
-%%------------------------------------------------------------------------------
-%\wpdef{3}{ODOP}{Pipeline -- ODOP tools}
-%\vspace{-0.3cm}
-%Scanning for regions of interest in
-%astrophysical simulations remains labour intensive and applied to disk-saved
-%datasets, output at intervals.
-%We shall apply cutting-edge machine-learning
-%tools for Opportunistic Data Operations \citep[][ODOP]{odop24} to analyze the
-%data to identify regions or patterns of interest and extract a suitable
-%subdomain from which to launch new experiments. Next these tools shall be
-%enhanced to work on active data in memory on-the-fly during the computation to
-%identify and extract relevant data when desired, and eventually launch such new
-%experiments.
-%\tabto{0em}
-%Deliveries and expected results:
-%\tabto{0em}
-%$\bullet$ ODOP tools to identify critical patterns and extract relevant datasets.
-%\tabto{0em}
-%$\bullet$ Manage spawning EMS multiscale simulations, rescheduling available resources to additional tasks and new physics, and .
-%\tabto{0em}
-%$\bullet$ Machine learning to manage additional resource requests and
-%execute new diagnostics.
-%%-----------------------------------------------------------------------------
-
-%------------------------------------------------------------------------------
 %------------------------------------------------------------------------------
 \wpdef{3}{CC}{Pipeline -- code coupling}
-\vspace{-0.3cm}
 Defining consistent BCs after remeshing to macro-scale $\mathcal{D}_n$, without
 erroneous artifacts in the flows, is a crucial step in the process.  Open
 boundaries independent of $\mathcal{D}_{n-1}$ can work (paper in preparation),
@@ -816,41 +717,29 @@ time) to retain dynamically the macro-scale features.  High cadence slices from
 $\mathcal{D}_{n-1}$ can be saved to disk and read subsequently for
 $\mathcal{D}_{n}$ BC updates.
 
-Data storage and management is commonly a bottleneck in any HPC,
-%mm dealing with
-    requiring management of
-datasets approaching TB and even PB scales.
-Code coupling on-the-fly saves on storage.
-%mm, and
-   It
-employs at the very least message passing interface (MPI).  Additional physics,
-such as dust, cooling or self-gravity, necessitate diverging timescales or
-computational load.  Code coupling enhanced by machine learning could gain
-speed by balancing load and available resources by minimizing redundant
-communication.
-We have access to cutting-edge machine-learning
-tools for
-%mm [acronym defined above] Opportunistic Data Operations \citep[][
-   ODOP \citep{odop24}
-to analyze the
-data to identify regions or patterns of interest and extract a suitable
-subdomain from which to launch new experiments.
-This work is at the frontier of computer science, in which HPCLab
-and \href{https://rdsea.github.io/}{\textbf{AaltoSEA}} are heavily
-invested
-%mm, and large-data use applications
-   Applications using large data, such as
-%mm this proposal
-   those proposed here,
-are critical for their development.
+Data storage and management is commonly a bottleneck in any HPC, requiring
+management of datasets approaching TB and even PB scales.  Code coupling
+on-the-fly saves on storage.  It employs at the very least message passing
+interface (MPI).  Additional physics, such as dust, cooling or self-gravity,
+necessitate diverging timescales or computational load.  Code coupling enhanced
+by machine learning could gain speed by balancing load and available resources
+by minimizing redundant communication.  We have access to cutting-edge
+machine-learning tools for ODOP \citep{odop24} to analyze the data to identify
+regions or patterns of interest and extract a suitable subdomain from which to
+launch new experiments.  This work is at the frontier of computer science, in
+which HPCLab and \href{https://rdsea.github.io/}{\textbf{AaltoSEA}} are heavily
+invested Applications using large data, such as those proposed here, are
+critical for their development.
 
-The basic machinery for coupling multiple versions of the code
-or with other codes would be similar.  HPCLab already has experience coupling
-%mm [is this the code you mean: https://www.mmm.ucar.edu/models/eulag]
-\textsc{Eulag}
-%mm
-\citep{Guerrero:2024}
-with \textsc{Pencil Code} (1-way).
+The basic machinery for coupling multiple versions of the code or with other
+codes would be similar.  HPCLab already has experience coupling
+\href{https://www.astro.umontreal.ca/~paulchar/grps/eulag-mhd.html}{\textsc{Eulag-MHD}}
+\citep{Guerrero:2024} with \textsc{Pencil Code} (1-way).
+In this case the highly stratified solar atmosphere evolving data obtained through the
+\textsc{Eulag-MHD} simulation was passed on-the-fly to the \sc{Pencil Code} to
+apply the test-field method to calculate the turbulent transport coefficients that
+can be used to explain the dynamo.
+%FAG: added model link, reference to thesis using the coupling and explained what was done.
 %%%%mm DEMONSTRATION AND FURTHER EXPLANATION IS VITAL AS THIS IS YOUR
 %%%%ONLY ACTUAL SUPPORTING EVIDENCE THAT YOU CAN DO THIS!
 
