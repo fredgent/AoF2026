@@ -404,26 +404,21 @@ increasingly high resolution zoom-ins of the ISM we aim to quantify where and
 when the blast waves are most destructive. We shall clarify what processes and
 properties promote or mitigate dust loss in different phases of the ISM.
 
-Our primary tool for massively parallel computations on GPUs is
-    the sixth-order MHD code \textsc{Pencil}, as implemented in the Astaroth
-    domain-specific language \citep{Astaroth22}, hereafter referred to
-    as PC-A, under development at the
-    Aalto \href{https://www.aalto.fi/en/department-of-computer-science/hpclab}{\textbf{HPCLab}}.
+Our primary tool for massively parallel computations on GPUs is the sixth-order
+MHD code \textsc{Pencil}, as implemented in the Astaroth domain-specific
+language \citep{Astaroth22}, hereafter referred to as PC-A, under development
+at the Aalto
+\href{https://www.aalto.fi/en/department-of-computer-science/hpclab}{\textbf{HPCLab}}.
 The suitability of this project for international collaboration in HPC has been
-demonstrated by successful campaigns at the LUMI Extreme Scale Access 2025
-call \citep{GMKPR26} and the INCITE 2026 award on Frontier (USA), which is
-currently progressing. This project will extend those simulations to include
-dust processing, which can require much higher
-%mm time [this is fixed by Courant, no?  Or is there a dust substep needed?]
-    spatial
-resolution and large scale
-dynamos, which require larger domains and much longer integration duration.
-Acceleration with GPUs on LUMI is critical to the feasibility of such studies.
-The PC-A code has obtained over 20 times speed-up
-%mm over the equivalent PC CPU-based code.
-    compared to the Pencil Code on CPU alone.
-It has performed reliably and stably with weak scaling
-approaching a constant execution time up to 4096 GPU cores on Frontier.
+demonstrated by successful campaigns at the LUMI Extreme Scale Access 2025 call
+\citep{GMKPR26} and the INCITE 2026 award on Frontier (USA), which is currently
+progressing. This project will extend those simulations to include dust
+processing, which at low Stokes numbers can require higher time resolution, and
+large scale dynamos, which require larger domains and much longer integration
+duration.  Acceleration with GPUs on LUMI is critical to the feasibility of
+such studies.  The PC-A code has obtained over 20 times speed-up compared to
+the Pencil Code on CPU alone.  It has performed reliably and stably with weak
+scaling approaching a constant execution time up to 4096 GPU cores on Frontier.
 
 It is a primary focus of this project to bring together two or more codes, or
 instances of the same code, working on related but distinct physics. The
