@@ -252,147 +252,71 @@ Maarit J. Korpi-Lagg (SNDust)
 
 \fag{incorporate work of new collaborators here and expand on the scientific questionmarks/hypotheses}
 
-We plan to implement groundbreaking
-%mm coupled multi-tiered, or
-{\textit{extended
-multiscale simulations}} (EMS), bridging previously unattainable
-%mm scales of separation
-%mm Extreme scales of separation are generic in astrophysics
-separations of spatial scales.  Extreme separation of spatial scales
-is generic
-  in astrophysical models.
-%mm , where
-   We shall apply
-this innovative concept
-%mm shall be applied to
-    modeling the evolution of interstellar
-dust, but our new interactive control tools
-%mm would have applicability in other disciplines proliferated by
-   will apply to other disciplines characterized by
-large and heterogeneous data.
+We plan to implement groundbreaking {\textit{extended multiscale simulations}}
+(EMS), bridging previously unattainable separations of spatial scales.  Extreme
+separation of spatial scales is generic in astrophysical models.  We shall
+apply this innovative concept modeling the evolution of interstellar dust, but
+our new interactive control tools will apply to other disciplines characterized
+by large and heterogeneous data.
 
-A common alternative approach
-%mm
-    to modeling multiple scales
-is \textit{adaptive mesh refinement},
-%mm [unused acronym] (AMR),
-in which higher resolution meshes are dynamically applied locally where,
-typically,
-%mm densities
-  pressure gradients
-%mm change \cite to \citep or \citet to avoid odd formatting in the PDF
-exceed some threshold %mm \citep{AMR00}.
-   \citep{Berger89}.
-%However, in MHD the strongest turbulence and critical dynamo action
-%often occur in regions of high temperatures and low densities. This
-%does not permit solving additional physics relevant only to the zoomed-in region.
-    However, turbulent flows have intermittency everywhere, so
-    refinement occurs throughout the domain for resolutions smaller
-    than $1024^3$ zones \citep{Kritsuk06}.  This does not readily
-    allow adding small-scale physics only to regions where the
-    smallest scales are resolved.
-Additionally, non-uniform discrete
-Fourier transforms that could be used to understand the spectral properties of
-turbulent fields are challenging to
-%mm determine
-    calculate \citep{NUFFT}. Multigrid methods
-are
-%mm also
-   another algorithm
-commonly employed for improving convergence with implicit
-solvers of
-%mm [this sentence ended before being finished. I have tried to finish
-%it.]
-   elliptic equations such as the Poisson equation, but this is not applicable to hyperbolic or parabolic
-   equations such as those of non-ideal magnetohydrodynamics (MHD).
+A common alternative approach to modeling multiple scales is \textit{adaptive
+mesh refinement}, in which higher resolution meshes are dynamically applied
+locally where, typically, pressure gradients exceed some threshold
+\citep{Berger89}.  However, turbulent flows have intermittency everywhere, so
+refinement occurs throughout the domain for resolutions smaller than $1024^3$
+zones \citep{Kritsuk06}.  This does not readily allow adding small-scale
+physics only to regions where the smallest scales are resolved.  Additionally,
+non-uniform discrete Fourier transforms that could be used to understand the
+spectral properties of turbulent fields are challenging to calculate
+\citep{NUFFT}. Multigrid methods are another algorithm commonly employed for
+improving convergence with implicit solvers of
+highly non-linear systems in chemistry \citep{MGRID}, engineering and other
+disciplines, with increased overheads. Our approach will use multi-grid tools to
+extend the scales and physics accessible to the hierarchy of simulations with
+minimal increase in overheads.
 
-%mm Another resource
-    An existing framework for
-applying a common interface to multiple astrophysics
-%mm
-  algorithms
-is the Astrophysical Multipurpose Software Environment \citep{AMUSE}.  Its Python
-interface is relatively user friendly, but has limited scalability via parallel
-high performance computation. Our project shall implement integrated, highly
-scalable simulations capable of handling huge data, while also developing user
-friendly interactive tools with which to manage and interrogate the
-applications.
+An existing framework for applying a common interface to multiple astrophysics
+algorithms is the Astrophysical Multipurpose Software Environment
+\citep{AMUSE}.  Its Python interface is relatively user friendly, but has
+limited scalability via parallel high performance computation. Our project
+shall implement integrated, highly scalable simulations capable of handling
+huge data, while also developing user friendly interactive tools with which to
+manage and interrogate the applications.
 
-%mm moved this paragraph into narrative order
-Cosmic dust plays a critical role in many astrophysical processes,
-%mm
-  including as
-a catalyst in star
-%mm and planet
-formation,
-%mm
-    the main ingredient in planet formation,
-and, due to its
-%mm heat absorption and light
-    light absorption and
-scattering,
-%mm important in galaxy evolution and multi-phase structure of the
-%ISM. [moved up the final sentence of the para and integrated]
-     a contributor to the multiphase structure of the ISM, galaxy
-     evolution, and the properties of cooling in the circumgalactic
-     medium in cosmological scale simulations \citep{Babul23}.
-Heavy elements are forged in stars, the heaviest metals fusing at the explosive
-death of the largest stars, and thus ejected into the ISM by
-supernovae (SNe). Some of these
-form dust, comprising a mixture of carbonaceous material and silicates
+Cosmic dust plays a critical role in many astrophysical processes, including as
+a catalyst in star formation, the main ingredient in planet formation, and, due
+to its light absorption and scattering, a contributor to the multiphase
+structure of the ISM, galaxy evolution, and the properties of cooling in the
+circumgalactic medium in cosmological scale simulations \citep{Babul23}.  Heavy
+elements are forged in stars, the heaviest metals fusing at the explosive death
+of the largest stars, and thus ejected into the ISM by supernovae (SNe). Some
+of these form dust, comprising a mixture of carbonaceous material and silicates
 \citep{Weingartner01}. The abundance or composition of dust is indicative of a
 galaxy's age and star formation rate.  Although SNe eject into the ISM some
-fraction of dust, their highly supersonic blast waves
-%mm destroy masses of
-     can destroy
-dust already present in the ambient ISM \citep{McKee89}.
-%Estimates
-    Observations of dust
-abundances in early galaxies
-%mm appear too high, given
-    substantially exceed predictions from
-prevailing models of destruction rates and accumulation mechanisms.
-This has
-%mm even been considered by some
-     been described
-as a {\textbf{dust budget crisis}} \citep{Rowlands14b}.  Sublimation,
-condensation, grain-grain interactions, and ion sputtering are well established as
-primary dust destruction mechanisms in SN blast waves \citep{Jones11}.  The
-resultant dust properties are, however, highly uncertain.  Both processing and
-formation of ISM dust remain poorly understood \citep{Draine09} and most models
-omit realistic ISM
-%mm
-   magnetized
-turbulence.
-%mm [moved up to list of applications] The treatment of dust abundances significantly
-%affects the galaxy evolution and the properties of the circumgalactic medium
-%in cosmological scale simulations arizing from cooling \citep{Babul23}.
+fraction of dust, their highly supersonic blast waves can destroy dust already
+present in the ambient ISM \citep{McKee89}.  Observations of dust abundances in
+early galaxies substantially exceed predictions from prevailing models of
+destruction rates and accumulation mechanisms.  This has been described as a
+{\textbf{dust budget crisis}} \citep{Rowlands14b}.  Sublimation, condensation,
+grain-grain interactions, and ion sputtering are well established as primary
+dust destruction mechanisms in SN blast waves \citep{Jones11}.  The resultant
+dust properties are, however, highly uncertain.  Both processing and formation
+of ISM dust remain poorly understood \citep{Draine09} and most models omit
+realistic ISM magnetized turbulence.
 
-Our recent breakthrough
-%mm revealed how cosmic dust, the building blocks of planets,
-    models demonstrated that ISM dust
-can survive destruction by SN
-%mm more than
-   blast waves far better than
-previously thought \citep{KMG24}. We showed that,
-%mm relative
-   compared
-to the commonly used uniform
-interstellar medium (ISM), including a realistic inhomogeneous and turbulent
-ISM can reduce by 50\% the amount of ambient dust destroyed during the lifetime of
-an SN remnant.  We also found that including the Lorentz force of the turbulent
-magnetic field acting on the dust further halved these losses, a much greater
-effect than had been anticipated.  Even larger scales are required to fully
-model the magnetic field structure and yet smaller scales to properly
-understand the dust processing. To advance this scientific goal we
-need
-%mm the multi-tiered
-    our proposed EMS
-approach and
-%mm the
-machine-learning toolkit to facilitate
-identifying critical features, launching coupled simulations, and managing
-communication and balancing resources within a typical HPC batch system.
+Our recent breakthrough models demonstrated that ISM dust can survive
+destruction by SN blast waves far better than previously thought \citep{KMG24}.
+We showed that, compared to the commonly used uniform interstellar medium
+(ISM), including a realistic inhomogeneous and turbulent ISM can reduce by 50\%
+the amount of ambient dust destroyed during the lifetime of an SN remnant.  We
+also found that including the Lorentz force of the turbulent magnetic field
+acting on the dust further halved these losses, a much greater effect than had
+been anticipated.  Even larger scales are required to fully model the magnetic
+field structure and yet smaller scales to properly understand the dust
+processing. To advance this scientific goal we need our proposed EMS approach
+and machine-learning toolkit to facilitate identifying critical features,
+launching coupled simulations, and managing communication and balancing
+resources within a typical HPC batch system.
 
 %==============================================================================
 \begin{figure}
@@ -403,76 +327,49 @@ communication and balancing resources within a typical HPC batch system.
 \end{minipage}
 \begin{minipage}[h]{0.29\textwidth}
   \caption{\footnotesize \label{ISMsim}\label{ISMsim2} Typical snapshots of gas
-%mm number $n$ and magnetic energy $e_B$ density and magnetic field
-    number density $n$, magnetic energy density $e_B$, and azimuthal
-    magnetic field
-$B_y$ from an
-MHD simulation of SN-driven turbulence and galactic dynamo
-%mm
-   activity
-\citep{GMK24}.
-Turbulence drives a fast small-scale dynamo, which
-%mm can create
-     generates
-magnetic fields
-%mm within
-   up to
-a few percent of the kinetic energy of the turbulence, while
-stratification about the galactic disc regulates the multi-phase structure of
-the ISM via outflows and inward precipitation. Large-scale shear is required
-for a mean-field dynamo, which continues the growth of the magnetic field to
-energy equipartition with the kinetic energy.  }
+number density $n$, magnetic energy density $e_B$, and azimuthal magnetic field
+$B_y$ from an MHD simulation of SN-driven turbulence and galactic dynamo
+activity \citep{GMK24}.  Turbulence drives a fast small-scale dynamo, which
+generates magnetic fields up to a few percent of the kinetic energy of the
+turbulence, while stratification about the galactic disc regulates the
+multi-phase structure of the ISM via outflows and inward precipitation.
+Large-scale shear is required for a mean-field dynamo, which continues the
+growth of the magnetic field to energy equipartition with the kinetic energy.
+}
 \end{minipage}
 \end{figure}
 %==============================================================================
 
 
-%mm Simulations
-     Our existing simulations, performed
-to sixth-order accuracy, explore many scales of the ISM.  Due to a
-vast range of scalse in space and time, all models,
-%mm
-   whether
-full galaxy or inside star-forming molecular clouds (MC), must exclude
-some physics from their scope.
-Models at kiloparsec scale (see, e.g., Figure~\ref{ISMsim}) of SN-driven turbulence in
-stratified discs with galactic-shear dynamos \citep[e.g.,][]{ GMK24} omit dust
-processing, but acquire the necessary turbulent structure.  Dust would decouple
-from the gas \citep[][]{Mattsson18a} and, because grains are easily charged,
-radiation pressure and Lorentz forces affect its critical distribution
-at MC scale.
+Our existing simulations, performed to sixth-order accuracy, explore many
+scales of the ISM.  Due to a vast range of scalse in space and time, all
+models, whether full galaxy or inside star-forming molecular clouds (MC), must
+exclude some physics from their scope.  Models at kiloparsec scale (see, e.g.,
+Figure~\ref{ISMsim}) of SN-driven turbulence in stratified discs with
+galactic-shear dynamos \citep[e.g.,][]{ GMK24} omit dust processing, but
+acquire the necessary turbulent structure.  Dust would decouple from the gas
+\citep[][]{Mattsson18a} and, because grains are easily charged, radiation
+pressure and Lorentz forces affect its critical distribution at MC scale.
 
 To bridge the gap between scales relevant to dust processing and the numerical
 scales required to model the realistic multi-phase turbulent ISM, we have
 treated dust as a distribution of multiple fluids binned by grain size and
-applied onto prior MHD data
-%mm
-    using the post-processing tool
-\textsc{Paperboats} \citep{Kirchschlager19}. Our
-breakthrough results \citep{KMG24} applied \textsc{Paperboats} to process dust
-on 2D slices taken from
-%mm the 3D MHD \textsc{Pencil Code} \citep{Pencil-Joss} model of
-    3D MHD models of the
-turbulent SN-driven dynamo
-%mm
-    run with the \textsc{Pencil Code} \citep{Pencil-Joss}
-\citep{GMKS21, GMKS22}.  As illustrated in
-Figure~\ref{fig_gsd} the magnetic field has a more significant effect
-%mm
- on dust resilience than expected, even beyond the effects of turbulence.
-%mm than might be expected above that offered by turbulence.
-A comprehensive review of MHD simulations at multiple scales \citep{Whitworth24},
+applied onto prior MHD data using the post-processing tool \textsc{Paperboats}
+\citep{Kirchschlager19}. Our breakthrough results \citep{KMG24} applied
+\textsc{Paperboats} to process dust on 2D slices taken from 3D MHD models of
+the turbulent SN-driven dynamo run with the \textsc{Pencil Code}
+\citep{Pencil-Joss} \citep{GMKS21, GMKS22}.  As illustrated in
+Figure~\ref{fig_gsd} the magnetic field has a more significant effect on dust
+resilience than expected, even beyond the effects of turbulence.  A
+comprehensive review of MHD simulations at multiple scales \citep{Whitworth24},
 exploring correlations between gas number density $n$ and magnetic field
-strength $B$, concludes that \citet{GMK24} obtained $B-n$ relations that are among
-the best match to those from observations.  Large scale dynamo (LSD) and a
-realistic multi-phase ISM are thus critical ingredients.
+strength $B$, concludes that \citet{GMK24} obtained $B-n$ relations that are
+among the best match to those from observations.  Large scale dynamo (LSD) and
+a realistic multi-phase ISM are thus critical ingredients.
 
 \begin{minipage}[h]{0.6\textwidth}
  \begin{center}
-%\begin{figure}
- %\resizebox{0.9\hsize}{!}{\hspace*{-0.6cm}
  \includegraphics[trim=1.9cm 0.6cm 0.35cm 0.2cm,  clip=true, width=\textwidth]{Pics/GrainSizes_04000_800Edi.pdf}
- %}
  \begin{picture}(0,0)
     \put(-139,232){\footnotesize(\textbf{\textsf{a}})}
     \put(   6,232){\footnotesize(\textbf{\textsf{b}})}
@@ -494,30 +391,20 @@ with and without Lorentz force, respectively.  The dust distributions show the
 average density for each grain size in each specimen.  At region ({\textbf{c}})
 significant amount of dust grains are removed or destroyed by the shock while
 at regions ({\textbf{b}}) and ({\textbf{d}}) any change is due to background
-processing (transport and destruction).  }
-  \label{fig_gsd}
-%\end{figure}
+processing (transport and destruction).  } \label{fig_gsd}
 \end{minipage}
 
 \fag{Add here summary of research questions/hypotheses}
 
-The primary research
-%mm questions of the project are
-    goal of the project is
-to quantify the rate at
-which dust is processed by SN blast waves: how this depends on the
-multiphase turbulence of the ISM and on the strength and topology of the
-galactic magnetic field. By including realistic large scale fields and
-large scale galactic topology in increasingly high resolution zoom-ins of the
-ISM we aim to quantify where and when the blast waves are most
-destructive. We shall clarify
-%mm which processes in the ISM are most critical to dust losses and properties and regions of the
-%ISM which most mitigate such losses.
-    what processes and properties promote or mitigate dust loss in different phases of the ISM.
+The primary research goal of the project is to quantify the rate at which dust
+is processed by SN blast waves: how this depends on the multiphase turbulence
+of the ISM and on the strength and topology of the galactic magnetic field. By
+including realistic large scale fields and large scale galactic topology in
+increasingly high resolution zoom-ins of the ISM we aim to quantify where and
+when the blast waves are most destructive. We shall clarify what processes and
+properties promote or mitigate dust loss in different phases of the ISM.
 
-%mm [needs an introductory sentence something like this, revised to
-%suit...]
-    Our primary tool for massively parallel computations on GPUs is
+Our primary tool for massively parallel computations on GPUs is
     the sixth-order MHD code \textsc{Pencil}, as implemented in the Astaroth
     domain-specific language \citep{Astaroth22}, hereafter referred to
     as PC-A, under development at the
