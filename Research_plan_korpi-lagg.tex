@@ -779,22 +779,11 @@ $\bullet$ Code coupling within scales to balance computational load (2-way).
       \ganttbar{PC-A dust}{10}{18}\\
       \ganttmilestone[milestone/.append style={fill=blue}]{\textsc{Dust in PC/PC-A}}{4}
       \ganttmilestone[milestone/.append style={fill=green}]{\textsc{}}{9} \\
-%%-----------------------------------------------------------------------------
-%      \ganttgroup[group/.append style={fill=yellow}]{\wpref{3} (ODOP)}{1}{4}
-%      \ganttgroup[group/.append style={fill=yellow}]{}{12}{17} \\
-%      \ganttbar[bar/.append style={fill=yellow}]{dev. ODOP selection}{1}{4} \\
-%      \ganttbar{ODOP applied}{6}{8} \\
-%      \ganttbar[bar/.append style={fill=yellow}]{ODOP coupling}{12}{14}
-%      \ganttbar{}{15}{17} \\
-%      \ganttmilestone[milestone/.append style={fill=yellow!50}]{publication}{9}
-%      \ganttmilestone[milestone/.append style={fill=yellow!50}]{publication}{16} \\
 %-----------------------------------------------------------------------------
       \ganttgroup[group/.append style={fill=yellow}]{\wpref{3} (Coupling)}{1}{4}
       \ganttgroup[group/.append style={fill=yellow}]{}{10}{18} \\
       \ganttbar[bar/.append style={fill=yellow}]{Dev. coupling PC}{1}{4} \\
       \ganttbar[bar/.append style={fill=yellow}]{GPU/other coupling}{10}{18} \\
-%      \ganttbar{coupling applied}{5}{7}
-%      \ganttbar{}{16}{18} \\
 %-----------------------------------------------------------------------------
       \ganttgroup[group/.append style={fill=green}]{\wpref{4} (GPU)}{5}{9}\\
       \ganttbar[bar/.append style={fill=green}]{Dev. PC-A dust}{5}{9} \\
@@ -824,51 +813,33 @@ Transactions on Automatic Control}}; blue to
 \end{figure}
 %-----------------------------------------------------------------------------
 
-\wpref{3} and \wpref{4} shall provide the framework around which the
-%mm GS thesis
-    student dissertation
-shall develop. Early in \wpref{3} the student shall understand what manual
-management is applied to the selection and management of data for \wpref{1} and
-develop machine management tools to automate and learn these tasks using ODOP.
-The student with the support of the PI and CoI will implement code coupling (\wpref{4})
-between versions of the PC or PC-A to handle differently loaded tasks while
-communicating memory. This may extend to considering alternative uses of idle
-central processors (CPUs) on GPU nodes and designing strategies applying to alternate types of
-processing. Initial methods could rely on manual settings at executions, but
-subsequently the focus shall return to \wpref{3} to implement run-time
-ODOP control and responses to the code coupling to maximize utilization and
-reduce compute times. The support of collaborations in HPCLab and AaltoSEA and
-the Aalto CS Doctoral program shall assist their
-%mm Doctoral
-success
-%mm
-    in completing their doctoral dissertation.
+\wpref{3} and \wpref{4} shall provide the framework around which the student
+dissertation shall develop. Early in \wpref{3} the student shall understand
+what manual management is applied to the selection and management of data for
+\wpref{1} and develop machine management tools to automate and learn these
+tasks using ODOP.  The student with the support of the PI and CoI will
+implement code coupling (\wpref{4}) between versions of the PC or PC-A to
+handle differently loaded tasks while communicating memory. This may extend to
+considering alternative uses of idle central processors (CPUs) on GPU nodes and
+designing strategies applying to alternate types of processing. Initial methods
+could rely on manual settings at executions, but subsequently the focus shall
+return to \wpref{3} to implement run-time ODOP control and responses to the
+code coupling to maximize utilization and reduce compute times. The support of
+collaborations in HPCLab and AaltoSEA and the Aalto CS Doctoral program shall
+assist their success in completing their doctoral dissertation.
 
 %------------------------------------------------------------------------------
 %------------------------------------------------------------------------------
-\wpdef{4}{GPU}{GPU Acceleration}
-\vspace{-0.3cm}
-GPUs can offer a speed up 40--55$\times$ over traditional CPUs
-\citep{Astaroth22},
-%mm  and
-     though
-for applications closer to the setup proposed here
-%mm the \textsc{Pencil Code -- Astaroth} (
-PC-A yields speedup closer to 20$\times$
-in our recent extreme-scale simulations
-%mm applied
-       executed
-on LUMI \citep{GMKPR26} and on
-Frontier
+\wpdef{4}{GPU}{GPU Acceleration} GPUs can offer a speed up 40--55$\times$ over
+traditional CPUs \citep{Astaroth22}, though for applications closer to the
+setup proposed here PC-A yields speedup closer to 20$\times$ in our recent
+extreme-scale simulations executed on LUMI \citep{GMKPR26} and on Frontier
 (\href{https://www.olcf.ornl.gov/2025/04/11/incite-2026-call-for-proposals/}{2026
-  INCITE call}).
-%mm This utilizes the higher
-     PC-A uses the high-level
-functionality of
-\textsc{Pencil Code} to compute and write diagnostics using idle CPUs while the
-GPU solves the equations.  A simple speedup in this project is anticipated by
-integrating \textsc{Paperboats} into PC-A.  Some operations are less efficient
-on GPUs, such as solving FFTs. CPUs may therefore be better suited to solving
+INCITE call}).  PC-A uses the high-level functionality of \textsc{Pencil Code}
+to compute and write diagnostics using idle CPUs while the GPU solves the
+equations.  A simple speedup in this project is anticipated by integrating
+\textsc{Paperboats} into PC-A.  Some operations are less efficient on GPUs,
+such as solving FFTs. CPUs may therefore be better suited to solving
 self-gravity. Code coupling between GPU and CPU solvers, coupling nodes of
 different type as required, shall be employed to distribute relevant
 calculation tasks optimally and faster.
@@ -878,7 +849,7 @@ Deliveries and expected results:
 $\bullet$~\textsc{Paperboats} implemented into highly scalable PC-A.
 \tabto{0em}
 $\bullet$ Code coupling between GPU and CPU solvers.
-%------------------------------------------------------------------------------
+
 %------------------------------------------------------------------------------
 \subsection{Research data and material, methods and research environment}
 
