@@ -853,65 +853,48 @@ $\bullet$ Code coupling between GPU and CPU solvers.
 %------------------------------------------------------------------------------
 \subsection{Research data and material, methods and research environment}
 
-The
-%mm research
-    simulation
-data is mainly
-%mm simulated in HDF5 or ASCII form of TB scale, although some
-    generated in HDF5 form for field data of TB scale and ASCII for
-    integrated quantities over time.
-Astrophysical observational data may be analyzed alongside our generated data for
-scientific publication. We also produce and utilize open source numerical codes
-and additional open source software tools for code integrations, management
-pipelines, and data analysis. The primary code milestones of this project will include: the implementation of
-Paperboats advanced dust processing physics into
-%mm the Pencil Code and Astaroth
-   PC-A
-for accelerated
-parallel 3D integration; code coupling machinery for running multiple versions of PC/PC-A or to match
-difficult combinations of scales and physics; automation to support
-code coupling and simulation management.
+The simulation data is mainly generated in HDF5 form for field data of TB scale
+and ASCII for integrated quantities over time.  Astrophysical observational
+data may be analyzed alongside our generated data for scientific publication.
+We also produce and utilize open source numerical codes and additional open
+source software tools for code integrations, management pipelines, and data
+analysis. The primary code milestones of this project will include: the
+implementation of Paperboats advanced dust processing physics into PC-A for
+accelerated parallel 3D integration; code coupling machinery for running
+multiple versions of PC/PC-A or to match difficult combinations of scales and
+physics; automation to support code coupling and simulation management.
 
-The main research environment is the Department of Computer Science (hereafter Aalto/CS) at the
-Aalto University School of Science. With over 40 professors and more than 400 employees, the
-department is the largest Computer Science unit in Finland. It is ranked among the top 10 Computer
-Science departments in Europe and among the top 100 globally.
-%mm ICT
-    Information and communications technology
-and digitalization are among
-the seven key research areas at
-%mm Aalto University
-   Aalto/CS. In addition to standard resources provided by the
-department, there is support for midrange HPC and data analytics through the Science-IT project of
-the Aalto University School of Science. Science-IT and its ﬂagship HPC unit Triton, are a part of the
-national Finnish Computing Competence Infrastructure (FCCI). Currently, Triton provides 9600
-computing cores and over 30 servers for high-end GPU computing. For in-depth research methods
-and software development, Science-IT provides support from research software engineers.
-Researchers also have free access to national CSC resources, including the supercomputers Puhti
-and Mahti, as well as the cloud resources Rahti and CPouta. The teams also have access to Europe’s
-most powerful GPU-based supercomputer LUMI through competitive computing time allocations
-via the Euro-HPC consortium.
-%mm The consortium
-     Our collaboration
-has an outstanding track record of obtaining
-competitive computational resources through the Partnership for Advanced Computing in Europe
-(PRACE), EuroHPC, and CSC.
+The main research environment is the Department of Computer Science (hereafter
+Aalto/CS) at the Aalto University School of Science. With over 40 professors
+and more than 400 employees, the department is the largest Computer Science
+unit in Finland. It is ranked among the top 10 Computer Science departments in
+Europe and among the top 100 globally.  Information and communications
+technology and digitalization are among the seven key research areas at
+Aalto/CS. In addition to standard resources provided by the department, there
+is support for midrange HPC and data analytics through the Science-IT project
+of the Aalto University School of Science. Science-IT and its ﬂagship HPC unit
+Triton, are a part of the national Finnish Computing Competence Infrastructure
+(FCCI). Currently, Triton provides 9600 computing cores and over 30 servers for
+high-end GPU computing. For in-depth research methods and software development,
+Science-IT provides support from research software engineers.  Researchers also
+have free access to national CSC resources, including the supercomputers Puhti
+and Mahti, as well as the cloud resources Rahti and CPouta. The teams also have
+access to Europe’s most powerful GPU-based supercomputer LUMI through
+competitive computing time allocations via the Euro-HPC consortium.  Our
+collaboration has an outstanding track record of obtaining competitive
+computational resources through the Partnership for Advanced Computing in
+Europe (PRACE), EuroHPC, and CSC.
 
-The research infrastructure extends to mature long-term collaborations between the
-PI, CoI and AaltoHPC on MHD and galaxy modelling with New York and Victoria collaborators
-and the CoI on dust processing with the Stockholm and Ghent collaborators.
+The research infrastructure extends to mature long-term collaborations between
+the PI, CoI and AaltoHPC on MHD and galaxy modelling with New York and Victoria
+collaborators and the CoI on dust processing with the Stockholm and Ghent
+collaborators.
 
 
-The PI shall have responsibility for
-%mm \wpref{5} [this doesn't exist.  I'm guessing you mean:
-    \wpref{4}
-and its integration within the
-%mm proposal,
-     project
-together with the HPCLab collaboration. This is an
-extension of new physics to existing PC-A, which complements the outcomes in
-\wpref{1} and \wpref{2}, which shall lead to a substantial speed up of the
-calculations.
+The PI and CoI shall have responsibility for \wpref{4} and its integration
+within the project together with the HPCLab team. This is an extension of new
+physics to existing PC-A, which complements the outcomes in \wpref{1} and
+\wpref{2}, which shall lead to a substantial speed up of the calculations.
 
 \begin{tabular}{|m{4.0cm}|m{5.3cm}|m{7.0cm}|}
 \hline
@@ -926,57 +909,42 @@ Collaborator & Institute & Role \\
 \hline
 \end{tabular}
 
-The Principal Investigator (PI) Maarit Korpi-Lagg\href{https://orcid.org/0000-0002-9614-2200}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}}
+The Principal Investigator (PI) Maarit
+Korpi-Lagg\href{https://orcid.org/0000-0002-9614-2200}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}}
 (over 4,800 citations and h-index of 39 according to Google Scholar), is a
-tenured associate professor at Aalto CS, where she leads the High-Performance Computing Lab. She
-was the grant holder of the ERC Consolidator grant "UniSDyn" and the ERC Proof of-concept grant
-“SYCOS”,
-%mm which projects
-   projects that
-studied dynamo action in solar and stellar convection zones. She acted as a
-team leader of the Academy of Finland Centre of Excellence “ReSoLVE” (2014-2019), which studied
-long-term solar magnetic activity and its eﬀects on Earth. She has acted as a PI of several
-competitive HPC projects (LUMI-C and LUMI-G Finnish project allocations, PRACE, DEISA/DECI, CSC
-Grand Challenge), and is a core developer of the Pencil Code Multiphysics Solver [8] for high-order
-stencil-based applications, and the initiator and project leader of the GPU-based MHD solver
+tenured associate professor at Aalto CS, where she leads the High-Performance
+Computing Lab. She was the grant holder of the ERC Consolidator grant "UniSDyn"
+and the ERC Proof of-concept grant “SYCOS”, projects that studied dynamo action
+in solar and stellar convection zones. She acted as a team leader of the
+Academy of Finland Centre of Excellence “ReSoLVE” (2014-2019), which studied
+long-term solar magnetic activity and its eﬀects on Earth. She has acted as a
+PI of several competitive HPC projects (LUMI-C and LUMI-G Finnish project
+allocations, PRACE, DEISA/DECI, CSC Grand Challenge), and is a core developer
+of the Pencil Code Multiphysics Solver [8] for high-order stencil-based
+applications, and the initiator and project leader of the GPU-based MHD solver
 Astaroth.
 
-The Co-Investigator
-(CoI) Frederick
+The Co-Investigator (CoI) Frederick
 Gent\href{https://orcid.org/0000-0002-1331-2260}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}}
-%mm has been
-     was
-a Research Fellow at
-%mm the Aalto Computer Science Department
-    Aalto/CS
-until March 2025 and since November 2023
-%mm
-    has been
-employed as Assistant Professor at Nordita, Stockholm, under the five-year Swedish Research Council grant no. 2022-03767.
-The responsibilities and research plan of the doctoral student recruit shall match
-their strengths and thesis goals best suited to the project.
+was a Research Fellow at Aalto/CS until March 2025 and since November 2023 has
+been employed as Assistant Professor at Nordita, Stockholm, under the five-year
+Swedish Research Council grant no. 2022-03767.  The responsibilities and
+research plan of the doctoral student recruit shall match their strengths and
+thesis goals best suited to the project.
 
 The research environment at Aalto/CS is highly conducive to success of the
 project, with groups invested in HPC and machine learning tools, as well as an
-international reputation for excellence in computer science.
-The Nordic Institute for
-Theoretical Physics (\href{https://nordita.org/}{\textbf{Nordita}})
-also has an international reputation for excellence in
-astrophysics.
-%mm , and the
-    The
-CoI and PI are actively pursuing opportunities to further
-enhance the Swedish funding for the joint project with the Swedish Space
-Science Agency and foundations.  Finnish collaborations include
-Prof.~Korpi-Lagg's
+international reputation for excellence in computer science.  The Nordic
+Institute for Theoretical Physics
+(\href{https://nordita.org/}{\textbf{Nordita}}) also has an international
+reputation for excellence in astrophysics.  The CoI and PI are actively
+pursuing opportunities to further enhance the Swedish funding for the joint
+project with the Swedish Space Science Agency and foundations.  Finnish
+collaborations include Prof.~Korpi-Lagg's
 \href{https://www.aalto.fi/en/department-of-computer-science?check_logged_in=1}{\textbf{HPCLab}}
 and Prof.~Truong's \href{https://rdsea.github.io/}{\textbf{AaltoSEA}} research
 groups combining expertise in HPC, service engineering analytics of distributed
 software systems, big data applications and machine learning tools.
-
-%\vspace{-0.6cm}
-\vspace{-0.2cm}
-
 
 \section{Responsible science}
 
@@ -1023,8 +991,8 @@ code policy will be adopted. Services like Zenodo and FAIRdata IDA will be
 utilised for opening up data products ranging from the data to reproduce all
 the ﬁgures, to intermediate and selected raw data products for reproducibility
 and reusability of the results. All the simulation and data analysis tools are
-developed as open source, available and continuously maintained on GitHub
-and Bitbucket repositories.
+developed as open source, available and continuously maintained on GitHub and
+Bitbucket repositories.
 
 Our simulation and data analysis tools are being developed to work generally on
 GPUs and hence are energy-eﬃcient in comparison to standard CPU computing.
