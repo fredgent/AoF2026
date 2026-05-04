@@ -341,8 +341,8 @@ growth of the magnetic field to energy equipartition with the kinetic energy.
 %==============================================================================
 
 
-Our existing simulations, performed to sixth-order accuracy, explore many
-scales of the ISM.  Due to a vast range of scalse in space and time, all
+Our existing simulations, performed to sixth-order spatial accuracy, explore many
+scales of the ISM.  Due to a vast range of scales in space and time, all
 models, whether full galaxy or inside star-forming molecular clouds (MC), must
 exclude some physics from their scope.  Models at kiloparsec scale (see, e.g.,
 Figure~\ref{ISMsim}) of SN-driven turbulence in stratified discs with
@@ -405,7 +405,9 @@ properties promote or mitigate dust loss in different phases of the ISM.
 
 Our primary tool for massively parallel computations on GPUs is the sixth-order
 MHD code \textsc{Pencil}, as implemented in the Astaroth domain-specific
-language \citep{Astaroth22}, hereafter referred to as PC-A, under development
+language \citep{Astaroth22}, 
+%MR: better: "accelerated by the Astaroth framework \citep{..."
+hereafter referred to as PC-A, under development
 at the Aalto
 \href{https://www.aalto.fi/en/department-of-computer-science/hpclab}{\textbf{HPCLab}}.
 The suitability of this project for international collaboration in HPC has been
@@ -416,8 +418,8 @@ processing, which at low Stokes numbers can require higher time resolution, and
 large scale dynamos, which require larger domains and much longer integration
 duration.  Acceleration with GPUs on LUMI is critical to the feasibility of
 such studies.  The PC-A code has obtained over 20 times speed-up compared to
-the Pencil Code on CPU alone.  It has performed reliably and stably with weak
-scaling approaching a constant execution time up to 4096 GPU cores on Frontier.
+the Pencil Code on CPUs alone.  It has performed reliably and stably with weak
+scaling approaching a constant execution time up to 4096 GPU cores on Frontier.  %MR: "GPU cores" uncommon, simply "GPUs"
 
 It is a primary focus of this project to bring together two or more codes, or
 instances of the same code, working on related but distinct physics. The
@@ -459,10 +461,10 @@ significant at typical MC scales (10--20~pc).
 $\bullet$ {\textit{Coulomb forces:}} Electrically charged dust affected in a
 plasma
 \tabto{0em}
-$\bullet$ {\textit{Lorentz forces:}} Dynamo-generated magnetic fields exert
+$\bullet$ {\textit{Lorentz forces:}} Dynamo-generated magnetic fields exerting
 forces on charged grains.
 \tabto{0em}
-$\bullet$ {\textit{Self-gravity:}} High cold cloud densities high act on
+$\bullet$ {\textit{Self-gravity:}} High cold cloud densities high act on   %MR: double "high"?
 decoupled grains, affecting dust clustering.
 \tabto{0em}
 $\bullet$ {\textit{Radiation pressure:}} Monochromatic proxy prior to SN
@@ -474,7 +476,7 @@ functions in MHD simulations.
 
 Effective implementation of the EMS approach will require replacing manual
 inspection of data, typically archived to disk after run completion, with
-machine tools accessing the data in memory at run time, sharing idle
+machine tools accessing the data in memory at run time, sharing idle     %MR: machine learning tools?
 processors.  We require that highly scalable and efficient algorithms inspect
 the data while simulations continue to advance.  Selection of subdomains then
 also shall advance from manual to automated extraction of the domain and setup
@@ -498,7 +500,7 @@ $\bullet$ {\textit{Code coupling:}} Adaptive resource and communication
 management of coupled simulations.
 \tabto{0em}
 $\bullet$ {\textit{On-the-fly-diagnostics:}} running diagnostics concurrently
-with the simulations (using ODOP).
+with the simulations (using ODOP).   %MR: ODOP needs reference here
 \tabto{0em}
 $\bullet$ {\textit{Node management:}} Concurrent computation, memory transfers,
 and diagnostics.
@@ -598,7 +600,7 @@ and interpolated from its larger domain. The span between macro and micro
 scales is too large to bridge in one step. With each increase in resolution
 additional physics can be considered, such as self-gravity or stellar radiation
 and, eventually, dust.  Applying the same such machinery with respect to other
-codes, we aim in future to embed our largest scale dynamo models in galaxy
+codes, we aim in the future to embed our largest scale dynamo models in galaxy
 scale models using codes used by our Victoria collaborators such as
 \textsc{Arepo} or \textsc{ChaNGa} \citep{Babul21L,Babul21a}, to capture even
 larger scale structure of the ISM magnetic field.
@@ -659,13 +661,13 @@ $\bullet$~Models of gas-dust distribution and $B$--$n$ correlations in ISM envir
 \tabto{0em}
 $\bullet$~Hand setting $\mathcal{D}_n$ \& boundary conditions superseded by pipeline tools (see \wpref{3}).
 \tabto{0em}
-$\bullet$~Post-processed dust (\textsc{PAPERBOATS}) superseded by integral \textsc{Pencil Code}
- (\wpref{2}) and graphics cards (GPU)-accelerated sub-physics and dust (\wpref{4}).
+$\bullet$~Post-processed dust (\textsc{PAPERBOATS}) superseded by integral \textsc{Pencil Code} %MR: integral PC - meaning?
+ (\wpref{2}) and GPU-accelerated sub-physics and dust (\wpref{4}).
 %------------------------------------------------------------------------------
 
 \wpdef{2}{Dust}{Dust processing}
 \textsc{Paperboats} shall be applied to new \textit{multiscale} simulations
-over a wider range of ISM environments, while being fully implemented into the
+over a wider range of ISM environments, while being fully implemented into the  %MR: how will Paperboats be implemented in PC?
 efficiently parallel, sixth-order \textsc{Pencil Code}.  Greater acceleration
 shall be achieved by integration into the GPU-accelerated PC-A.  Code coupling
 of MHD and dust modeling will be developed to address differences in timescales
@@ -724,11 +726,11 @@ interface (MPI).  Additional physics, such as dust, cooling or self-gravity,
 necessitate diverging timescales or computational load.  Code coupling enhanced
 by machine learning could gain speed by balancing load and available resources
 by minimizing redundant communication.  We have access to cutting-edge
-machine-learning tools for ODOP \citep{odop24} to analyze the data to identify
+machine-learning tools for ODOP \citep{odop24} to analyze the data to identify   %MR: for ODOP -> for use with ODOP ?
 regions or patterns of interest and extract a suitable subdomain from which to
 launch new experiments.  This work is at the frontier of computer science, in
 which HPCLab and \href{https://rdsea.github.io/}{\textbf{AaltoSEA}} are heavily
-invested Applications using large data, such as those proposed here, are
+invested applications using large data, such as those proposed here, are
 critical for their development.
 
 The basic machinery for coupling multiple versions of the code or with other
