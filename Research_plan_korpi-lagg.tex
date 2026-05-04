@@ -603,18 +603,20 @@ the large-scale MHD flow phenomena via \textit{boundary conditions} inherited
 and interpolated from its larger domain. The span between macro and micro
 scales is too large to bridge in one step. With each increase in resolution
 additional physics can be considered, such as self-gravity or stellar radiation
-and, eventually, dust.  Applying the same such machinery with respect to other
-codes, we aim in the future to embed our largest scale dynamo models in galaxy
-scale models using codes used by our Victoria collaborators such as
-\textsc{Arepo} or \textsc{ChaNGa} \citep{Babul21L,Babul21a}, to capture even
-larger scale structure of the ISM magnetic field.
-%%%%mm [How will you couple from structured to unstructured mesh in
-%%%%Arepo, or to SPH in ChaNGa? That sounds like a quick ding from a
-%%%%referee if you don't address it explicitly.]
+and, eventually, dust.  
 EMS is not an entirely new concept \citep{EMS2023,EMS2024}, but offers an
 innovative means to perform the required simulations for our science goals.
 
-%mm [placing flowchart next to description]
+Applying the same such machinery with respect to other
+codes, we aim in the to embed our largest scale dynamo models in galaxy
+scale models using codes used by our Victoria collaborators such as
+\textsc{Arepo} or \textsc{ChaNGa} \citep{Babul21L,Babul21a}, to capture even
+larger scale structure of the ISM magnetic field.
+Selecting suitable subdomains within such full-galaxy simulations, we shall 
+map critical variables from the unstructured subdomain onto a matching 
+structured coarse grid. This shall be updated as required to host the 
+higher resolution multiphase ISM dynamo simulations.
+
 \begin{minipage}[h]{0.6\textwidth}
     \centering
 
@@ -893,29 +895,12 @@ collaboration has an outstanding track record of obtaining competitive
 computational resources through the Partnership for Advanced Computing in
 Europe (PRACE), EuroHPC, and CSC.
 
-The research infrastructure extends to mature long-term collaborations between
-the PI, CoI and AaltoHPC on MHD and galaxy modelling with New York and Victoria
-collaborators and the CoI on dust processing with the Stockholm and Ghent
-collaborators.
+\subsection{High-performance computing resources}
 
 
-The PI and CoI shall have responsibility for \wpref{4} and its integration
-within the project together with the HPCLab team. This is an extension of new
-physics to existing PC-A, which complements the outcomes in \wpref{1} and
-\wpref{2}, which shall lead to a substantial speed up of the calculations.
+\subsection{Risk assessment and alternative implementation strategies}
 
-\begin{tabular}{|m{4.0cm}|m{5.3cm}|m{7.0cm}|}
-\hline
-Collaborator & Institute & Role \\
-\hline
-\href{https://nordita.org/people/nordita-person/lars-mattsson}{{Lars Mattsson}}\href{https://orcid.org/0000-0003-2670-2513}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & Nordita \& Stockholm University & Modeling dust processing dynamics \\[0.1cm]
-\href{https://kirchschlager.github.io/}{{Florian Kirchschlager}}\href{https://orcid.org/0000-0002-3036-0184}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & Ghent University & Modeling dust processing dynamics \\[0.1cm]
-\href{https://www.uvic.ca/research/centres/arc/people/faculty/babul-arif.php}{{Arif Babul}}\href{https://orcid.org/0000-0003-1746-9529}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & University of Victoria & Galaxy evolution and composition \\[0.1cm]
-%\href{https://science.gsfc.nasa.gov/astrophysics/cosmology/bio/eliahu.dwek-1}{{Eli Dwek??}}\href{https://orcid.org/0000-0001-8033-1181}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & NASA Emeritus Professor & Supernova Remnants \& ISM and Dust \\[0.1cm]
-\href{https://www.amnh.org/research/staff-directory/mordecai-mark-mac-low}{Mordecai-M Mac Low}\href{https://orcid.org/0000-0003-0064-4060}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & American Museum of Natural History, New York & Modeling astrophysical turbulence and physics of molecular clouds \\[0.4cm]
-\href{https://www.aalto.fi/en/people/linh-truong?check_logged_in=1}{Hong-Linh Truong}\href{https://orcid.org/0000-0003-1465-9722}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & Aalto University & analytics of distributed software systems, big data applications \& machine learning tools (ODOP)\\[0.4cm]
-\hline
-\end{tabular}
+\subsection{Project personnel and their project-relevant key merits}
 
 The Principal Investigator (PI) Maarit
 Korpi-Lagg\href{https://orcid.org/0000-0002-9614-2200}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}}
@@ -930,15 +915,15 @@ PI of several competitive HPC projects (LUMI-C and LUMI-G Finnish project
 allocations, PRACE, DEISA/DECI, CSC Grand Challenge), and is a core developer
 of the Pencil Code Multiphysics Solver [8] for high-order stencil-based
 applications, and the initiator and project leader of the GPU-based MHD solver
-Astaroth.
-
-The Co-Investigator (CoI) Frederick
-Gent\href{https://orcid.org/0000-0002-1331-2260}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}}
-was a Research Fellow at Aalto/CS until March 2025 and since November 2023 has
-been employed as Assistant Professor at Nordita, Stockholm, under the five-year
-Swedish Research Council grant no. 2022-03767.  The responsibilities and
-research plan of the doctoral student recruit shall match their strengths and
-thesis goals best suited to the project.
+Astaroth. The PI shall have responsibility for recruitment and supervison of
+the Graduate Student (GS) and the integration of \wpref{3} and \wpref{4} within
+the HPCLab team.  The PI's
+\href{https://www.aalto.fi/en/department-of-computer-science?check_logged_in=1}{\textbf{HPCLab}}
+has collaborated with Prof.~Truong's
+\href{https://rdsea.github.io/}{\textbf{AaltoSEA}} research group on the
+development and application of ODOP, and has expertise in HPC, service
+engineering analytics of distributed software systems, big data applications
+and machine learning tools.
 
 The research environment at Aalto/CS is highly conducive to success of the
 project, with groups invested in HPC and machine learning tools, as well as an
@@ -948,11 +933,32 @@ Institute for Theoretical Physics
 reputation for excellence in astrophysics.  The CoI and PI are actively
 pursuing opportunities to further enhance the Swedish funding for the joint
 project with the Swedish Space Science Agency and foundations.  Finnish
-collaborations include Prof.~Korpi-Lagg's
-\href{https://www.aalto.fi/en/department-of-computer-science?check_logged_in=1}{\textbf{HPCLab}}
-and Prof.~Truong's \href{https://rdsea.github.io/}{\textbf{AaltoSEA}} research
-groups combining expertise in HPC, service engineering analytics of distributed
-software systems, big data applications and machine learning tools.
+collaborations include 
+
+The Co-Investigator (CoI) Frederick
+Gent\href{https://orcid.org/0000-0002-1331-2260}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}}
+was a Research Fellow at Aalto/CS until March 2025 and since November 2023 has
+been employed as Assistant Professor at Nordita, Stockholm, under the five-year
+Swedish Research Council grant no. 2022-03767.  The CoI will be the  
+thesis advisor for the GS and responsible for implementation of \wpref{1} with Arif Banul \&
+Mordecai-Mark Mac Low and \wpref{2} with Lars Mattsson \& Florian Kirchschlager.
+The CoI has managed three Grand Challenge projects around galactic large-scale dynamos on CSC since 2009 
+and on LUMI led a 2025 Extreme Scale campaign and on Frontier (USA) is running a 2026 Incite
+project both relating to the galactic small-scale dynamo.
+
+
+\begin{tabular}{|m{4.0cm}|m{5.3cm}|m{7.0cm}|}
+\hline
+Collaborator & Institute & Role \\
+\hline
+\href{https://nordita.org/people/nordita-person/lars-mattsson}{{Lars Mattsson}}\href{https://orcid.org/0000-0003-2670-2513}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & Nordita \& Stockholm University & Modeling dust processing dynamics \\[0.1cm]
+\href{https://kirchschlager.github.io/}{{Florian Kirchschlager}}\href{https://orcid.org/0000-0002-3036-0184}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & Ghent University & Modeling dust processing dynamics \\[0.1cm]
+\href{https://www.uvic.ca/research/centres/arc/people/faculty/babul-arif.php}{{Arif Babul}}\href{https://orcid.org/0000-0003-1746-9529}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & University of Victoria & Galaxy evolution and composition \\[0.1cm]
+%\href{https://science.gsfc.nasa.gov/astrophysics/cosmology/bio/eliahu.dwek-1}{{Eli Dwek??}}\href{https://orcid.org/0000-0001-8033-1181}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & NASA Emeritus Professor & Supernova Remnants \& ISM and Dust \\[0.1cm]
+\href{https://www.amnh.org/research/staff-directory/mordecai-mark-mac-low}{Mordecai-M Mac Low}\href{https://orcid.org/0000-0003-0064-4060}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & American Museum of Natural History, New York & Modeling astrophysical turbulence and physics of molecular clouds \\[0.4cm]
+%\href{https://www.aalto.fi/en/people/linh-truong?check_logged_in=1}{Hong-Linh Truong}\href{https://orcid.org/0000-0003-1465-9722}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}} & Aalto University & analytics of distributed software systems, big data applications \& machine learning tools (ODOP)\\[0.4cm]
+\hline
+\end{tabular}
 
 \section{Responsible science}
 
