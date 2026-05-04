@@ -405,7 +405,7 @@ properties promote or mitigate dust loss in different phases of the ISM.
 
 Our primary tool for massively parallel computations on GPUs is the sixth-order
 MHD code \textsc{Pencil}, as implemented in the Astaroth domain-specific
-language \citep{Astaroth22}, 
+language \citep{Astaroth22},
 %MR: better: "accelerated by the Astaroth framework \citep{..."
 hereafter referred to as PC-A, under development
 at the Aalto
@@ -476,8 +476,11 @@ functions in MHD simulations.
 
 Effective implementation of the EMS approach will require replacing manual
 inspection of data, typically archived to disk after run completion, with
-machine tools accessing the data in memory at run time, sharing idle     %MR: machine learning tools?
-processors.  We require that highly scalable and efficient algorithms inspect
+machine learning tools accessing the data in memory at run time, sharing idle     %MR: machine learning tools?
+processors.
+Existing applications involve identifying a maximum density and zooming in around the neighbourhood, or a more complex algorithm to identify clusters of high
+density in which star formation may be expected and
+ We require that highly scalable and efficient algorithms inspect
 the data while simulations continue to advance.  Selection of subdomains then
 also shall advance from manual to automated extraction of the domain and setup
 of simulation parameters and execution.  We plan to run the simulations
