@@ -454,7 +454,8 @@ inspection of data, typically archived to disk after run completion, with
 machine learning tools accessing the data in memory at run time, sharing idle
 processors.  Existing applications involve identifying a maximum density and
 zooming in around the neighbourhood, or a more complex algorithm to identify
-clusters of high density in which star formation may be expected and We require
+clusters of high density in which star formation may be expected and within a
+time frame determined by its freefall time. We require
 that highly scalable and efficient algorithms inspect the data while
 simulations continue to advance.  Selection of subdomains then also shall
 advance from manual to automated extraction of the domain and setup of
@@ -523,11 +524,15 @@ $\bullet$ {\textit{GPU acceleration:}} Dust processing, radiation, and
 self-gravity added to MHD on GPUs.
    }
 
-Ultimately, the primary scientific impact of the project shall be to extend our understanding of
-the processing of cosmic dust by supernovae and to accurately relate cosmic dust abundances 
-to star formation rates. By matching the most advance modelling of dust processing in the ISM with
-realistic multiphase ISM turbulence and magnetic field strength and topology we expect to better
-\fag{Finish this paragraph}
+Primarily, the scientific impact of the project shall be to extend our
+understanding of the processing of cosmic dust by supernovae and to accurately
+relate cosmic dust abundances to star formation rates. The comprehensive
+treatment of dust processing available through Paperboats and its incorporation
+directly into the Pencil Code and PC-A applied to realistic multiphase ISM
+turbulence provides a more accurate statistical correlation between various
+dust grain sizes and gas abundances. From this we propose to provide the most
+reliable model for dust composition and distribution in galaxies according the
+age, location and magnetic field topology.
 
 
 \section{Implementation}
@@ -608,7 +613,7 @@ the large-scale MHD flow phenomena via \textit{boundary conditions} inherited
 and interpolated from its larger domain. The span between macro and micro
 scales is too large to bridge in one step. With each increase in resolution
 additional physics can be considered, such as self-gravity or stellar radiation
-and, eventually, dust.  
+and, eventually, dust.
 EMS is not an entirely new concept \citep{EMS2023,EMS2024}, but offers an
 innovative means to perform the required simulations for our science goals.
 
@@ -617,9 +622,9 @@ codes, we aim in the to embed our largest scale dynamo models in galaxy
 scale models using codes used by our Victoria collaborators such as
 \textsc{Arepo} or \textsc{ChaNGa} \citep{Babul21L,Babul21a}, to capture even
 larger scale structure of the ISM magnetic field.
-Selecting suitable subdomains within such full-galaxy simulations, we shall 
-map critical variables from the unstructured subdomain onto a matching 
-structured coarse grid. This shall be updated as required to host the 
+Selecting suitable subdomains within such full-galaxy simulations, we shall
+map critical variables from the unstructured subdomain onto a matching
+structured coarse grid. This shall be updated as required to host the
 higher resolution multiphase ISM dynamo simulations.
 
 \begin{minipage}[h]{0.6\textwidth}
@@ -922,7 +927,7 @@ of the Pencil Code Multiphysics Solver [8] for high-order stencil-based
 applications, and the initiator and project leader of the GPU-based MHD solver
 Astaroth. The PI shall have responsibility for recruitment and supervison of
 the Graduate Student (GS) and the integration of \wpref{3} and \wpref{4} within
-the HPCLab team.  
+the HPCLab team.
 %The PI's
 %\href{https://www.aalto.fi/en/department-of-computer-science?check_logged_in=1}{\textbf{HPCLab}}
 %has collaborated with Prof.~Truong's
@@ -961,7 +966,7 @@ Distinguished Professor in galaxy evolution and composition.  Arif has experise
 in numerical modeling of galaxy evolution and shall contribute to \wpref{1},
 providing subdomain data from galaxy formation simulations for galactic dynamo
 models and coauthoring publication of MHD \wpref{1} and dust \wpref{2}
-simulation results. 
+simulation results.
 
 \textbf{\href{https://www.amnh.org/research/staff-directory/mordecai-mark-mac-low}{Mordecai-M
 Mac Low}, American Museum of Natural History, New York,
@@ -988,7 +993,7 @@ Heisenberg Fellow recently awarded at Hamburg Unversity, Florian is an
 expert on cosmic dust processing, author of the Paperboats Code and a regular
 collaborator of the CoI. Florian will assist the implemenation of Paperboats
 functionality into the Pencil Code and PC-A dust modules \wpref{2} \&
-\wpref{4} and coauthor publications on \wpref{2}. 
+\wpref{4} and coauthor publications on \wpref{2}.
 
 
 
