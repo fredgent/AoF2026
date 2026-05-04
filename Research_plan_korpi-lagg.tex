@@ -785,8 +785,8 @@ $\bullet$ Code coupling within scales to balance computational load (2-way).
       \ganttbar{$R_1\rightarrow R_n$}{1}{4}\\
       \ganttbar{Coupled $R_1\rightarrow R_n$}{6}{18}\\
       \node (a) [fill=blue,draw,anchor=east] at ([xshift=4.6cm]current bounding box.0){MHD-Dust applications};
-      \node (b) [fill=yellow,draw,anchor=west] at ([yshift=-0.8cm]a.west){Toolkit development};
-      \node (c) [fill=green,draw,anchor=west] at ([yshift=-0.8cm]b.west){GPU-PC-Toolkit integration};
+      \node (b) [fill=green,draw,anchor=west] at ([yshift=-0.8cm]a.west){GPU-PC-Toolkit integration};
+      \node (c) [fill=yellow,draw,anchor=west] at ([yshift=-0.8cm]b.west){Toolkit development};
 %-----------------------------------------------------------------------------
       \ganttgroup{\wpref{2} (Dust)}{1}{18} \\
       \ganttbar{\textsc{Paperboats dust}}{1}{4} \\
@@ -800,8 +800,8 @@ $\bullet$ Code coupling within scales to balance computational load (2-way).
       \ganttbar[bar/.append style={fill=yellow}]{Dev. coupling PC}{1}{4} \\
       \ganttbar[bar/.append style={fill=yellow}]{GPU/other coupling}{10}{18} \\
 %-----------------------------------------------------------------------------
-      \ganttgroup[group/.append style={fill=green}]{\wpref{4} (GPU)}{5}{9}\\
-      \ganttbar[bar/.append style={fill=green}]{Dev. PC-A dust}{5}{9} \\
+      \ganttgroup[group/.append style={fill=green}]{\wpref{4} (GPU)}{1}{5}\\
+      \ganttbar[bar/.append style={fill=green}]{Dev. PC-A dust}{1}{5} \\
       \ganttmilestone[milestone/.append style={fill=blue!50}]{Publications}{4}
       \ganttmilestone[milestone/.append style={fill=blue!50}]{}{9}
       \ganttmilestone[milestone/.append style={fill=blue!50}]{}{18}
