@@ -450,6 +450,23 @@ machinery to support their synthesis.
 }
 
 \fag{add scientific impact and goals of the simulations}
+
+Effective implementation of the EMS approach will require replacing manual
+inspection of data, typically archived to disk after run completion, with
+machine learning tools accessing the data in memory at run time, sharing idle
+processors.  Existing applications involve identifying a maximum density and
+zooming in around the neighbourhood, or a more complex algorithm to identify
+clusters of high density in which star formation may be expected and We require
+that highly scalable and efficient algorithms inspect the data while
+simulations continue to advance.  Selection of subdomains then also shall
+advance from manual to automated extraction of the domain and setup of
+simulation parameters and execution.  We plan to run the simulations
+simultaneously, developing tools to manage communication across the nodes and
+distribute resources efficiently between the simulations, potentially extending
+to a hierarchy of simultaneous EMS, rather than coupling between simulations
+consecutively with boundary conditions saved to disk for use later by the
+subdomain.
+
 \answer{
 The critical advance to application science envisaged here is to model physics,
 previously mutually exclusive due to differences in scale, but essential to
@@ -464,8 +481,8 @@ plasma
 $\bullet$ {\textit{Lorentz forces:}} Dynamo-generated magnetic fields exerting
 forces on charged grains.
 \tabto{0em}
-$\bullet$ {\textit{Self-gravity:}} High cold cloud densities high act on   %MR: double "high"?
-decoupled grains, affecting dust clustering.
+$\bullet$ {\textit{Self-gravity:}} Cold cloud high densities act on decoupled
+grains, affecting dust clustering.
 \tabto{0em}
 $\bullet$ {\textit{Radiation pressure:}} Monochromatic proxy prior to SN
 explosions.
@@ -474,22 +491,18 @@ $\bullet$ {\textit{Dust cooling:}} Supersede gas temperature-dependent cooling
 functions in MHD simulations.
   }
 
-Effective implementation of the EMS approach will require replacing manual
-inspection of data, typically archived to disk after run completion, with
-machine learning tools accessing the data in memory at run time, sharing idle     %MR: machine learning tools?
-processors.
-Existing applications involve identifying a maximum density and zooming in around the neighbourhood, or a more complex algorithm to identify clusters of high
-density in which star formation may be expected and
- We require that highly scalable and efficient algorithms inspect
-the data while simulations continue to advance.  Selection of subdomains then
-also shall advance from manual to automated extraction of the domain and setup
-of simulation parameters and execution.  We plan to run the simulations
-simultaneously, developing tools to manage communication across the nodes and
-distribute resources efficiently between the simulations, potentially extending
-to a hierarchy of simultaneous EMS, rather than coupling between simulations
-consecutively with boundary conditions saved to disk for use later by the
-subdomain.
-
+As the hierarchy of high-resolution subdomains expands, the storage becomes an
+increasing bottleneck, making the challenge of analysis and interpretation more
+demanding.  A major objective of this project is to develop an intelligent
+adaptive \textbf{pipeline} for managing the implementation, evolution, and
+measurement, of our astrophysical simulations as a proof of concept, but
+ultimately of any HPC applications that combine big data and highly
+heterogeneous problems.  This has two distinct contributions: code coupling
+products that combine calculations between related problems with very different
+methods or regimes; and data management products that diagnose and adapt HPC
+applications on-the-fly, employing machine learning to recognize critical
+features and issue commands using \textbf{opportunistic data operations}
+(ODOP) \citep{odop24}.
 
 \answer{Critical advances to the HPC toolkit:
 \tabto{0em}
@@ -503,7 +516,7 @@ $\bullet$ {\textit{Code coupling:}} Adaptive resource and communication
 management of coupled simulations.
 \tabto{0em}
 $\bullet$ {\textit{On-the-fly-diagnostics:}} running diagnostics concurrently
-with the simulations (using ODOP).   %MR: ODOP needs reference here
+with the simulations (using ODOP).
 \tabto{0em}
 $\bullet$ {\textit{Node management:}} Concurrent computation, memory transfers,
 and diagnostics.
@@ -511,18 +524,6 @@ and diagnostics.
 $\bullet$ {\textit{GPU acceleration:}} Dust processing, radiation, and
 self-gravity added to MHD on GPUs.
    }
-As the hierarchy of high-resolution subdomains expands, the storage becomes an
-increasing bottleneck, making the challenge of analysis and interpretation more
-demanding.  A major objective of this project is to develop an intelligent
-adaptive \textbf{pipeline} for managing the implementation, evolution, and
-measurement, of our astrophysical simulations as a proof of concept, but
-ultimately of any HPC applications that combine big data and highly
-heterogeneous problems.  This has two distinct contributions: code coupling
-products that combine calculations between related problems with very different
-methods or regimes; and data management products that diagnose and adapt HPC
-applications on-the-fly, employing machine learning to recognize critical
-features and issue commands using \textbf{opportunistic data operations}
-(ODOP).
 
 \section{Implementation}
 
@@ -664,18 +665,20 @@ $\bullet$~Models of gas-dust distribution and $B$--$n$ correlations in ISM envir
 \tabto{0em}
 $\bullet$~Hand setting $\mathcal{D}_n$ \& boundary conditions superseded by pipeline tools (see \wpref{3}).
 \tabto{0em}
-$\bullet$~Post-processed dust (\textsc{PAPERBOATS}) superseded by integral \textsc{Pencil Code} %MR: integral PC - meaning?
- (\wpref{2}) and GPU-accelerated sub-physics and dust (\wpref{4}).
+$\bullet$~Post-processed dust (\textsc{PAPERBOATS}) superseded by concurrent
+MHD and dust evolution \textsc{Pencil Code} (\wpref{2}) and GPU-accelerated
+sub-physics and dust (\wpref{4}).
 %------------------------------------------------------------------------------
 
 \wpdef{2}{Dust}{Dust processing}
 \textsc{Paperboats} shall be applied to new \textit{multiscale} simulations
-over a wider range of ISM environments, while being fully implemented into the  %MR: how will Paperboats be implemented in PC?
-efficiently parallel, sixth-order \textsc{Pencil Code}.  Greater acceleration
-shall be achieved by integration into the GPU-accelerated PC-A.  Code coupling
-of MHD and dust modeling will be developed to address differences in timescales
-and computational load required for faster and more efficient deployment of
-resources.
+over a wider range of ISM environments, while being fully implemented into the
+efficiently parallel, sixth-order \textsc{Pencil Code} by updating its dust
+modules to include the full functionality of \textsc{Paperboats}. Greater
+acceleration shall be achieved by integration into the GPU-accelerated PC-A.
+Code coupling of MHD and dust modeling will be developed to address differences
+in timescales and computational load required for faster and more efficient
+deployment of resources.
 \tabto{0em}
 Deliveries and expected results:
 \tabto{0em}
@@ -729,7 +732,7 @@ interface (MPI).  Additional physics, such as dust, cooling or self-gravity,
 necessitate diverging timescales or computational load.  Code coupling enhanced
 by machine learning could gain speed by balancing load and available resources
 by minimizing redundant communication.  We have access to cutting-edge
-machine-learning tools for ODOP \citep{odop24} to analyze the data to identify   %MR: for ODOP -> for use with ODOP ?
+machine-learning tools for use with ODOP to analyze the data to identify
 regions or patterns of interest and extract a suitable subdomain from which to
 launch new experiments.  This work is at the frontier of computer science, in
 which HPCLab and \href{https://rdsea.github.io/}{\textbf{AaltoSEA}} are heavily
