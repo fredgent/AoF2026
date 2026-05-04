@@ -428,26 +428,25 @@ machinery to support their synthesis.
 
 \section{Impact}
 
-\instructions{
-  	In this section, describe the following aspects:
-    \begin{itemize}
-        \item {Outcomes and impacts of research within academia}
-        \begin{itemize}
-            \item Expected research results and their anticipated scientific impact
-            \item Project’s novelty or added value for science
-            \item Potential for scientific breakthroughs and for promoting scientific renewal
-            \item Research impact within the scientific community
-        \end{itemize}
-        \item{Effects, impact and interaction beyond academia}
-        \begin{itemize}
-           	\item Brief description of the appeal, utilisation potential and application areas of the research results beyond the scientific community
-            	\item For instance, provide a self-assessment of the expected societal impact of the research in the long or short term. Impact beyond academia may come in many different forms depending on the research field and the project. For example, science is a source of wealth and prosperity, but it also improves our understanding of the world and enhances the level of civilisation, supports the development of good practices and informs decision-making.
-            	\item \href{https://www.aka.fi/en/tutkimuksen_vaikuttavuus}{Read more about the broader impact of research.}
-        \end{itemize}
-    \end{itemize}
-}
+%\instructions{
+%  	In this section, describe the following aspects:
+%    \begin{itemize}
+%        \item {Outcomes and impacts of research within academia}
+%        \begin{itemize}
+%            \item Expected research results and their anticipated scientific impact
+%            \item Project’s novelty or added value for science
+%            \item Potential for scientific breakthroughs and for promoting scientific renewal
+%            \item Research impact within the scientific community
+%        \end{itemize}
+%        \item{Effects, impact and interaction beyond academia}
+%        \begin{itemize}
+%           	\item Brief description of the appeal, utilisation potential and application areas of the research results beyond the scientific community
+%            	\item For instance, provide a self-assessment of the expected societal impact of the research in the long or short term. Impact beyond academia may come in many different forms depending on the research field and the project. For example, science is a source of wealth and prosperity, but it also improves our understanding of the world and enhances the level of civilisation, supports the development of good practices and informs decision-making.
+%            	\item \href{https://www.aka.fi/en/tutkimuksen_vaikuttavuus}{Read more about the broader impact of research.}
+%        \end{itemize}
+%    \end{itemize}
+%}
 
-\fag{add scientific impact and goals of the simulations}
 
 Effective implementation of the EMS approach will require replacing manual
 inspection of data, typically archived to disk after run completion, with
@@ -791,7 +790,7 @@ $\bullet$ Code coupling within scales to balance computational load (2-way).
       \ganttbar{Coupled $R_1\rightarrow R_n$}{6}{18}\\
       \node (a) [fill=blue,draw,anchor=east] at ([xshift=4.6cm]current bounding box.0){MHD-Dust applications};
       \node (b) [fill=green,draw,anchor=west] at ([yshift=-0.8cm]a.west){GPU-PC-Toolkit integration};
-      \node (c) [fill=yellow,draw,anchor=west] at ([yshift=-0.8cm]b.west){Toolkit development};
+      \node (c) [fill=yellow,draw,anchor=west] at ([yshift=-0.8cm]b.west){Toolkit coupling dev.};
 %-----------------------------------------------------------------------------
       \ganttgroup{\wpref{2} (Dust)}{1}{18} \\
       \ganttbar{\textsc{Paperboats dust}}{1}{4} \\
@@ -800,13 +799,16 @@ $\bullet$ Code coupling within scales to balance computational load (2-way).
       \ganttmilestone[milestone/.append style={fill=blue}]{\textsc{Dust in PC/PC-A}}{4}
       \ganttmilestone[milestone/.append style={fill=green}]{\textsc{}}{9} \\
 %-----------------------------------------------------------------------------
-      \ganttgroup[group/.append style={fill=yellow}]{\wpref{3} (Coupling)}{1}{4}
-      \ganttgroup[group/.append style={fill=yellow}]{}{10}{18} \\
-      \ganttbar[bar/.append style={fill=yellow}]{Dev. coupling PC}{1}{4} \\
-      \ganttbar[bar/.append style={fill=yellow}]{GPU/other coupling}{10}{18} \\
+      \ganttgroup[group/.append style={fill=yellow}]{\wpref{3} (Coupling)}{1}{3}
+      \ganttgroup[group/.append style={fill=yellow}]{}{7}{10}
+\\
+      \ganttbar[bar/.append style={fill=yellow}]{Dev. coupling PC}{1}{3} \\
+      \ganttbar[bar/.append style={fill=yellow}]{GPU/other coupling}{7}{10} \\
 %-----------------------------------------------------------------------------
-      \ganttgroup[group/.append style={fill=green}]{\wpref{4} (GPU)}{1}{5}\\
-      \ganttbar[bar/.append style={fill=green}]{Dev. PC-A dust}{1}{5} \\
+      \ganttgroup[group/.append style={fill=green}]{\wpref{4} (GPU)}{4}{6}
+      \ganttgroup[group/.append style={fill=green}]{}{11}{14}\\
+      \ganttbar[bar/.append style={fill=green}]{Dev. PC-A dust}{4}{6} \\
+      \ganttbar[bar/.append style={fill=green}]{Dev. PC-A dust}{7}{10} \\
       \ganttmilestone[milestone/.append style={fill=blue!50}]{Publications}{4}
       \ganttmilestone[milestone/.append style={fill=blue!50}]{}{9}
       \ganttmilestone[milestone/.append style={fill=blue!50}]{}{18}
