@@ -409,7 +409,8 @@ Aalto
 (High Performace Computing Laboratory).  The suitability of this project for
 international collaboration in HPC has been demonstrated by successful
 campaigns at the LUMI Extreme Scale Access 2025 call \citep{GMKPR26} and the
-INCITE 2026 award on Frontier (USA), which is currently progressing. This
+\href{https://www.olcf.ornl.gov/2025/04/11/incite-2026-call-for-proposals/}{2026
+INCITE call} award on Frontier (USA), which is currently progressing. This
 project will extend those simulations to include dust processing, which at low
 Stokes numbers can require higher time resolution, and large scale dynamos,
 which require larger domains and much longer integration duration.
@@ -693,7 +694,11 @@ Deliveries and expected results:
 \tabto{0em}
 $\bullet$~\textsc{Paperboats} implemented into highly scalable PC-A.
 \tabto{0em}
-$\bullet$~Dust modeling applied with GPU-accelerated PC-A.
+$\bullet$~Dust modeling applied with PC-A.
+\tabto{0em}
+$\bullet$~Enhanced modeling of dust to include radiation pressure and self-gravity.
+\tabto{0em}
+$\bullet$~Enhanced modeling of cooling to based on dust.
 \tabto{0em}
 $\bullet$~Code-coupling tools: highly heterogeneous codes or computations
 require resource management to avoid idle resources, match performance and
@@ -701,13 +706,14 @@ reduce IO, memory or compute bottlenecks (\wpref{3}).
 
 %------------------------------------------------------------------------------
 \wpdef{3}{CC}{Pipeline -- code coupling}
-Defining consistent BCs after remeshing to macro-scale $\mathcal{D}_n$, without
-erroneous artifacts in the flows, is a crucial step in the process.  Open
-boundaries independent of $\mathcal{D}_{n-1}$ can work (paper in preparation, Aurora:2025),
-but acquire only initial features from $\mathcal{D}_{n-1}$, which dissipate
-over time.  Using surfaces from within $\mathcal{D}_{n-1}$ surrounding
-$\mathcal{D}_n$ one may interpolate boundary values onto the fine grid (also in
-time) to retain dynamically the macro-scale features.  High cadence slices from
+Defining consistent BCs after remeshing to some micro-scale $\mathcal{D}_n$,
+without erroneous artifacts in the flows, is a crucial step in the process.
+Open boundaries independent of $\mathcal{D}_{n-1}$ can work \citep[][and paper
+in preparation]{Aurora:2025}, but acquire only initial features from
+$\mathcal{D}_{n-1}$, which dissipate over time.  Using surfaces from within the
+higher tier domain $\mathcal{D}_{n-1}$ surrounding $\mathcal{D}_n$ one may
+interpolate boundary values onto the fine grid (also in time) to retain
+dynamically the macro-scale features.  High cadence slices from
 $\mathcal{D}_{n-1}$ can be saved to disk and read subsequently for
 $\mathcal{D}_{n}$ BC updates.
 
@@ -740,9 +746,13 @@ that can be used to explain the dynamo.
 \tabto{0em}
 Deliveries and expected results:
 \tabto{0em}
-$\bullet$ Code coupling to communicate BCs across multiple scales (1-way).
+$\bullet$ Code coupling to communicate BCs \wpref{1} across multiple scales (1-way).
 \tabto{0em}
-$\bullet$ Code coupling within scales to balance computational load (2-way).
+$\bullet$ Code coupling to share code with varying physics, e.g. dust processing with MHD \wpref{2}, and to balance computational load (2-way).
+\tabto{0em}
+$\bullet$ Code coupling to communicate data between CPU-based simulations and GPU-simulations (2-way).
+\tabto{0em}
+$\bullet$ Code coupling to combine simulations using different codes (1 or 2-way).
 %------------------------------------------------------------------------------
 %------------------------------------------------------------------------------
 
@@ -760,47 +770,50 @@ $\bullet$ Code coupling within scales to balance computational load (2-way).
       \gantttitle{Year 3}{6} \\
 %-----------------------------------------------------------------------------
       \ganttgroup{\wpref{1} (EMS)}{1}{18} \\
-      \ganttbar{Manual $R_1\rightarrow R_n$}{1}{4}\\
-      \ganttbar{Coupled PC-A $R_1\rightarrow R_n$}{5}{10}\\
-      \ganttbar{Coupling CPU-GPU}{11}{16}\\
-      \node (a) [fill=blue,draw,anchor=east] at ([xshift=4.6cm]current bounding box.0){MHD-Dust applications};
-      \node (b) [fill=green,draw,anchor=west] at ([yshift=-0.8cm]a.west){GPU-PC-Toolkit integration};
-      \node (c) [fill=yellow,draw,anchor=west] at ([yshift=-0.8cm]b.west){Toolkit coupling dev.};
+      \ganttbar{$R_1\rightarrow R_n$}{1}{2}\\
+      \ganttbar[bar/.append style={fill=white}]{Apply coupling}{1}{5} \\
+      \ganttbar{BCs $R_1\rightarrow R_n$}{3}{5}\\
+      \ganttbar{CPU \& GPU}{6}{10}\\
+      \ganttbar{Arepo \& PC-A}{11}{16}\\
+      \node (a) [fill=blue,draw,anchor=east] at ([xshift=3.6cm]current bounding box.0){EMS applications};
+      \node (b) [fill=green,draw,anchor=west] at ([yshift=-0.8cm]a.west){Dust applications};
+      \node (c) [fill=yellow,draw,anchor=west] at ([yshift=-0.8cm]b.west){Coupling Toolkit};
+      \ganttmilestone[milestone/.append style={fill=blue!50}]{Publications}{5}
+      \ganttmilestone[milestone/.append style={fill=blue!50}]{}{16}\\
 %-----------------------------------------------------------------------------
-      \ganttgroup{\wpref{2} (Dust)}{1}{18} \\
-      \ganttbar{\textsc{App. Paperboats}}{2}{4} \\
-      \ganttbar{\textsc{Dev. PC-A dust}}{1}{3}\\
-      \ganttbar{App. PC-A dust}{5}{10}\\
+      \ganttgroup[group/.append style={fill=green}]{\wpref{2} (Dust)}{1}{18} \\
+      \ganttbar[bar/.append style={fill=white}]{Dust application}{1}{5} \\
+      \ganttbar[bar/.append style={fill=green}]{\textsc{Paperboats}}{1}{3} \\
+      \ganttbar[bar/.append style={fill=green}]{PC-A}{4}{10}\\
+      \ganttbar[bar/.append style={fill=green}]{Added physics}{11}{16}\\
+      \ganttmilestone[milestone/.append style={fill=green!50}]{Publications}{3}
+      \ganttmilestone[milestone/.append style={fill=green!50}]{}{10}\\
 %-----------------------------------------------------------------------------
-      \ganttgroup[group/.append style={fill=yellow}]{\wpref{3} (Coupling)}{1}{4}
-      \ganttgroup[group/.append style={fill=yellow}]{}{7}{10}
-\\
-      \ganttbar[bar/.append style={fill=yellow}]{Dev. coupling PC-A}{1}{4} \\
-      \ganttbar[bar/.append style={fill=yellow}]{Dev. coupling GPU-CPU}{7}{10} \\
-      \ganttmilestone[milestone/.append style={fill=yellow}]{Coupled \textsc{PC-A}}{5} \\
-      \ganttmilestone[milestone/.append style={fill=yellow}]{Coupled GPU-CPU}{11} \\
-%-----------------------------------------------------------------------------
-      \ganttgroup[group/.append style={fill=green}]{\wpref{4} (GPU)}{1}{3}
-      \ganttgroup[group/.append style={fill=green}]{}{11}{14}\\
-      \ganttbar[bar/.append style={fill=green}]{Dev. PC-A dust}{1}{3} \\
-      \ganttbar[bar/.append style={fill=green}]{Dev. PC-A dust}{7}{10} \\
-      \ganttmilestone[milestone/.append style={fill=green}]{\textsc{Dust in PC-A}}{4}\\
-      \ganttmilestone[milestone/.append style={fill=blue!50}]{Publications}{4}
-      \ganttmilestone[milestone/.append style={fill=blue!50}]{}{9}
-      \ganttmilestone[milestone/.append style={fill=blue!50}]{}{18}
-      \ganttmilestone[milestone/.append style={fill=yellow!50}]{}{5}
-      \ganttmilestone[milestone/.append style={fill=yellow!50}]{}{15}
-      \ganttmilestone[milestone/.append style={fill=blue!50}]{}{13}
+      \ganttgroup[group/.append style={fill=yellow}]{\wpref{3} (Coupling)}{1}{18} \\
+      \ganttbar[bar/.append style={fill=white}]{Develop and apply}{1}{5} \\
+      \ganttbar[bar/.append style={fill=yellow}]{BCs coupling}{1}{5} \\
+      \ganttbar[bar/.append style={fill=yellow}]{2-way coupling}{4}{9} \\
+      \ganttbar[bar/.append style={fill=yellow}]{CPU-GPU coupling}{8}{13} \\
+      \ganttbar[bar/.append style={fill=yellow}]{Arepo-PC-A coupling}{11}{17} \\
+%%-----------------------------------------------------------------------------
+%      \ganttgroup[group/.append style={fill=green}]{\wpref{4} (GPU)}{1}{3}
+%      \ganttgroup[group/.append style={fill=green}]{}{11}{14}\\
+%      \ganttbar[bar/.append style={fill=green}]{Dev. PC-A dust}{1}{3} \\
+%      \ganttbar[bar/.append style={fill=green}]{Dev. PC-A dust}{7}{10} \\
+      \ganttmilestone[milestone/.append style={fill=yellow!50}]{Publications}{6}
+      \ganttmilestone[milestone/.append style={fill=yellow!50}]{}{12}
+      \ganttmilestone[milestone/.append style={fill=yellow!50}]{}{18}
       \ganttvrule{}{6}
       \ganttvrule{}{12}
     \end{ganttchart}
     \vspace{-1.6em}
     \caption{
 Gantt chart: proposed 3-year timeline and \wpref{} organization. Blue denotes
-science applications, results executed with PC-A; yellow denotes
-development and application of coupling and EMS management tools; green denotes GPU
-integration into PC. At least 3 publications shall
-have GS lead author, relevant to thesis; yellow to
+simulations within EMS with coupled PC-A instances and with other codes; green
+denotes development and application of dust modeling; yellow denotes
+development and application of coupling strategies. At least 3 publications
+shall have the GS as lead author reporting code and tool development or results
+of applications of these new tools; yellow to
 \href{https://www.nature.com/natmachintell/}{\textbf{Nature Machine
 Intelligence}} or
 \href{https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=9}{\textbf{IEEE
@@ -811,43 +824,15 @@ Transactions on Automatic Control}}; blue to
 \end{figure}
 %-----------------------------------------------------------------------------
 
-\wpref{3} and \wpref{4} shall provide the framework around which the student
-dissertation shall develop. Early in \wpref{3}, the student shall understand
-what manual interaction is applied to the selection and management of data for
-\wpref{1} and develop machine management tools to automate and learn these
-tasks using ODOP.  The student with the support of the PI and CoI will
-implement code coupling (\wpref{4}) between instances of PC-A to
-handle differently loaded tasks while communicating memory. This may extend to
-considering alternative uses of idle central processors (CPUs) on GPU nodes and
-designing strategies applying to alternate types of processing. 
-Initial methods
-could rely on manual settings at executions, but subsequently the focus shall
-return to \wpref{3} to implement run-time ODOP control and responses to the
-coupled codes to maximize utilization and reduce compute times. The support of
-collaborations in HPCLab and AaltoSEA and the Aalto CS Doctoral program shall
-assist the student's success in completing their doctoral dissertation.
-
-%------------------------------------------------------------------------------
-%------------------------------------------------------------------------------
-\wpdef{4}{GPU}{GPU Acceleration} GPUs can offer a speedup 40--55$\times$ over
-traditional CPUs \citep{Astaroth22}, though for applications closer to the
-setup proposed here, PC-A yields speedups closer to 20$\times$ in our recent
-extreme-scale simulations executed on LUMI \citep{GMKPR26} and on Frontier
-(\href{https://www.olcf.ornl.gov/2025/04/11/incite-2026-call-for-proposals/}{2026
-INCITE call}).  PC-A uses the high-level functionality of \textsc{Pencil Code}
-to compute and write diagnostics using idle CPUs while the GPU solves the
-equations.  A direct speedup in this project is anticipated by integrating
-\textsc{Paperboats} into PC-A.  We also aim to be able to couple to alternative
-codes, some of which may not yet be available or optimized for use with GPUs.
-Code coupling, therfore, between applications  employing separately GPU and CPU
-nodes, coupling nodes of different type as required, shall be employed to
-distribute relevant calculation tasks optimally and faster.
-\tabto{0em}
-Deliveries and expected results:
-\tabto{0em}
-$\bullet$~\textsc{Paperboats} implemented into highly scalable PC-A.
-\tabto{0em}
-$\bullet$ Code coupling between GPU and CPU solvers.
+\wpref{3} shall provide the framework around which the student dissertation
+shall develop. Early in \wpref{3}, the student shall understand what manual
+interaction is applied to the selection and management of data for \wpref{1}
+and develop machine management tools to automate and learn these tasks,
+including where applicable the use of ODOP.  The student with the support of
+the PI and CoI will design and test new code coupling machinery.  Initial
+methods could rely on manual settings at execution, but subsequently the aim
+would be to extend to more automated control and responses to the coupled codes
+to maximize utilization and reduce compute times.
 
 %------------------------------------------------------------------------------
 \subsection{Research data and material, methods and research environment}
@@ -860,9 +845,8 @@ source software tools for code integrations, management pipelines, and data
 analysis. The primary code milestones of this project will include: the
 implementation of \textsc{Paperboats}' advanced dust processing physics into
 PC-A for accelerated parallel 3D integration; code coupling machinery for
-running multiple versions of PC-A or to match difficult combinations of
-scales and physics; automation to support code coupling and simulation
-management.
+running multiple versions of PC-A or to match difficult combinations of scales
+and physics; automation to support code coupling and simulation management.
 
 The main research environment is the Department of Computer Science (hereafter
 Aalto/CS) at the Aalto University School of Science. With over 40 professors
@@ -887,6 +871,8 @@ Europe (PRACE), EuroHPC, and CSC.
 
 \subsection{High-performance computing resources}
 
+
+
 \subsection{Risk assessment and alternative implementation strategies}
 
 The highest risk to \wpref{1} arises from delays or challenges in developing
@@ -898,14 +884,14 @@ the grid. Open boundary conditions can be used should interpolating over time
 the boundary conditions prove unfeasible, with the . This has already been done for a
 smaller domain (paper in preparation), with the disadvantage that the boundary
 turbulence  tends to dissipate over time without the continual renewal.  Over
-short enough timescales this is still effective. 
+short enough timescales this is still effective.
 
 Modifications to the dust modules and implementation to PC-A \wpref{2} are low risk, as
 the PI and CoI have led the HPCLab development of the PC-A implementation of SN
 driven turbulence, and partial dust-processing modeling has successfully been
-implemented by the Swedish collaborator and the author of Paperboats can advice on 
-any technical challenges. Further extension of the physics of dust modeling 
-depends on the successful implementation of \wpref{1} and \wpref{3} to enable ever 
+implemented by the Swedish collaborator and the author of Paperboats can advice on
+any technical challenges. Further extension of the physics of dust modeling
+depends on the successful implementation of \wpref{1} and \wpref{3} to enable ever
 higher resolution domains to be investigated.
 
 To implement \wpref{1} and \wpref{2} the PI and CoI have years of experience
@@ -924,7 +910,7 @@ important to interpreting observations and understanding galaxy evolution.
 Four publications are realistic, the rate and extent of any advances increasing
 the better the success of \wpref{3}.  The graduate student shall be included in
 the execution and analysis of \wpref{1} and \wpref{2}, while their thesis shall
-primarily address \wpref{3}. 
+primarily address \wpref{3}.
 
 \subsection{Project personnel and their project-relevant key merits}
 
