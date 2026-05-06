@@ -252,10 +252,10 @@ Maarit J. Korpi-Lagg (SNDust)
 
 We plan to implement groundbreaking {\textit{extended multiscale simulations}}
 (EMS), bridging previously unattainable separations of spatial scales.  Extreme
-separation of spatial scales is generic in astrophysical models.  We shall
-apply this innovative concept modeling the evolution of interstellar dust, but
-our new interactive control tools will apply to other disciplines characterized
-by large and heterogeneous data.
+separation of scales is generic in astrophysical models.  We shall apply this
+innovative concept to modeling the evolution of interstellar dust, but our new
+interactive control tools may apply to any disciplines characterized by large
+and heterogeneous data.
 
 A common alternative approach to modeling multiple scales is \textit{adaptive
 mesh refinement}, in which higher resolution meshes are dynamically applied
@@ -267,54 +267,55 @@ physics only to regions where the smallest scales are resolved.  Additionally,
 non-uniform discrete Fourier transforms that could be used to understand the
 spectral properties of turbulent fields are challenging to calculate
 \citep{NUFFT}. Multigrid methods are another algorithm commonly employed for
-improving convergence with implicit solvers of
-highly non-linear systems in chemistry \citep{MGRID}, engineering and other
-disciplines, with increased overheads. Our approach will use multi-grid tools to
-extend the scales and physics accessible to the hierarchy of simulations with
-minimal increase in overheads.
+improving convergence with implicit solvers of highly non-linear systems in
+chemistry \citep{MGRID}, engineering and other disciplines, with increased
+overheads. Our approach will use multi-grid tools to extend the scales and
+physics accessible to the hierarchy of simulations with minimal increase in
+overheads.
 
 An existing framework for applying a common interface to multiple astrophysics
 algorithms is the Astrophysical Multipurpose Software Environment
 \citep{AMUSE}.  Its Python interface is relatively user friendly, but has
-limited scalability via parallel high performance computation. Our project
-shall implement integrated, highly scalable simulations capable of handling
-huge data, while also developing user friendly interactive tools with which to
+limited scalability via parallel high performance computation (HPC). Our
+project shall implement integrated, highly scalable simulations capable of
+handling huge data, with also user friendly interactive tools with which to
 manage and interrogate the applications.
 
 Cosmic dust plays a critical role in many astrophysical processes, including as
 a catalyst in star formation, the main ingredient in planet formation, and, due
 to its light absorption and scattering, a contributor to the multiphase
-structure of the ISM, galaxy evolution, and the properties of cooling in the
-circumgalactic medium in cosmological scale simulations \citep{Babul23}.  Heavy
-elements are forged in stars, the heaviest metals fusing at the explosive death
-of the largest stars, and thus ejected into the ISM by supernovae (SNe). Some
-of these form dust, comprising a mixture of carbonaceous material and silicates
-\citep{Weingartner01}. The abundance or composition of dust is indicative of a
-galaxy's age and star formation rate.  Although SNe eject into the ISM some
-fraction of dust, their highly supersonic blast waves can destroy dust already
-present in the ambient ISM \citep{McKee89}.  Observations of dust abundances in
-early galaxies substantially exceed predictions from prevailing models of
-destruction rates and accumulation mechanisms.  This has been described as a
-{\textbf{dust budget crisis}} \citep{Rowlands14b}.  Sublimation, condensation,
-grain-grain interactions, and ion sputtering are well established as primary
-dust destruction mechanisms in SN blast waves \citep{Jones11}.  The resultant
-dust properties are, however, highly uncertain.  Both processing and formation
-of ISM dust remain poorly understood \citep{Draine09} and most models omit
+structure of the interstellar medium (ISM), galaxy evolution, and the
+properties of cooling in the circumgalactic medium in cosmological scale
+simulations \citep{Babul23}.  Heavy elements are forged in stars, the heaviest
+metals fusing at the explosive death of the largest stars, and thus ejected
+into the ISM by supernovae (SNe). Some of these form dust, comprising a mixture
+of carbonaceous material and silicates \citep{Weingartner01}. The abundance or
+composition of dust is indicative of a galaxy's age and star formation rate.
+Although SNe eject into the ISM some fraction of dust, their highly supersonic
+blast waves can destroy dust already present in the ambient ISM
+\citep{McKee89}.  Observations of dust abundances in early galaxies
+substantially exceed predictions from prevailing models of destruction rates
+and accumulation mechanisms.  This has been described as a {\textbf{dust budget
+crisis}} \citep{Rowlands14b}.  Sublimation, condensation, grain-grain
+interactions, and ion sputtering are well established as primary dust
+destruction mechanisms in SN blast waves \citep{Jones11}.  The resultant dust
+properties are, however, highly uncertain.  Both processing and formation of
+ISM dust remain poorly understood \citep{Draine09} and most models omit
 realistic ISM magnetized turbulence.
 
-Our recent breakthrough models demonstrated that ISM dust can survive
+Our recent breakthrough models demonstrate that ISM dust can survive
 destruction by SN blast waves far better than previously thought \citep{KMG24}.
-We showed that, compared to the commonly used uniform interstellar medium
-(ISM), including a realistic inhomogeneous and turbulent ISM can reduce by 50\%
-the amount of ambient dust destroyed during the lifetime of an SN remnant.  We
-also found that including the Lorentz force of the turbulent magnetic field
-acting on the dust further halved these losses, a much greater effect than had
-been anticipated.  Even larger scales are required to fully model the magnetic
-field structure and yet smaller scales to properly understand the dust
-processing. To advance this scientific goal we need our proposed EMS approach
-and machine-learning toolkit to facilitate identifying critical features,
-launching coupled simulations, and managing communication and balancing
-resources within a typical HPC batch system.
+We show that, compared to the commonly used uniform ISM, including a realistic
+inhomogeneous and turbulent ISM can reduce by 50\% the amount of ambient dust
+destroyed during the lifetime of an SN remnant.  We also find that including
+the Lorentz force of the turbulent magnetic field acting on the dust further
+halves these losses, a much greater effect than had been anticipated.  Even
+larger scales are required to fully model the magnetic field structure and yet
+smaller scales to properly understand the dust processing. To advance this
+scientific goal we need our proposed EMS approach and machine-learning toolkit
+to facilitate identifying critical features, launching coupled simulations,
+managing communication and balancing resources within a typical HPC batch
+system.
 
 %==============================================================================
 \begin{figure}
@@ -333,39 +334,66 @@ turbulence, while stratification about the galactic disc regulates the
 multi-phase structure of the ISM via outflows and inward precipitation.
 Large-scale shear is required for a mean-field dynamo, which continues the
 growth of the magnetic field to energy equipartition with the kinetic energy.
+\vspace{-0.5cm}
 }
 \end{minipage}
 \end{figure}
 %==============================================================================
 
 
-Our existing simulations, performed to sixth-order spatial accuracy, explore many
-scales of the ISM.  Due to a vast range of scales in space and time, all
-models, whether full galaxy or inside star-forming molecular clouds (MC), must
-exclude some physics from their scope.  Models at kiloparsec scale (see, e.g.,
-Figure~\ref{ISMsim}) of SN-driven turbulence in stratified discs with
-galactic-shear dynamos \citep[e.g.,][]{ GMK24} omit dust processing, but
-acquire the necessary turbulent structure.  Dust would decouple from the gas
-\citep[][]{Mattsson18a} and, because grains are easily charged, radiation
-pressure \citep{HDB06} and Lorentz forces \citep{Draine79} affect its critical
-distribution at MC scale.
+Our existing simulations, performed to sixth-order spatial accuracy, explore
+many scales of the ISM.  Over such vast ranges of scales in space and time, all
+models, whether of full galaxy or star-forming molecular clouds (MC), must
+exclude some physics from their scope.  At kiloparsec scale (see, e.g.,
+Figure~\ref{ISMsim}) SN-driven turbulence in stratified discs with
+galactic-shear dynamos \citep[e.g.,][]{ GMK24} neglects dust processing, but
+acquires a necessary turbulent structure.  Dust decouples from the gas
+\citep[][]{Mattsson18a} and radiation pressure \citep{HDB06} and Lorentz forces
+\citep{Draine79} affect the critical distribution of grains, easily charged, at
+MC scale.
 
 To bridge the gap between scales relevant to dust processing and the numerical
 scales required to model the realistic multi-phase turbulent ISM, we have
 treated dust as a distribution of multiple fluids binned by grain size and
-applied onto prior MHD data using the post-processing tool \textsc{Paperboats}
-\citep{Kirchschlager19}. Our breakthrough results \citep{KMG24} applied
-\textsc{Paperboats} to process dust on 2D slices taken from 3D MHD models of
-the turbulent SN-driven dynamo run with the \textsc{Pencil Code}
-\citep{Pencil-Joss} \citep{GMKS21, GMKS22}.  As illustrated in
-Figure~\ref{fig_gsd} the magnetic field has a more significant effect on dust
-resilience than expected, even beyond the effects of turbulence.  A
-comprehensive review of MHD simulations at multiple scales \citep{Whitworth24},
-exploring correlations between gas number density $n$ and magnetic field
-strength $B$, concludes that \citet{GMK24} obtained $B-n$ relations that are
-among the best match to those from observations.  Large scale dynamo (LSD) and
-a realistic multi-phase ISM are thus critical ingredients.
+applied via the post-processing tool \textsc{PAPERBOATS}
+\citep{Kirchschlager19} to prior MHD data. \citet{KMG24} applied
+\textsc{PAPERBOATS} to process dust on 2D slices taken from 3D MHD models of
+the turbulent SN-driven dynamo \citep{GMKS21, GMKS22} obtained with
+\textsc{PENCIL CODE} \citep{PENCIL-Joss}.  As illustrated in
+Figure~\ref{fig_gsd} the magnetic field has a significant effect on dust
+resilience, even beyond the effects of turbulence.  A comprehensive review of
+MHD simulations at multiple scales \citep{Whitworth24}, exploring correlations
+between gas number density $n$ and magnetic field strength $B$, concludes that
+\citet{GMK24} obtained $B-n$ relations that are among the best match to those
+from observations.  Large scale dynamo (LSD) and a realistic multi-phase ISM
+are thus critical ingredients.
 
+We seek to quantify the rate at which dust is processed by SN blast waves: how
+this depends on the multiphase turbulence of the ISM and on the strength and
+topology of the galactic magnetic field. By including realistic large scale
+fields and large scale galactic topology in increasingly high resolution
+zoom-ins of the ISM we shall clarify where and when blast waves are most
+destructive and what processes and properties promote or mitigate dust loss in
+different phases of the ISM.
+
+Our primary tool for massively parallel GPU computations is the sixth-order MHD
+code \textsc{PENCIL}, as accelerated by the ASTAROTH framework
+\citep{ASTAROTH22}, hereafter referred to as PC-A, developed at
+\href{https://www.aalto.fi/en/department-of-computer-science/hpclab}{\textbf{HPCLab}}
+(High Performace Computing Laboratory) in the Department of Computer Science
+(hereafter Aalto/CS) at the Aalto University School of Science.  The project
+suitability for HPC international collaboration has been demonstrated by
+successful campaigns at LUMI Extreme Scale 2025 \citep{GMKPR26} and FRONTIER
+(USA)
+\href{https://www.olcf.ornl.gov/2025/04/11/incite-2026-call-for-proposals/}{INCITE
+2026} now in progress. Adding dust processing, at low Stokes numbers requires
+higher time resolution, and large-scale dynamos, requires greater domains and
+duration.  Acceleration with GPUs on LUMI is critical to the feasibility of
+such studies.  PC-A has attained over 20$\times$ speed-up over PENCIL CODE on
+CPUs alone.  It has performed reliably and stably with weak scaling approaching
+near constant execution time at up to 4096 GPUs on FRONTIER.
+
+\begin{figure}
 \begin{minipage}[h]{0.6\textwidth}
  \begin{center}
  \includegraphics[trim=1.9cm 0.6cm 0.35cm 0.2cm,  clip=true, width=\textwidth]{Pics/GrainSizes_04000_800Edi.pdf}
@@ -391,39 +419,9 @@ average density for each grain size in each specimen.  At region ({\textbf{c}})
 significant amount of dust grains are removed or destroyed by the shock while
 at regions ({\textbf{b}}) and ({\textbf{d}}) any change is due to background
 processing (transport and destruction).  } \label{fig_gsd}
+\vspace{-0.5cm}
 \end{minipage}
-
-The primary research goal of the project is to quantify the rate at which dust
-is processed by SN blast waves: how this depends on the multiphase turbulence
-of the ISM and on the strength and topology of the galactic magnetic field. By
-including realistic large scale fields and large scale galactic topology in
-increasingly high resolution zoom-ins of the ISM we aim to quantify where and
-when the blast waves are most destructive. We shall clarify what processes and
-properties promote or mitigate dust loss in different phases of the ISM.
-
-Our primary tool for massively parallel computations on GPUs is the sixth-order
-MHD code \textsc{Pencil}, as accelerated by the Astaroth framework
-\citep{Astaroth22}, hereafter referred to as PC-A, under development at the
-Aalto
-\href{https://www.aalto.fi/en/department-of-computer-science/hpclab}{\textbf{HPCLab}}
-(High Performace Computing Laboratory).  The suitability of this project for
-international collaboration in HPC has been demonstrated by successful
-campaigns at the LUMI Extreme Scale Access 2025 call \citep{GMKPR26} and the
-\href{https://www.olcf.ornl.gov/2025/04/11/incite-2026-call-for-proposals/}{2026
-INCITE call} award on Frontier (USA), which is currently progressing. This
-project will extend those simulations to include dust processing, which at low
-Stokes numbers can require higher time resolution, and large scale dynamos,
-which require larger domains and much longer integration duration.
-Acceleration with GPUs on LUMI is critical to the feasibility of such studies.
-The PC-A code has obtained over 20 times speed-up compared to the Pencil Code
-on CPUs alone.  It has performed reliably and stably with weak scaling
-approaching a constant execution time up to 4096 GPUs on Frontier.
-
-It is a primary focus of this project to bring together two or more codes, or
-instances of the same code, working on related but distinct physics. The
-participants will develop internationally leading expertise in knowledge and
-application of our collaborative codes and how to create, adapt and apply
-machinery to support their synthesis.
+\end{figure}
 
 \section{Impact}
 
@@ -447,23 +445,11 @@ machinery to support their synthesis.
 %}
 
 
-Effective implementation of the EMS approach will require replacing manual
-inspection of data, typically archived to disk after run completion, with
-machine learning tools accessing the data in memory at run time, sharing idle
-processors.  Existing applications involve identifying a maximum density and
-zooming in around the neighbourhood, or a more complex algorithm to identify
-clusters of high density in which star formation may be expected and within a
-time frame determined by its freefall time. We require that highly scalable and
-efficient algorithms inspect the data while simulations continue to advance.
-Selection of subdomains then also shall advance from manual to automated
-extraction of the domain criteria and required physics, resolution and other
-simulation parameters and its subsequent execution.  We plan to run the
-simulations at different resolution or with complementary physics
-simultaneously, developing tools to manage communication across the nodes and
-distribute resources efficiently between the simulations, potentially extending
-to a hierarchy of simultaneous EMS, rather than coupling between simulations
-consecutively with boundary conditions saved to disk for later use in the
-subdomain.
+It is a primary focus of this project to bring together two or more codes, or
+instances of the same code, working on related but distinct physics. The
+participants will develop internationally leading expertise in knowledge and
+application of our collaborative codes and how to create, adapt and apply
+machinery to support their synthesis.
 
 \answer{
 The critical advance to application science envisaged here is to model physics,
@@ -489,18 +475,43 @@ $\bullet$ {\textit{Dust cooling:}} Supersede gas temperature-dependent cooling
 functions in MHD simulations.
   }
 
-As the hierarchy of high-resolution subdomains expands, the storage becomes an
-increasing bottleneck, making the challenge of analysis and interpretation more
-demanding.  A major objective of this project is to develop an intelligent
-adaptive \textbf{pipeline} for managing the implementation, evolution of
-simulations, and measurement, of our astrophysical simulations as a proof of
-concept, but ultimately of any HPC applications that combine big data and
-highly heterogeneous problems.  This has two distinct contributions: code
-coupling products that combine calculations between related problems with very
-different methods or regimes; and data management products that diagnose and
-adapt HPC applications on-the-fly, employing machine learning to recognize
-critical features, and issue commands using \textbf{opportunistic data
-operations} (ODOP) \citep{odop24}.
+The scientific impact of the project shall be to extend our
+understanding of the processing of cosmic dust by supernovae and to accurately
+relate cosmic dust abundances to star formation rates. The comprehensive
+treatment of dust processing available through PAPERBOATS and its incorporation
+directly into PENCIL CODE and PC-A applied to realistic multiphase ISM
+turbulence provides a more accurate statistical correlation between various
+dust grain sizes and gas abundances. From this we propose to provide the most
+reliable model for dust composition and distribution in galaxies pertaining to
+its age, position within the galaxy structure and its magnetic field topology.
+
+Effective implementation of the EMS approach will replace manual
+inspection of data, archived to disk at run completion, with
+machine learning tools iusing idle processors to access the data in memory at run time.
+Current stategies identify a maximum density and
+zoom in around its neighbourhood, or apply algorithms to identify
+clusters in which star formation may be expected within a
+time frame determined by its freefall time. New highly scalable and
+efficient algorithms shall inspect the data while simulations continue to advance.
+Subdomain extraction, 
+criteria for required physics, resolution and other
+simulation parameters with subsequent execution need also to become automated.  We plan to run the
+simulations at different resolution or with complementary physics
+simultaneously, developing tools to manage communication across the nodes and
+distribute resources efficiently between the simulations, potentially extending
+to a hierarchy of simultaneous EMS.
+
+As the hierarchy of subdomains expands, storage becomes an increasing
+bottleneck, making analysis and interpretation more challenging.  An objective
+is to develop an intelligent adaptive \textbf{pipeline} for managing the
+implementation, evolution and measurement of simulations. As proof of concept
+this applies to our astrophysical simulations, but ultimately any HPC
+applications with large highly heterogeneous data.  We shall develop code
+coupling products to combine calculations of related problems with very
+different methods or regimes and data management products to diagnose and adapt
+HPC applications on-the-fly, employing machine learning to recognize critical
+features, and issue commands using \textbf{opportunistic data operations}
+(ODOP) \citep{odop24}.
 
 \answer{Critical advances to the HPC toolkit:
 \tabto{0em}
@@ -522,16 +533,6 @@ and diagnostics.
 $\bullet$ {\textit{GPU acceleration:}} Dust processing, radiation, and
 self-gravity added to MHD on GPUs.
    }
-
-Primarily, the scientific impact of the project shall be to extend our
-understanding of the processing of cosmic dust by supernovae and to accurately
-relate cosmic dust abundances to star formation rates. The comprehensive
-treatment of dust processing available through Paperboats and its incorporation
-directly into Pencil Code and PC-A applied to realistic multiphase ISM
-turbulence provides a more accurate statistical correlation between various
-dust grain sizes and gas abundances. From this we propose to provide the most
-reliable model for dust composition and distribution in galaxies pertaining to
-its age, position within the galaxy structure and its magnetic field topology.
 
 
 \section{Implementation}
@@ -601,22 +602,46 @@ its age, position within the galaxy structure and its magnetic field topology.
 
 \wpdef{1}{EMS}{Extended Multiscale Simulations}
 \vspace{-0.3cm}
-We begin from established {\textit{macro-scale simulations}}, in which the
+From established {\textit{macro-scale simulations}}, in which 
 micro-scale physics of gas-dust and dust-dust interactions are neglected or
-treated in \textsc{Pencil Code} with a mean dust density or dust velocity
-approach, but using  stratification and shear.  We spawn consecutive EMS
+treated in \textsc{PC-A} with a mean dust density or dust velocity
+approach, but using stratification and shear we spawn consecutive EMS
 from a zoomed-in region of the larger domain (see flow chart). We capture
 scales between sub-MC sizes and the large-scale MHD flow phenomena via
-\textit{boundary conditions} for the subdomain inherited and interpolated from
-the larger host domain in which the subdomain is embedded.  The span between
+\textit{boundary conditions} (BCs) for the subdomain inherited and interpolated from
+the larger host domain in which it is embedded.  The span between
 macro and micro scales is too large to bridge in one step. With each increase
 in resolution additional physics can be considered, such as self-gravity \citep[recently added to PC-A]{Ruben26}  or
 stellar radiation and, eventually, dust.  EMS is not an entirely new concept
 \citep{EMS2023,EMS2024}, but offers an innovative means to perform the required
 simulations for our science goals.
+Applying such machinery alongside other codes, we aim to embed our
+largest-scale dynamo models in the galaxy scale models of our
+Victoria collaborators using \textsc{Arepo} or \textsc{ChaNGa}
+\citep{Babul21L,Babul21a}, to capture the full structure of the ISM
+magnetic field.  Selecting suitable subdomains within such full-galaxy
+simulations, we shall map critical variables from the unstructured
+\textsc{Arepo} or \textsc{ChaNGa} subdomain onto a matching structured coarse
+grid for PC-A. This shall be updated as required to host the higher resolution
+multiphase ISM dynamo simulations.
+%
+\tabto{0em}
+Deliverables and expected results:
+\tabto{0em}
+$\bullet$~MHD simulations spanning more than three tiers or two orders of
+magnitude in resolution.
+\tabto{0em}
+$\bullet$~Models of gas-dust interaction and $B$--$n$ correlations in ISM
+environments up to MC densities.  \tabto{0em}
+$\bullet$~Hand-setting $\mathcal{D}_n$ \& boundary conditions superseded by
+pipeline tools (see \wpref{3}).  \tabto{0em}
+$\bullet$~Post-processed dust (\textsc{PAPERBOATS}) superseded by concurrent
+MHD and dust evolution by the GPU-accelerated \textsc{PENCIL CODE} (PC-A) (\wpref{2}).
+
 
 %------------------------------------------------------------------------------
-\begin{minipage}[h]{0.61\textwidth}
+\begin{figure}
+\begin{minipage}[h]{0.55\textwidth}
     \centering
 
     \resizebox{\hsize}{!}{
@@ -632,6 +657,7 @@ simulations for our science goals.
   \end{picture}
     }
  \end{minipage}
+\vspace{-0.5cm}
 \begin{minipage}[h]{0.38\textwidth}
 
 Schematically, the EMS process is as follows:
@@ -650,39 +676,16 @@ $\mathcal{D}_{n-1}$ to retain macro dynamics.
 reaches some limiting length scale.
 \end{enumerate}
 }
-
 \end{minipage}
+\end{figure}
 %------------------------------------------------------------------------------
 
-Applying such machinery with respect to other codes, we aim to embed our
-largest-scale dynamo models in galaxy scale models using codes used by our
-Victoria collaborators such as \textsc{Arepo} or \textsc{ChaNGa}
-\citep{Babul21L,Babul21a}, to capture even larger scale structure of the ISM
-magnetic field.  Selecting suitable subdomains within such full-galaxy
-simulations, we shall map critical variables from the unstructured
-\textsc{Arepo} or \textsc{ChaNGa} subdomain onto a matching structured coarse
-grid for PC-A. This shall be updated as required to host the higher resolution
-multiphase ISM dynamo simulations.
-
-\tabto{0em}
-Deliverables and expected results:
-\tabto{0em}
-$\bullet$~MHD simulations spanning more than three tiers or two orders of
-magnitude in resolution.
-\tabto{0em}
-$\bullet$~Models of gas-dust interaction and $B$--$n$ correlations in ISM
-environments up to MC densities.  \tabto{0em}
-$\bullet$~Hand-setting $\mathcal{D}_n$ \& boundary conditions superseded by
-pipeline tools (see \wpref{3}).  \tabto{0em}
-$\bullet$~Post-processed dust (\textsc{PAPERBOATS}) superseded by concurrent
-MHD and dust evolution by the GPU-accelerated \textsc{Pencil Code} (PC-A) (\wpref{2}).
-
-
 \wpdef{2}{Dust}{Dust processing}
-\textsc{Paperboats} shall be applied to new \textit{multiscale} simulations
+\vspace{-0.3cm}
+\textsc{PAPERBOATS} shall be applied to new \textit{multiscale} simulations
 over a wider range of ISM environments, while being fully implemented into the
-efficiently parallel, sixth-order \textsc{Pencil Code} by updating its dust
-modules to include the full functionality of \textsc{Paperboats}. Due to
+efficiently parallel, sixth-order \textsc{PENCIL CODE} by updating its dust
+modules to include the full functionality of \textsc{PAPERBOATS}. Due to
 transpolation of the Fortran code this will be inherited by the GPU-accelerated PC-A.
 Code coupling of MHD and dust modeling will be developed to address differences
 in timescales and computational load required for faster and more efficient
@@ -690,7 +693,7 @@ deployment of resources (see \wpref{3}).
 \tabto{0em}
 Deliveries and expected results:
 \tabto{0em}
-$\bullet$~\textsc{Paperboats} implemented into highly scalable PC-A.
+$\bullet$~\textsc{PAPERBOATS} implemented into highly scalable PC-A.
 \tabto{0em}
 $\bullet$~Dust modeling applied with PC-A.
 \tabto{0em}
@@ -704,6 +707,7 @@ reduce IO, memory or compute bottlenecks (\wpref{3}).
 
 %------------------------------------------------------------------------------
 \wpdef{3}{CC}{Pipeline -- code coupling}
+\vspace{-0.3cm}
 Defining consistent BCs after remeshing to some micro-scale $\mathcal{D}_n$,
 without erroneous artifacts in the flows, is a crucial step in the process.
 Open boundaries independent of $\mathcal{D}_{n-1}$ can work \citep[][and paper
@@ -717,27 +721,25 @@ $\mathcal{D}_{n}$ BC updates.
 
 Data storage and management is commonly a bottleneck in any HPC, requiring
 management of datasets approaching TB and even PB scales.  Lossless data
-compression for such data can provide modest reductions storage, but code
-coupling on-the-fly saves substantailly on storage.  It employs at the very
-least message passing interface (MPI).  Additional physics, such as dust,
-cooling or self-gravity, necessitate diverging timescales or computational
-load.  Code coupling enhanced by machine learning could gain speed by balancing
-load and available resources by minimizing redundant communication.  We have
-access to cutting-edge machine-learning tools for use with ODOP to analyze the
-data to identify regions or patterns of interest and extract a suitable
-subdomain from which to launch new experiments.  This work is at the frontier
-of computer science, in which the Aalto research groups HPCLab and
+compression for such data can provide modest storage reductions, but code
+coupling on-the-fly saves substantially more.  It employs at the very least
+message passing interface (MPI).  Additional physics, such as dust, cooling or
+self-gravity, necessitate diverging timescales or computational load.  Code
+coupling enhanced by machine learning to minimize redundant communication could
+gain speed, balancing load and available resources.  We have access to
+cutting-edge machine-learning tools to inspect the data for regions or patterns
+of interest and to extract as a suitable subdomain from which to launch new
+experiments.  This work is at the frontier of computer science, in which the
+Aalto/CS HPCLab and
 \href{https://rdsea.github.io/}{\textbf{AaltoSEA}} are heavily invested.
-Applications using large data, such as those proposed here, provide critical
-challenges to support their development.
 
-The basic machinery for coupling multiple versions of the same code (e.g.
-Pencil Code) or with other codes would be similar.  HPCLab already has
-experience coupling
+The basic machinery would be similar for coupling multiple instances of the
+same code (e.g.  PC-A) or with other codes.  HPCLab already has experience
+coupling
 \href{https://www.astro.umontreal.ca/~paulchar/grps/eulag-mhd.html}{\textsc{Eulag-MHD}}
-\citep{Guerrero:2024} with \textsc{Pencil Code} (1-way).  In this case, the
+\citep{Guerrero:2024} with \textsc{PENCIL CODE} (1-way).  In this case, the
 evolving data from the highly stratified solar atmosphere  obtained through a
-\textsc{Eulag-MHD} simulation was passed on-the-fly to the \sc{Pencil Code} to
+\textsc{Eulag-MHD} simulation was passed on-the-fly to the \sc{PENCIL CODE} to
 apply the test-field method to calculate the turbulent transport coefficients
 that can be used to explain the dynamo.
 
@@ -781,7 +783,7 @@ $\bullet$ Code coupling to combine simulations using different codes (1 or 2-way
 %-----------------------------------------------------------------------------
       \ganttgroup[group/.append style={fill=green}]{\wpref{2} (Dust)}{1}{18} \\
       \ganttbar[bar/.append style={fill=white}]{Dust application}{1}{5} \\
-      \ganttbar[bar/.append style={fill=green}]{\textsc{Paperboats}}{1}{3} \\
+      \ganttbar[bar/.append style={fill=green}]{\textsc{PAPERBOATS}}{1}{3} \\
       \ganttbar[bar/.append style={fill=green}]{PC-A}{4}{10}\\
       \ganttbar[bar/.append style={fill=green}]{Added physics}{11}{16}\\
       \ganttmilestone[milestone/.append style={fill=green!50}]{Publications}{3}
@@ -811,10 +813,11 @@ of applications of these new tools; yellow to
 \href{https://www.nature.com/natmachintell/}{\textbf{Nature Machine
 Intelligence}} or
 \href{https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=9}{\textbf{IEEE
-Transactions on Automatic Control}}; blue to
+Transactions on Automatic Control}}; blue and green to
 \href{https://www.nature.com/natastron/}{\textbf{Nature Astronomy}} or
 \href{https://www.aanda.org/}{\textbf{Astronomy \& Astrophysics}}.}
     \label{fig:work-packages}
+    \vspace{-0.3cm}
 \end{figure}
 %-----------------------------------------------------------------------------
 
@@ -837,13 +840,12 @@ data may be analyzed alongside our generated data for scientific publication.
 We also produce and utilize open source numerical codes and additional open
 source software tools for code integrations, management pipelines, and data
 analysis. The primary code milestones of this project will include: the
-implementation of \textsc{Paperboats}' advanced dust processing physics into
+implementation of \textsc{PAPERBOATS}' advanced dust processing physics into
 PC-A for accelerated parallel 3D integration; code coupling machinery for
-running multiple versions of PC-A or to match difficult combinations of scales
-and physics; automation to support code coupling and simulation management.
+running multiple instances of PC-A or to match difficult combinations of scales
+and physics or other codes; automated code coupling and simulation management support.
 
-The main research environment is the Department of Computer Science (hereafter
-Aalto/CS) at the Aalto University School of Science. With over 40 professors
+The main research environment Aalto/CS. With over 40 professors
 and more than 400 employees, the department is the largest Computer Science
 unit in Finland. It is ranked among the top 10 Computer Science departments in
 Europe and among the top 100 globally.  Information and communications
@@ -855,8 +857,8 @@ Triton, are a part of the national Finnish Computing Competence Infrastructure
 (FCCI). Currently, Triton provides 9600 computing cores and over 30 servers for
 high-end GPU computing. For in-depth research methods and software development,
 Science-IT provides support from research software engineers.  Researchers also
-have free access to national CSC resources, including the supercomputers Puhti
-and Mahti, as well as the cloud resources Rahti and CPouta. The teams also have
+have free access to national CSC resources, including the supercomputers PUHTI
+and MAHTI, as well as the cloud resources Rahti and CPouta. The teams also have
 access to Europe’s most powerful GPU-based supercomputer LUMI through
 competitive computing time allocations via the Euro-HPC consortium.  Our
 collaboration has an outstanding track record of obtaining competitive
@@ -869,51 +871,45 @@ The project will rely heavily on massively parallel GPU simulations. As
 coupling codes designed for use on varying archtecture is an important element
 of the project we shall also seek massively parallel CPU resources.  Running
 times for typical jobs often require walltimes in excess of a few weeks, due to
-the long integration times to evolve galactic dynamos, which is an important
-component of the science objectives. Small-scale dynamo simulations of Lumi and
-Frontier have a typical walltime of over two weeks, the duration differing
-little between low and high resolution simulations, due to the highly efficient
-scaling of the PC-A. Although the time step reduces with resolution, in these
-cases the increased speed of the dynamo tends to compensate for the delay.
+the long integration times to evolve galactic dynamos, an important
+aspet of our science objectives. Small-scale dynamo (SSD) simulations on LUMI and
+FRONTIER each have typical walltime above two weeks, the duration differing
+little by model resolution, due to the highly efficient
+scaling of the PC-A. The time step reducing with resolution is offset by the increasing efficiency of the dynamo.
 Dust processing typically drives down the timestep while the duration of the
 simulations would not need to be as long, so resources for these simulations we
-would expect to be similar to those of the small-scale dynamo.  We anticipate
+would expect to be similar to those of the SSD.  We anticipate
 the need for multiple millions of GPU node hours and plan to participate in
 Finnish, European, Canadian and US extreme scale calls at every opportunity.
 
 \subsection{Risk assessment and alternative implementation strategies}
 
-The highest risk to \wpref{1} arises from delays or challenges in developing
-the code coupling in \wpref{3}. An alternative strategy would be to manually
-select regions of interest on which to run dust post-processing with Paperboats
-or apply the revised dust modules of PC-A. For embedding the PC-A large-scale
-dynamo in the galaxy data of Arepo or ChaNGa we could manually map the data to
-the grid. Open boundary conditions can be used should interpolating over time
-the boundary conditions prove unfeasible, with the . This has already been done for a
-smaller domain (paper in preparation), with the disadvantage that the boundary
-turbulence  tends to dissipate over time without the continual renewal.  Over
-short enough timescales this is still effective.
+Some risk to \wpref{1} arises from delays or challenges in developing the code
+coupling in \wpref{3}. An alternative strategy remains to manually select
+regions of interest on which to post-process dust.  For embedding the PC-A
+large-scale dynamo in the galaxy data of Arepo or ChaNGa we could manually map
+the data to the grid. Open BCs could be used on subdomains should interpolating
+these from the macro-scale prove unfeasible.  This has already been done for a
+smaller domain \citep[][and paper in preparation]{Aurora:2025}.  If the
+boundaries are distant from the region of interest and the duration is short
+this can be effective.
 
-Modifications to the dust modules and implementation to PC-A \wpref{2} are low risk, as
-the PI and CoI have led the HPCLab development of the PC-A implementation of SN
-driven turbulence, and partial dust-processing modeling has successfully been
-implemented by the Swedish collaborator and the author of Paperboats can advice on
-any technical challenges. Further extension of the physics of dust modeling
-depends on the successful implementation of \wpref{1} and \wpref{3} to enable ever
-higher resolution domains to be investigated.
+Modifications to the dust modules and implementation to PC-A \wpref{2} are low
+risk.  The PI and CoI have led the HPCLab development of the PC-A
+implementation of SN driven turbulence. Partial dust-processing modeling has
+successfully been implemented by the Lars Mattsson. Florian Kirchschlager, author of
+PAPERBOATS, can advise on any technical challenges. Further extension of the
+physics of dust modeling depends on the successful implementation of \wpref{1}
+and \wpref{3} to enable ever higher resolution domains to be investigated. 
 
-To implement \wpref{1} and \wpref{2} the PI and CoI have years of experience
-executing such simulations with consistent success applying for resources on
+For \wpref{1} and \wpref{2} the PI and CoI have years of consistent success applying for resources on
 the Finnish national infrastructure CSC, European infrastructure directly on
 LUMI, as well as successful HPCLab European scale PRACE projects.  The CoI and
-Lars Mattsson also have continuous access to the National Academic
-Infrastructure for Supercomputing in Sweden and, via our established
-collaboration with Mordecai Mac Low, to calls on Frontier HPC resources.  Our
-collaborators all also have high expertise at modeling dust and MCs.  However,
-if required we could reduce the parameter space of our simulations and still
-have sufficient to support the development, testing and running of the new code
+Lars Mattsson also have access to the National Academic
+Infrastructure for Supercomputing in Sweden. Via Mordecai Mac Low we can apply for FRONTIER HPC resources.  
+All collaborators have high expertise at modeling dust and MCs.  However,
+with fewer simulations we would still have access to scientific breakthough and enough for testing and running of the new code
 coupling tools in \wpref{3} to enable the success of the student.
-
 \wpref{1} and \wpref{2} are assured results of high impact, since they explore
 regimes of astrophysics with respect to dust distribution and dynamics,
 magnetic field and ISM multi-phase structure that are poorly understood and
@@ -923,25 +919,25 @@ the better the success of \wpref{3}.  The graduate student shall be included in
 the execution and analysis of \wpref{1} and \wpref{2}, while their thesis shall
 primarily address \wpref{3}.
 
-The risks associated with the code coupling in \wpref{3} include effectively
+Risks associated with code coupling in \wpref{3} include effectively
 managing communication between asymmetric processes in the MPI distribution of
 the different simulations and effectively managing the load between the nodes
-in each couple to obtain optimal load and maximum speed of the codes.  We have
-some experience of successfully handling this and if necessary compromises can
+in the pair to obtain optimal load and maximum speed.  We have had
+experience at handling this but if necessary compromises can
 be made in domain selection to facilitate processor communication at the
-expence of a slightly larger grid.  Most of the coupling is between instances
-of PC-A, so will be easier to share domain data.  In the case of other codes,
+expense of a slightly larger grid.  Most of the coupling is between instances
+of PC-A, making it easier to share domain data.  In the case of other codes,
 suitable intermediary mapping of the key data can be implemented to prepare it
 for easier transfer between codes.  If the progress of \wpref{3} is delayed,
 manual management of the EMS process can still permit us to make progress with
-the scientific obejctives of \wpref{1} and \wpref{2}.
+the scientific objectives of \wpref{1} and \wpref{2}.
 
 \subsection{Project personnel and their project-relevant key merits}
 
 \textbf{The Principal Investigator (PI) Maarit
 Korpi-Lagg}\href{https://orcid.org/0000-0002-9614-2200}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}}
 (over 4,800 citations and h-index of 39 according to Google Scholar), is a
-tenured associate professor at Aalto CS, where she leads the High-Performance
+tenured associate professor at Aalto/CS, where she leads the High-Performance
 Computing Lab. She was the grant holder of the ERC Consolidator grant "UniSDyn"
 and the ERC Proof of-concept grant “SYCOS”, projects that studied dynamo action
 in solar and stellar convection zones. She acted as a team leader of the
@@ -949,9 +945,9 @@ Academy of Finland Centre of Excellence “ReSoLVE” (2014-2019), which studied
 long-term solar magnetic activity and its eﬀects on Earth. She has acted as a
 PI of several competitive HPC projects (LUMI-C and LUMI-G Finnish project
 allocations, PRACE, DEISA/DECI, CSC Grand Challenge), and is a core developer
-of the Pencil Code Multiphysics Solver [8] for high-order stencil-based
+of the PENCIL CODE Multiphysics Solver for high-order stencil-based
 applications, and the initiator and project leader of the GPU-based MHD solver
-Astaroth. The PI shall have responsibility for recruitment and supervison of
+ASTAROTH. The PI shall have responsibility for recruitment and supervison of
 the Graduate Student (GS) and the integration of \wpref{3} within
 the HPCLab team.
 %The PI's
@@ -966,24 +962,23 @@ the HPCLab team.
 Gent}\href{https://orcid.org/0000-0002-1331-2260}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}}
 (1000 citations and h-index of 17) was a Research Fellow at Aalto/CS until
 March 2025 and since November 2023 has been employed as Assistant Professor at
-Nordita, Stockholm, under the five-year Swedish Research Council grant no.
-2022-03767.  The CoI is a core developer of the Pencil Code and has the first
-published use-application of the PC-A GPU code \citep{GMKPR26}.  The CoI will
+Nordita, Stockholm, under the Swedish Research Council grant no.
+2022-03767.  The CoI is a core developer of the PENCIL CODE and has the first
+published use-application of PC-A \citep{GMKPR26}.  The CoI will
 be the  thesis advisor for the GS working on \wpref{1} -- \wpref{3} and
-responsible for implementation of \wpref{1} with Arif Banul \& Mordecai-Mark
+implement \wpref{1} with Arif Babul \& Mordecai-M.
 Mac Low and \wpref{2} with Lars Mattsson \& Florian Kirchschlager.  The CoI has
 managed three Grand Challenge projects around galactic large-scale dynamos on
-CSC since 2009, and on LUMI he led a 2025 Extreme Scale campaign while on Frontier
-(USA) he is running a 2026 Incite project both relating to the galactic
-small-scale dynamo.
+CSC since 2009, and on LUMI he led a 2025 Extreme Scale project, then running on FRONTIER
+(USA) a 2026 Incite project, both relating to the galactic
+SSD.
 
-\textbf{The Graduate Student (GS)} shall be recruited to the Aalto Computer
-Science Graduate Programme.  They will work on \wpref{3} and as
-lead author on three papers on code coupling or its application. The
-applications of the code development and tools shall be applied to at least one
-EMS application \wpref{1} and they will be included in the experimental design,
-implementation and publication of \wpref{1} and \wpref{2} as part of their
-training and education.
+\textbf{The Graduate Student (GS)} shall be recruited to the Aalto/CS Graduate
+Programme.  They will work on \wpref{3} and as lead author on three papers on
+code coupling or its application. The applications of the code development and
+tools shall be applied to at least one EMS application \wpref{1} and they will
+be included in the experimental design, implementation and publication of
+\wpref{1} and \wpref{2} as part of their training and education.
 
 \textbf{\href{https://www.uvic.ca/research/centres/arc/people/faculty/babul-arif.php}{Arif
 Babul}, University of Victoria,
@@ -1000,16 +995,16 @@ Mac Low}, American Museum of Natural History, New York,
 USA}\href{https://orcid.org/0000-0003-0064-4060}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}}
 Curator and Professor of Astrophysics with expertise of numerical modeling,
 astrophysical turbulence and modelecular clouds. We have an ongoing
-collaboration with several coauthored publications and multiple HPC projects on
-CSC, Lumi and Frontier together including parallel runs as high as 16384 GPU
-cores on Frontier. Mordecai will participate in \wpref{1} and \wpref{2} with
-experimental design and subsequent analysis.
+collaboration resulting in several coauthored publications and sharing multiple
+HPC projects on CSC, LUMI and FRONTIER together including parallel runs as large
+as 16384 GPUs on FRONTIER. Mordecai will contribute to the
+ experimental design and subsequent analysis of \wpref{1} and \wpref{2}.
 
 \textbf{\href{https://nordita.org/people/nordita-person/lars-mattsson}{Lars
 Mattsson}, Nordita, Stockholm University,
 Sweden}\href{https://orcid.org/0000-0003-2670-2513}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}}
 Assistant Professor of Astrophysics and expert on dust processing in
-astrophysical turbulence. Lars is a core developer of the Pencil Code and
+astrophysical turbulence. Lars is a core developer of the PENCIL CODE and
 worked with the CoI on modeling dust in high Mach number turbulence.  Lars will
 contribute to \wpref{1} with the EMS design, analysis of \wpref{2} results and
 implementing dust with PC-A.
@@ -1018,8 +1013,8 @@ implementing dust with PC-A.
 University,
 Belgium}\href{https://orcid.org/0000-0002-3036-0184}{\includegraphics[scale=0.5]{orcid_16x16.jpeg}}.
 Heisenberg Fellow recently awarded at Hamburg Unversity, Florian is an expert
-on cosmic dust processing, author of the Paperboats Code and a regular
-collaborator of the CoI. Florian will assist the implemenation of Paperboats
+on cosmic dust processing, author of the PAPERBOATS Code and a regular
+collaborator of the CoI. Florian will assist the implemenation of PAPERBOATS
 functionality into PC-A dust modules and coauthor publications on \wpref{2}.
 
 
